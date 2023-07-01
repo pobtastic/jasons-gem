@@ -2163,6 +2163,8 @@ c$9470 LD HL,$FAF4   ; {#HTML(Write #N$FAF4 to <a
                      ; TABLE#}
  $94DF AND %00001000 ; Keep only bit 3.
  $94E1 JP Z,$96B7    ; If "4" was pressed then jump to #R$96B7.
+; Handles ... cheat codes?
+@label=CHEATCODES
  $94E4 LD A,$FD      ; {Read from the keyboard;
  $94E6 IN A,($FE)    ; #TABLE(default,centre,centre,centre,centre,centre,centre)
                      ; { =h,r2 Port Number | =h,c5 Bit }

@@ -82,6 +82,8 @@ N $94DB Handles selecting "4. INTERFACE 2".
 . TABLE#
   $94DF,$02,b$01 Keep only bit 3.
   $94E1,$03 If "4" was pressed then jump to #R$96B7.
+N $94E4 Handles ... cheat codes?
+@ $94E4 label=CHEATCODES
   $94E4,$04 Read from the keyboard;
 . #TABLE(default,centre,centre,centre,centre,centre,centre)
 . { =h,r2 Port Number | =h,c5 Bit }
