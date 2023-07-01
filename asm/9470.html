@@ -234,7 +234,7 @@ Handles selecting "1. KEYBOARD".
 </td>
 </tr>
 <tr>
-<td class="asm-label">GameEntry_1</td>
+<td class="asm-label">TitleSelectInput</td>
 <td class="address-2"><span id="94c0"></span>94C0</td>
 <td class="instruction">LD A,$F7</td>
 <td class="comment-1" rowspan="2">Read from the keyboard; <table class="default">
@@ -475,8 +475,8 @@ Handles selecting "4. INTERFACE 2".
 <tr>
 <td class="asm-label"></td>
 <td class="address-1"><span id="94ea"></span>94EA</td>
-<td class="instruction">JP Z,<a href="9910.html#992a">$992A</a></td>
-<td class="comment-1" rowspan="1">If "A" and "S" was pressed then jump to <a href="9910.html#992a">992A</a>.</td>
+<td class="instruction">JP Z,<a href="992A.html">$992A</a></td>
+<td class="comment-1" rowspan="1">If "A" and "S" was pressed then jump to <a href="992A.html">992A</a>.</td>
 </tr>
 <tr>
 <td class="asm-label"></td>
@@ -660,7 +660,7 @@ Handles selecting "6. PLAY".
 <tr>
 <td class="asm-label"></td>
 <td class="address-1"><span id="9512"></span>9512</td>
-<td class="instruction">CALL Z,<a href="9910.html#9923">$9923</a></td>
+<td class="instruction">CALL Z,<a href="9923.html">$9923</a></td>
 <td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
@@ -696,7 +696,7 @@ Handles selecting "6. PLAY".
 <tr>
 <td class="asm-label"></td>
 <td class="address-1"><span id="951e"></span>951E</td>
-<td class="instruction">JP NZ,<a href="9470.html#94c0">GameEntry_1</a></td>
+<td class="instruction">JP NZ,<a href="9470.html#94c0">TitleSelectInput</a></td>
 <td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
@@ -708,7 +708,7 @@ Handles selecting "6. PLAY".
 <tr>
 <td class="asm-label"></td>
 <td class="address-1"><span id="9522"></span>9522</td>
-<td class="instruction">JP NZ,<a href="9470.html#94c0">GameEntry_1</a></td>
+<td class="instruction">JP NZ,<a href="9470.html#94c0">TitleSelectInput</a></td>
 <td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
@@ -732,7 +732,7 @@ Handles selecting "6. PLAY".
 <tr>
 <td class="asm-label"></td>
 <td class="address-1"><span id="952c"></span>952C</td>
-<td class="instruction">JP NZ,<a href="9470.html#94c0">GameEntry_1</a></td>
+<td class="instruction">JP NZ,<a href="9470.html#94c0">TitleSelectInput</a></td>
 <td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>

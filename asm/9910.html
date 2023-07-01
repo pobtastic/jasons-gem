@@ -29,11 +29,11 @@ Prev: <a href="97AC.html">97AC</a>
 </td>
 <td class="up">Up: <a href="../maps/all.html#9910">Map</a></td>
 <td class="next">
-Next: <a href="9944.html">9944</a>
+Next: <a href="9923.html">9923</a>
 </td>
 </tr>
 </table>
-<div class="description">9910: Routine at 9910</div>
+<div class="description">9910: Initialise Paper/ Ink For Best Scores Table</div>
 <table class="disassembly">
 <tr>
 <td class="routine-comment" colspan="5">
@@ -45,154 +45,73 @@ Used by the routine at <a href="96FC.html">BestScoresTablePrint</a>.
 </td>
 </tr>
 <tr>
+<td class="asm-label">Init_BestScoresTable</td>
 <td class="address-2"><span id="9910"></span>9910</td>
 <td class="instruction">LD A,$11</td>
-<td class="comment-0" rowspan="1"></td>
+<td class="comment-1" rowspan="4">PAPER 00.</td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="9912"></span>9912</td>
 <td class="instruction">RST $10</td>
-<td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="9913"></span>9913</td>
 <td class="instruction">LD A,$00</td>
-<td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="9915"></span>9915</td>
 <td class="instruction">RST $10</td>
-<td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="9916"></span>9916</td>
 <td class="instruction">LD A,$10</td>
-<td class="comment-0" rowspan="1"></td>
+<td class="comment-1" rowspan="4">INK 03.</td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="9918"></span>9918</td>
 <td class="instruction">RST $10</td>
-<td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="9919"></span>9919</td>
 <td class="instruction">LD A,$03</td>
-<td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="991b"></span>991B</td>
 <td class="instruction">RST $10</td>
-<td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="991c"></span>991C</td>
 <td class="instruction">LD A,$13</td>
-<td class="comment-0" rowspan="1"></td>
+<td class="comment-1" rowspan="4">BRIGHT "OFF".</td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="991e"></span>991E</td>
 <td class="instruction">RST $10</td>
-<td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="991f"></span>991F</td>
 <td class="instruction">LD A,$00</td>
-<td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="9921"></span>9921</td>
 <td class="instruction">RST $10</td>
-<td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="9922"></span>9922</td>
 <td class="instruction">RET</td>
-<td class="comment-0" rowspan="1"></td>
-</tr>
-<tr>
-<td class="routine-comment" colspan="5">
-<span id="9923"></span>
-<div class="comments">
-<div class="paragraph">
-This entry point is used by the routine at <a href="9470.html">GameEntry</a>.
-</div>
-</div>
-</td>
-</tr>
-<tr>
-<td class="address-2"><span id="9923"></span>9923</td>
-<td class="instruction">LD HL,$0000</td>
-<td class="comment-0" rowspan="1"></td>
-</tr>
-<tr>
-<td class="address-1"><span id="9926"></span>9926</td>
-<td class="instruction">LD ($5B99),HL</td>
-<td class="comment-0" rowspan="1"></td>
-</tr>
-<tr>
-<td class="address-1"><span id="9929"></span>9929</td>
-<td class="instruction">RET</td>
-<td class="comment-0" rowspan="1"></td>
-</tr>
-<tr>
-<td class="routine-comment" colspan="5">
-<span id="992a"></span>
-<div class="comments">
-<div class="paragraph">
-This entry point is used by the routine at <a href="9470.html">GameEntry</a>.
-</div>
-</div>
-</td>
-</tr>
-<tr>
-<td class="address-2"><span id="992a"></span>992A</td>
-<td class="instruction">LD A,$FB</td>
-<td class="comment-0" rowspan="1"></td>
-</tr>
-<tr>
-<td class="address-1"><span id="992c"></span>992C</td>
-<td class="instruction">IN A,($FE)</td>
-<td class="comment-0" rowspan="1"></td>
-</tr>
-<tr>
-<td class="address-1"><span id="992e"></span>992E</td>
-<td class="instruction">AND $02</td>
-<td class="comment-0" rowspan="1"></td>
-</tr>
-<tr>
-<td class="address-1"><span id="9930"></span>9930</td>
-<td class="instruction">JP NZ,<a href="9470.html#94c0">GameEntry_1</a></td>
-<td class="comment-0" rowspan="1"></td>
-</tr>
-<tr>
-<td class="address-1"><span id="9933"></span>9933</td>
-<td class="instruction">LD A,$FF</td>
-<td class="comment-0" rowspan="1"></td>
-</tr>
-<tr>
-<td class="address-1"><span id="9935"></span>9935</td>
-<td class="instruction">LD ($BC4D),A</td>
-<td class="comment-0" rowspan="1"></td>
-</tr>
-<tr>
-<td class="address-1"><span id="9938"></span>9938</td>
-<td class="instruction">LD HL,$0190</td>
-<td class="comment-0" rowspan="1"></td>
-</tr>
-<tr>
-<td class="address-1"><span id="993b"></span>993B</td>
-<td class="instruction">LD DE,$00C8</td>
-<td class="comment-0" rowspan="1"></td>
-</tr>
-<tr>
-<td class="address-1"><span id="993e"></span>993E</td>
-<td class="instruction">CALL $03B5</td>
-<td class="comment-0" rowspan="1"></td>
-</tr>
-<tr>
-<td class="address-1"><span id="9941"></span>9941</td>
-<td class="instruction">JP <a href="9470.html#94c0">GameEntry_1</a></td>
-<td class="comment-0" rowspan="1"></td>
+<td class="comment-1" rowspan="1">Return.</td>
 </tr>
 </table>
 <table class="asm-navigation">
@@ -202,7 +121,7 @@ Prev: <a href="97AC.html">97AC</a>
 </td>
 <td class="up">Up: <a href="../maps/all.html#9910">Map</a></td>
 <td class="next">
-Next: <a href="9944.html">9944</a>
+Next: <a href="9923.html">9923</a>
 </td>
 </tr>
 </table>
