@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Jason's Gem: Data at B92B</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-dark.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-dark.css" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-75RERFCHBG"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-75RERFCHBG');
+</script>
+</head>
+<body class="Asm-b">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Data</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="B8F6.html">B8F6</a>
+</td>
+<td class="up">Up: <a href="../maps/all.html#b92b">Map</a></td>
+<td class="next">
+Next: <a href="B9EA.html">B9EA</a>
+</td>
+</tr>
+</table>
+<div class="description">B92B: Congratulations Copy</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+</div>
+</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="b92b"></span>
+<div class="comments">
+<div class="paragraph">
+Handles printing the "THE MISSION HAS NOW BEEN " text.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">CongratulationsCopy</td>
+<td class="address-1"><span id="b92b"></span>B92B</td>
+<td class="instruction">DEFB $11,$00</td>
+<td class="comment-1" rowspan="1">PAPER 0.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="b92d"></span>B92D</td>
+<td class="instruction">DEFB $16,$06,$00</td>
+<td class="comment-1" rowspan="1">PRINT AT (6, 0).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="b930"></span>B930</td>
+<td class="instruction">DEFB $10,$05</td>
+<td class="comment-1" rowspan="1">INK 5.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="b932"></span>B932</td>
+<td class="instruction">DEFM "THE MISSION HAS NOW BEEN "</td>
+<td class="comment-1" rowspan="1">"THE MISSION HAS NOW BEEN ".</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="b94b"></span>
+<div class="comments">
+<div class="paragraph">
+Handles printing the "ACCOMPLISHED," text.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="b94b"></span>B94B</td>
+<td class="instruction">DEFB $16,$07,$13</td>
+<td class="comment-1" rowspan="1">PRINT AT (7, 19).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="b94e"></span>B94E</td>
+<td class="instruction">DEFM "ACCOMPLISHED,"</td>
+<td class="comment-1" rowspan="1">"ACCOMPLISHED,".</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="b95b"></span>
+<div class="comments">
+<div class="paragraph">
+Handles printing the "WITH A BONUS OF 3000 TO YOUR" text.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="b95b"></span>B95B</td>
+<td class="instruction">DEFB $16,$09,$00</td>
+<td class="comment-1" rowspan="1">PRINT AT (9, 0).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="b95e"></span>B95E</td>
+<td class="instruction">DEFB $10,$06</td>
+<td class="comment-1" rowspan="1">INK 6.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="b960"></span>B960</td>
+<td class="instruction">DEFM "WITH A BONUS OF 3000 TO YOUR"</td>
+<td class="comment-1" rowspan="1">"WITH A BONUS OF 3000 TO YOUR".</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="b97c"></span>
+<div class="comments">
+<div class="paragraph">
+Handles printing the "SCORE," text.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="b97c"></span>B97C</td>
+<td class="instruction">DEFB $16,$0A,$1A</td>
+<td class="comment-1" rowspan="1">PRINT AT (10, 26).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="b97f"></span>B97F</td>
+<td class="instruction">DEFM "SCORE,"</td>
+<td class="comment-1" rowspan="1">"SCORE,".</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="b985"></span>
+<div class="comments">
+<div class="paragraph">
+Handles printing the "BUT I AM SURE YOUR SCORE COULD" text.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="b985"></span>B985</td>
+<td class="instruction">DEFB $16,$0C,$00</td>
+<td class="comment-1" rowspan="1">PRINT AT (12, 0).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="b988"></span>B988</td>
+<td class="instruction">DEFB $10,$05</td>
+<td class="comment-1" rowspan="1">INK 5.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="b98a"></span>B98A</td>
+<td class="instruction">DEFM "BUT I AM SURE YOUR SCORE COULD"</td>
+<td class="comment-1" rowspan="1">"BUT I AM SURE YOUR SCORE COULD".</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="b9a8"></span>
+<div class="comments">
+<div class="paragraph">
+Handles printing the "BE HIGHER," text.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="b9a8"></span>B9A8</td>
+<td class="instruction">DEFB $16,$0D,$16</td>
+<td class="comment-1" rowspan="1">PRINT AT (13, 22).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="b9ab"></span>B9AB</td>
+<td class="instruction">DEFM "BE HIGHER,"</td>
+<td class="comment-1" rowspan="1">"BE HIGHER,".</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="b9b5"></span>
+<div class="comments">
+<div class="paragraph">
+Handles printing the "SO PRESS THE " text.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="b9b5"></span>B9B5</td>
+<td class="instruction">DEFB $16,$0F,$00</td>
+<td class="comment-1" rowspan="1">PRINT AT (15, 0).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="b9b8"></span>B9B8</td>
+<td class="instruction">DEFB $10,$06</td>
+<td class="comment-1" rowspan="1">INK 6.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="b9ba"></span>B9BA</td>
+<td class="instruction">DEFM "SO PRESS THE "</td>
+<td class="comment-1" rowspan="1">"SO PRESS THE ".</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="b9c7"></span>
+<div class="comments">
+<div class="paragraph">
+Handles printing the "SPACE" text.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="b9c7"></span>B9C7</td>
+<td class="instruction">DEFB $10,$06</td>
+<td class="comment-1" rowspan="1">INK 6.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="b9c9"></span>B9C9</td>
+<td class="instruction">DEFB $11,$02</td>
+<td class="comment-1" rowspan="1">PAPER 2.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="b9cb"></span>B9CB</td>
+<td class="instruction">DEFB $12,$01</td>
+<td class="comment-1" rowspan="1">FLASH "ON".</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="b9cd"></span>B9CD</td>
+<td class="instruction">DEFB $13,$01</td>
+<td class="comment-1" rowspan="1">BRIGHT "ON".</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="b9cf"></span>B9CF</td>
+<td class="instruction">DEFM "SPACE"</td>
+<td class="comment-1" rowspan="1">"SPACE".</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="b9d4"></span>
+<div class="comments">
+<div class="paragraph">
+Handles printing the " KEY FOR MORE!" text.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="b9d4"></span>B9D4</td>
+<td class="instruction">DEFB $10,$06</td>
+<td class="comment-1" rowspan="1">INK 6.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="b9d6"></span>B9D6</td>
+<td class="instruction">DEFB $11,$00</td>
+<td class="comment-1" rowspan="1">PAPER 0.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="b9d8"></span>B9D8</td>
+<td class="instruction">DEFB $12,$00</td>
+<td class="comment-1" rowspan="1">FLASH "OFF".</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="b9da"></span>B9DA</td>
+<td class="instruction">DEFB $13,$00</td>
+<td class="comment-1" rowspan="1">BRIGHT "OFF".</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="b9dc"></span>B9DC</td>
+<td class="instruction">DEFM " KEY FOR MORE!"</td>
+<td class="comment-1" rowspan="1">" KEY FOR MORE!".</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="B8F6.html">B8F6</a>
+</td>
+<td class="up">Up: <a href="../maps/all.html#b92b">Map</a></td>
+<td class="next">
+Next: <a href="B9EA.html">B9EA</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&copy; Mastertronic Ltd 1985 &copy; 2023 ArcadeGeek LTD.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.10.</div>
+<div><a href="../dec/asm/47403.html">Switch to decimal</a>.</div>
+</footer>
+</body>
+</html>

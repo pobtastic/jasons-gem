@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Jason's Gem: Routine at 46965</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-dark.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-dark.css" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-75RERFCHBG"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-75RERFCHBG');
+</script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="46952.html">46952</a>
+</td>
+<td class="up">Up: <a href="../maps/all.html#46965">Map</a></td>
+<td class="next">
+Next: <a href="47006.html">47006</a>
+</td>
+</tr>
+</table>
+<div class="description">46965: High Score Print</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="46800.html">46800</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">HighScorePrint</td>
+<td class="address-2"><span id="46965"></span>46965</td>
+<td class="instruction">LD HL,16384</td>
+<td class="comment-1" rowspan="5">Writes 0 to all 6144 screen buffer address locations (clears the screen).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="46968"></span>46968</td>
+<td class="instruction">LD BC,6143</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="46971"></span>46971</td>
+<td class="instruction">LD DE,16385</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="46974"></span>46974</td>
+<td class="instruction">LD (HL),0</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="46976"></span>46976</td>
+<td class="instruction">LDIR</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="46978"></span>46978</td>
+<td class="instruction">LD HL,22528</td>
+<td class="comment-1" rowspan="5">Writes 7 to all 768 attribute buffer address locations.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="46981"></span>46981</td>
+<td class="instruction">LD DE,22529</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="46984"></span>46984</td>
+<td class="instruction">LD BC,767</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="46987"></span>46987</td>
+<td class="instruction">LD (HL),7</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="46989"></span>46989</td>
+<td class="instruction">LDIR</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="46991"></span>
+<div class="comments">
+<div class="paragraph">
+Open the upper screen channel.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="46991"></span>46991</td>
+<td class="instruction">LD A,2</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=2.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="46993"></span>46993</td>
+<td class="instruction">CALL 5633</td>
+<td class="comment-1" rowspan="1">Call <a href="https://skoolkit.ca/disassemblies/rom/hex/asm/1601.html">CHAN_OPEN</a>.</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="46996"></span>
+<div class="comments">
+<div class="paragraph">
+Uses <a href="https://skoolkit.ca/disassemblies/rom/hex/asm/1FFC.html#203C">PR_STRING</a> to print to the screen.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="46996"></span>46996</td>
+<td class="instruction">LD DE,47006</td>
+<td class="comment-1" rowspan="1"><span class="register">DE</span>=<a href="47006.html">HighScoreCopy</a> (text).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="46999"></span>46999</td>
+<td class="instruction">LD BC,123</td>
+<td class="comment-1" rowspan="1"><span class="register">BC</span>=123 (counter).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="47002"></span>47002</td>
+<td class="instruction">CALL 8252</td>
+<td class="comment-1" rowspan="1">Call <a href="https://skoolkit.ca/disassemblies/rom/hex/asm/1FFC.html#203C">PR_STRING</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="47005"></span>47005</td>
+<td class="instruction">RET</td>
+<td class="comment-1" rowspan="1">Return.</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="46952.html">46952</a>
+</td>
+<td class="up">Up: <a href="../maps/all.html#46965">Map</a></td>
+<td class="next">
+Next: <a href="47006.html">47006</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&copy; Mastertronic Ltd 1985 &copy; 2023 ArcadeGeek LTD.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.10.</div>
+<div><a href="../../asm/B775.html">Switch to hexadecimal</a>.</div>
+</footer>
+</body>
+</html>

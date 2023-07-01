@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Jason's Gem: Routine at 38619</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-dark.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-dark.css" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-75RERFCHBG"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-75RERFCHBG');
+</script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="38610.html">38610</a>
+</td>
+<td class="up">Up: <a href="../maps/all.html#38619">Map</a></td>
+<td class="next">
+Next: <a href="38652.html">38652</a>
+</td>
+</tr>
+</table>
+<div class="description">38619: Instructions Print</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="38000.html">GameEntry</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">InstructionsPrint</td>
+<td class="address-2"><span id="38619"></span>38619</td>
+<td class="instruction">LD A,247</td>
+<td class="comment-1" rowspan="2">Read from the keyboard; <table class="default">
+<tr>
+<th colspan="1" rowspan="2">Port Number</th>
+<th colspan="5" rowspan="1">Bit</th>
+</tr>
+<tr>
+<th colspan="1" rowspan="1">0</th>
+<th colspan="1" rowspan="1">1</th>
+<th colspan="1" rowspan="1">2</th>
+<th colspan="1" rowspan="1">3</th>
+<th colspan="1" rowspan="1">4</th>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">247</td>
+<td class="centre" colspan="1" rowspan="1">1</td>
+<td class="centre" colspan="1" rowspan="1">2</td>
+<td class="centre" colspan="1" rowspan="1">3</td>
+<td class="centre" colspan="1" rowspan="1">4</td>
+<td class="centre" colspan="1" rowspan="1">5</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="38621"></span>38621</td>
+<td class="instruction">IN A,(254)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="38623"></span>38623</td>
+<td class="instruction">AND %00010000</td>
+<td class="comment-1" rowspan="1">Keep only bit 4.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="38625"></span>38625</td>
+<td class="instruction">JP Z,<a href="38619.html#38619">InstructionsPrint</a></td>
+<td class="comment-1" rowspan="1">Jump back to <a href="38619.html">InstructionsPrint</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="38628"></span>38628</td>
+<td class="instruction">LD HL,39800</td>
+<td class="comment-1" rowspan="4">Copies 6912 bytes of data from <a href="39800.html">InstructionsData</a> to the screen buffer.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="38631"></span>38631</td>
+<td class="instruction">LD DE,16384</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="38634"></span>38634</td>
+<td class="instruction">LD BC,6912</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="38637"></span>38637</td>
+<td class="instruction">LDIR</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="38639"></span>38639</td>
+<td class="instruction">XOR A</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label">InstructionsPrint_Loop</td>
+<td class="address-2"><span id="38640"></span>38640</td>
+<td class="instruction">IN A,(254)</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="38642"></span>38642</td>
+<td class="instruction">AND %00011111</td>
+<td class="comment-1" rowspan="1">Keep only bits 0-4.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="38644"></span>38644</td>
+<td class="instruction">XOR %00011111</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="38646"></span>38646</td>
+<td class="instruction">JP Z,<a href="38619.html#38640">InstructionsPrint_Loop</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="38649"></span>38649</td>
+<td class="instruction">JP <a href="38000.html#38016">GameEntry_0</a></td>
+<td class="comment-1" rowspan="1">Call <a href="38000.html#38016">GameEntry_0</a>.</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="38610.html">38610</a>
+</td>
+<td class="up">Up: <a href="../maps/all.html#38619">Map</a></td>
+<td class="next">
+Next: <a href="38652.html">38652</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&copy; Mastertronic Ltd 1985 &copy; 2023 ArcadeGeek LTD.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.10.</div>
+<div><a href="../../asm/96DB.html">Switch to hexadecimal</a>.</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Jason's Gem: Routine at 95A3</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-dark.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-dark.css" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-75RERFCHBG"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-75RERFCHBG');
+</script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="955A.html">955A</a>
+</td>
+<td class="up">Up: <a href="../maps/all.html#95a3">Map</a></td>
+<td class="next">
+Next: <a href="95B2.html">95B2</a>
+</td>
+</tr>
+</table>
+<div class="description">95A3: Title Screen Print</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="9470.html">GameEntry</a>, <a href="9666.html">9666</a>, <a href="9681.html">9681</a>, <a href="969C.html">969C</a> and <a href="96B7.html">96B7</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="95a3"></span>
+<div class="comments">
+<div class="paragraph">
+Open the upper screen channel.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">TitleScreenPrint</td>
+<td class="address-2"><span id="95a3"></span>95A3</td>
+<td class="instruction">LD A,$02</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=02.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="95a5"></span>95A5</td>
+<td class="instruction">CALL $1601</td>
+<td class="comment-1" rowspan="1">Call <a href="https://skoolkit.ca/disassemblies/rom/hex/asm/1601.html">CHAN_OPEN</a>.</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="95a8"></span>
+<div class="comments">
+<div class="paragraph">
+Uses <a href="https://skoolkit.ca/disassemblies/rom/hex/asm/1FFC.html#203C">PR_STRING</a> to print to the screen.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="95a8"></span>95A8</td>
+<td class="instruction">LD DE,$95B2</td>
+<td class="comment-1" rowspan="1"><span class="register">DE</span>=<a href="95B2.html">TitleScreenCopy</a> (text).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="95ab"></span>95AB</td>
+<td class="instruction">LD BC,$00B4</td>
+<td class="comment-1" rowspan="1"><span class="register">BC</span>=B4 (counter).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="95ae"></span>95AE</td>
+<td class="instruction">CALL $203C</td>
+<td class="comment-1" rowspan="1">Call <a href="https://skoolkit.ca/disassemblies/rom/hex/asm/1FFC.html#203C">PR_STRING</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="95b1"></span>95B1</td>
+<td class="instruction">RET</td>
+<td class="comment-1" rowspan="1">Return.</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="955A.html">955A</a>
+</td>
+<td class="up">Up: <a href="../maps/all.html#95a3">Map</a></td>
+<td class="next">
+Next: <a href="95B2.html">95B2</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&copy; Mastertronic Ltd 1985 &copy; 2023 ArcadeGeek LTD.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.10.</div>
+<div><a href="../dec/asm/38307.html">Switch to decimal</a>.</div>
+</footer>
+</body>
+</html>

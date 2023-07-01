@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Jason's Gem: Routine at 46800</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-dark.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-dark.css" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-75RERFCHBG"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-75RERFCHBG');
+</script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="46712.html">46712</a>
+</td>
+<td class="up">Up: <a href="../maps/all.html#46800">Map</a></td>
+<td class="next">
+Next: <a href="46871.html">46871</a>
+</td>
+</tr>
+</table>
+<div class="description">46800: Routine at B6D0</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="38828.html">StartGame</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="address-2"><span id="46800"></span>46800</td>
+<td class="instruction">CALL <a href="46965.html">HighScorePrint</a></td>
+<td class="comment-1" rowspan="1">Call <a href="46965.html">HighScorePrint</a>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="46803"></span>46803</td>
+<td class="instruction">DI</td>
+<td class="comment-1" rowspan="1">Disable interrupts.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="46804"></span>46804</td>
+<td class="instruction">LD A,(23658)</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="address-1"><span id="46807"></span>46807</td>
+<td class="instruction">OR 8</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="address-1"><span id="46809"></span>46809</td>
+<td class="instruction">LD (23658),A</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="46812"></span>
+<div class="comments">
+<div class="paragraph">
+Open the upper screen channel.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="address-1"><span id="46812"></span>46812</td>
+<td class="instruction">LD A,2</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=2.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="46814"></span>46814</td>
+<td class="instruction">CALL 5633</td>
+<td class="comment-1" rowspan="1">Call <a href="https://skoolkit.ca/disassemblies/rom/hex/asm/1601.html">CHAN_OPEN</a>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="46817"></span>46817</td>
+<td class="instruction">LD HL,47200</td>
+<td class="comment-1" rowspan="1"><span class="register">HL</span>=<a href="47200.html">47200</a>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="46820"></span>46820</td>
+<td class="instruction">LD B,12</td>
+<td class="comment-1" rowspan="1"><span class="register">B</span>=12.</td>
+</tr>
+<tr>
+<td class="address-2"><span id="46822"></span>46822</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-1" rowspan="2">Stash <span class="register">BC</span> and <span class="register">HL</span> on the stack.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="46823"></span>46823</td>
+<td class="instruction">PUSH HL</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="46824"></span>
+<div class="comments">
+<div class="paragraph">
+g
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="address-2"><span id="46824"></span>46824</td>
+<td class="instruction">CALL <a href="46871.html">46871</a></td>
+<td class="comment-1" rowspan="1">Call <a href="46871.html">46871</a>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="46827"></span>46827</td>
+<td class="instruction">CP 32</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="address-1"><span id="46829"></span>46829</td>
+<td class="instruction">JR Z,<a href="46800.html#46843">46843</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="address-1"><span id="46831"></span>46831</td>
+<td class="instruction">CP 13</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="address-1"><span id="46833"></span>46833</td>
+<td class="instruction">JR Z,<a href="46952.html">46952</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="address-1"><span id="46835"></span>46835</td>
+<td class="instruction">CP 65</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="address-1"><span id="46837"></span>46837</td>
+<td class="instruction">JR C,<a href="46800.html#46824">46824</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="address-1"><span id="46839"></span>46839</td>
+<td class="instruction">CP 91</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="address-1"><span id="46841"></span>46841</td>
+<td class="instruction">JR NC,<a href="46800.html#46824">46824</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="46843"></span>
+<div class="comments">
+<div class="paragraph">
+f
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="address-2"><span id="46843"></span>46843</td>
+<td class="instruction">PUSH AF</td>
+<td class="comment-1" rowspan="2">Stash <span class="register">AF</span> on the stack twice.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="46844"></span>46844</td>
+<td class="instruction">PUSH AF</td>
+</tr>
+<tr>
+<td class="address-1"><span id="46845"></span>46845</td>
+<td class="instruction">LD A,16</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=16.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="46847"></span>46847</td>
+<td class="instruction">RST 16</td>
+<td class="comment-1" rowspan="1">Call <a href="https://skoolkit.ca/disassemblies/rom/hex/asm/0010.html">PRINT_A_1</a>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="46848"></span>46848</td>
+<td class="instruction">LD A,7</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=7.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="46850"></span>46850</td>
+<td class="instruction">RST 16</td>
+<td class="comment-1" rowspan="1">Call <a href="https://skoolkit.ca/disassemblies/rom/hex/asm/0010.html">PRINT_A_1</a>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="46851"></span>46851</td>
+<td class="instruction">LD A,17</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=17.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="46853"></span>46853</td>
+<td class="instruction">RST 16</td>
+<td class="comment-1" rowspan="1">Call <a href="https://skoolkit.ca/disassemblies/rom/hex/asm/0010.html">PRINT_A_1</a>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="46854"></span>46854</td>
+<td class="instruction">LD A,2</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=2.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="46856"></span>46856</td>
+<td class="instruction">RST 16</td>
+<td class="comment-1" rowspan="1">Call <a href="https://skoolkit.ca/disassemblies/rom/hex/asm/0010.html">PRINT_A_1</a>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="46857"></span>46857</td>
+<td class="instruction">POP AF</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">AF</span> from the stack.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="46858"></span>46858</td>
+<td class="instruction">RST 16</td>
+<td class="comment-1" rowspan="1">Call <a href="https://skoolkit.ca/disassemblies/rom/hex/asm/0010.html">PRINT_A_1</a>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="46859"></span>46859</td>
+<td class="instruction">POP AF</td>
+<td class="comment-1" rowspan="2">Restore <span class="register">AF</span> and <span class="register">HL</span> from the stack.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="46860"></span>46860</td>
+<td class="instruction">POP HL</td>
+</tr>
+<tr>
+<td class="address-1"><span id="46861"></span>46861</td>
+<td class="instruction">LD (HL),A</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="address-1"><span id="46862"></span>46862</td>
+<td class="instruction">INC HL</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="address-1"><span id="46863"></span>46863</td>
+<td class="instruction">CALL <a href="46889.html">46889</a></td>
+<td class="comment-1" rowspan="1">Call <a href="46889.html">46889</a>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="46866"></span>46866</td>
+<td class="instruction">POP BC</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">BC</span> from the stack.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="46867"></span>46867</td>
+<td class="instruction">DJNZ <a href="46800.html#46822">46822</a></td>
+<td class="comment-1" rowspan="1"><a href="46800.html#46822">46822</a>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="46869"></span>46869</td>
+<td class="instruction">EI</td>
+<td class="comment-1" rowspan="1">Enable interrupts.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="46870"></span>46870</td>
+<td class="instruction">RET</td>
+<td class="comment-1" rowspan="1">Return.</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="46712.html">46712</a>
+</td>
+<td class="up">Up: <a href="../maps/all.html#46800">Map</a></td>
+<td class="next">
+Next: <a href="46871.html">46871</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&copy; Mastertronic Ltd 1985 &copy; 2023 ArcadeGeek LTD.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.10.</div>
+<div><a href="../../asm/B6D0.html">Switch to hexadecimal</a>.</div>
+</footer>
+</body>
+</html>

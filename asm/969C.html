@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Jason's Gem: Routine at 969C</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-dark.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-dark.css" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-75RERFCHBG"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-75RERFCHBG');
+</script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="9681.html">9681</a>
+</td>
+<td class="up">Up: <a href="../maps/all.html#969c">Map</a></td>
+<td class="next">
+Next: <a href="96B7.html">96B7</a>
+</td>
+</tr>
+</table>
+<div class="description">969C: Routine at 969C</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="9470.html">GameEntry</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="address-2"><span id="969c"></span>969C</td>
+<td class="instruction">LD A,($5BA8)</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=<a href="5BA8.html">5BA8</a>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="969f"></span>969F</td>
+<td class="instruction">CP $03</td>
+<td class="comment-1" rowspan="2">If this is 03 then jump to <a href="9470.html#94c0">GameEntry_1</a>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="96a1"></span>96A1</td>
+<td class="instruction">JP Z,<a href="9470.html#94c0">GameEntry_1</a></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="96a4"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routine at <a href="9470.html">GameEntry</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="address-2"><span id="96a4"></span>96A4</td>
+<td class="instruction">LD A,$03</td>
+<td class="comment-1" rowspan="2">Write 03 to <a href="5BA8.html">5BA8</a>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="96a6"></span>96A6</td>
+<td class="instruction">LD ($5BA8),A</td>
+</tr>
+<tr>
+<td class="address-1"><span id="96a9"></span>96A9</td>
+<td class="instruction">CALL <a href="95A3.html">TitleScreenPrint</a></td>
+<td class="comment-1" rowspan="1">Call <a href="95A3.html">TitleScreenPrint</a>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="96ac"></span>96AC</td>
+<td class="instruction">LD HL,$5967</td>
+<td class="comment-1" rowspan="1"><span class="register">HL</span>=5967.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="96af"></span>96AF</td>
+<td class="instruction">LD A,$12</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=12.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="96b1"></span>96B1</td>
+<td class="instruction">CALL <a href="96D2.html">$96D2</a></td>
+<td class="comment-1" rowspan="1">Call <a href="96D2.html">96D2</a>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="96b4"></span>96B4</td>
+<td class="instruction">JP <a href="9470.html#94c0">GameEntry_1</a></td>
+<td class="comment-1" rowspan="1">Jump to <a href="9470.html#94c0">GameEntry_1</a>.</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="9681.html">9681</a>
+</td>
+<td class="up">Up: <a href="../maps/all.html#969c">Map</a></td>
+<td class="next">
+Next: <a href="96B7.html">96B7</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&copy; Mastertronic Ltd 1985 &copy; 2023 ArcadeGeek LTD.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.10.</div>
+<div><a href="../dec/asm/38556.html">Switch to decimal</a>.</div>
+</footer>
+</body>
+</html>

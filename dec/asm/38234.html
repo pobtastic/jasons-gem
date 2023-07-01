@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Jason's Gem: Routine at 38234</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-dark.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-dark.css" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-75RERFCHBG"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-75RERFCHBG');
+</script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="38225.html">38225</a>
+</td>
+<td class="up">Up: <a href="../maps/all.html#38234">Map</a></td>
+<td class="next">
+Next: <a href="38307.html">38307</a>
+</td>
+</tr>
+</table>
+<div class="description">38234: Routine at 955A</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="38000.html">GameEntry</a> and <a href="38736.html">BestScoresPrint</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="address-2"><span id="38234"></span>38234</td>
+<td class="instruction">LD HL,22528</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="address-1"><span id="38237"></span>38237</td>
+<td class="instruction">LD DE,22529</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="address-1"><span id="38240"></span>38240</td>
+<td class="instruction">LD BC,767</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="address-1"><span id="38243"></span>38243</td>
+<td class="instruction">LD (HL),0</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="address-1"><span id="38245"></span>38245</td>
+<td class="instruction">LDIR</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="address-1"><span id="38247"></span>38247</td>
+<td class="instruction">LD HL,39800</td>
+<td class="comment-1" rowspan="4">Copies 2047 bytes of data from <a href="39800.html">InstructionsData</a> to the screen buffer.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="38250"></span>38250</td>
+<td class="instruction">LD BC,2047</td>
+</tr>
+<tr>
+<td class="address-1"><span id="38253"></span>38253</td>
+<td class="instruction">LD DE,16384</td>
+</tr>
+<tr>
+<td class="address-1"><span id="38256"></span>38256</td>
+<td class="instruction">LDIR</td>
+</tr>
+<tr>
+<td class="address-1"><span id="38258"></span>38258</td>
+<td class="instruction">LD HL,16544</td>
+<td class="comment-1" rowspan="1"><span class="register">HL</span>=16544.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="38261"></span>38261</td>
+<td class="instruction">LD B,24</td>
+<td class="comment-1" rowspan="1"><span class="register">B</span>=24.</td>
+</tr>
+<tr>
+<td class="address-2"><span id="38263"></span>38263</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-1" rowspan="2">Stash <span class="register">BC</span> and <span class="register">HL</span> on the stack.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="38264"></span>38264</td>
+<td class="instruction">PUSH HL</td>
+</tr>
+<tr>
+<td class="address-1"><span id="38265"></span>38265</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-1" rowspan="2"><span class="register">DE</span>=<span class="register">HL</span>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="38266"></span>38266</td>
+<td class="instruction">POP DE</td>
+</tr>
+<tr>
+<td class="address-1"><span id="38267"></span>38267</td>
+<td class="instruction">INC DE</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="address-1"><span id="38268"></span>38268</td>
+<td class="instruction">LD BC,31</td>
+<td class="comment-1" rowspan="1"><span class="register">BC</span>=31.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="38271"></span>38271</td>
+<td class="instruction">LD (HL),0</td>
+<td class="comment-1" rowspan="1">Writes 0 to <span class="register">HL</span>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="38273"></span>38273</td>
+<td class="instruction">LDIR</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="address-1"><span id="38275"></span>38275</td>
+<td class="instruction">POP HL</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span> from the stack.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="38276"></span>38276</td>
+<td class="instruction">CALL <a href="38194.html">38194</a></td>
+<td class="comment-1" rowspan="1">Call <a href="38194.html">38194</a>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="38279"></span>38279</td>
+<td class="instruction">POP BC</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">BC</span> from the stack.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="38280"></span>38280</td>
+<td class="instruction">DJNZ <a href="38234.html#38263">38263</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="address-1"><span id="38282"></span>38282</td>
+<td class="instruction">LD HL,45944</td>
+<td class="comment-1" rowspan="4">Copies 160 bytes of data from <a href="39800.html#45944">InstructionsAttributeData</a> to the attribute buffer.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="38285"></span>38285</td>
+<td class="instruction">LD DE,22528</td>
+</tr>
+<tr>
+<td class="address-1"><span id="38288"></span>38288</td>
+<td class="instruction">LD BC,160</td>
+</tr>
+<tr>
+<td class="address-1"><span id="38291"></span>38291</td>
+<td class="instruction">LDIR</td>
+</tr>
+<tr>
+<td class="address-1"><span id="38293"></span>38293</td>
+<td class="instruction">LD HL,22688</td>
+<td class="comment-1" rowspan="5">Writes 7.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="38296"></span>38296</td>
+<td class="instruction">LD DE,22689</td>
+</tr>
+<tr>
+<td class="address-1"><span id="38299"></span>38299</td>
+<td class="instruction">LD (HL),7</td>
+</tr>
+<tr>
+<td class="address-1"><span id="38301"></span>38301</td>
+<td class="instruction">LD BC,607</td>
+</tr>
+<tr>
+<td class="address-1"><span id="38304"></span>38304</td>
+<td class="instruction">LDIR</td>
+</tr>
+<tr>
+<td class="address-1"><span id="38306"></span>38306</td>
+<td class="instruction">RET</td>
+<td class="comment-1" rowspan="1">Return.</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="38225.html">38225</a>
+</td>
+<td class="up">Up: <a href="../maps/all.html#38234">Map</a></td>
+<td class="next">
+Next: <a href="38307.html">38307</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&copy; Mastertronic Ltd 1985 &copy; 2023 ArcadeGeek LTD.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.10.</div>
+<div><a href="../../asm/955A.html">Switch to hexadecimal</a>.</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Jason's Gem: Routine at 97AC</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-dark.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-dark.css" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-75RERFCHBG"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-75RERFCHBG');
+</script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="9798.html">9798</a>
+</td>
+<td class="up">Up: <a href="../maps/all.html#97ac">Map</a></td>
+<td class="next">
+Next: <a href="9910.html">9910</a>
+</td>
+</tr>
+</table>
+<div class="description">97AC: Start Game</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="9470.html">GameEntry</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">StartGame</td>
+<td class="address-2"><span id="97ac"></span>97AC</td>
+<td class="instruction">LD HL,$4000</td>
+<td class="comment-1" rowspan="5">Writes 00 to all 1800 screen buffer address locations (clears the screen).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="97af"></span>97AF</td>
+<td class="instruction">LD DE,$4001</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="97b2"></span>97B2</td>
+<td class="instruction">LD BC,$17FF</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="97b5"></span>97B5</td>
+<td class="instruction">LD (HL),$00</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="97b7"></span>97B7</td>
+<td class="instruction">LDIR</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="97b9"></span>97B9</td>
+<td class="instruction">LD HL,$5800</td>
+<td class="comment-1" rowspan="5">Writes 07 to all 0300 attribute buffer address locations.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="97bc"></span>97BC</td>
+<td class="instruction">LD DE,$5801</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="97bf"></span>97BF</td>
+<td class="instruction">LD BC,$02FF</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="97c2"></span>97C2</td>
+<td class="instruction">LD (HL),$07</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="97c4"></span>97C4</td>
+<td class="instruction">LDIR</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="97c6"></span>97C6</td>
+<td class="instruction">LD HL,($B87B)</td>
+<td class="comment-1" rowspan="2">Writes <a href="B86F.html#b87b">B87B</a> to <a href="5BA4.html">Score</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="97c9"></span>97C9</td>
+<td class="instruction">LD ($5BA4),HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="97cc"></span>97CC</td>
+<td class="instruction">XOR A</td>
+<td class="comment-1" rowspan="2">Write 00 to <a href="5B00.html#5ba0">5BA0</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="97cd"></span>97CD</td>
+<td class="instruction">LD ($5BA0),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="97d0"></span>97D0</td>
+<td class="instruction">CALL <a href="BC48.html">$BC48</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="97d3"></span>97D3</td>
+<td class="instruction">LD A,$01</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="97d5"></span>97D5</td>
+<td class="instruction">LD ($5C6B),A</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="97d8"></span>97D8</td>
+<td class="instruction">LD A,($5BA9)</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="97db"></span>97DB</td>
+<td class="instruction">AND A</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="97dc"></span>97DC</td>
+<td class="instruction">JP NZ,<a href="9470.html#9480">GameEntry_0</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="97df"></span>97DF</td>
+<td class="instruction">LD A,($5BA0)</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="97e2"></span>97E2</td>
+<td class="instruction">AND A</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="97e3"></span>97E3</td>
+<td class="instruction">CALL Z,$8CA0</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="97e6"></span>97E6</td>
+<td class="instruction">LD A,($5BA0)</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="97e9"></span>97E9</td>
+<td class="instruction">AND A</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="97ea"></span>97EA</td>
+<td class="instruction">CALL NZ,$8F2A</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="97ed"></span>97ED</td>
+<td class="instruction">LD HL,$B86F</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="97f0"></span>97F0</td>
+<td class="instruction">LD DE,$915F</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="97f3"></span>97F3</td>
+<td class="instruction">LD BC,$0055</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="97f6"></span>97F6</td>
+<td class="instruction">LDIR</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="97f8"></span>97F8</td>
+<td class="instruction">LD A,$01</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="97fa"></span>97FA</td>
+<td class="instruction">LD ($5C6B),A</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="97fd"></span>97FD</td>
+<td class="instruction">LD HL,($5B8E)</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9800"></span>9800</td>
+<td class="instruction">LD A,($B87C)</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9803"></span>9803</td>
+<td class="instruction">CP H</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9804"></span>9804</td>
+<td class="instruction">JP C,<a href="97AC.html#9858">StartGame_4</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9807"></span>9807</td>
+<td class="instruction">JP NZ,<a href="97AC.html#9811">StartGame_0</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="980a"></span>980A</td>
+<td class="instruction">LD A,($B87B)</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="980d"></span>980D</td>
+<td class="instruction">CP L</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="980e"></span>980E</td>
+<td class="instruction">JP C,<a href="97AC.html#9858">StartGame_4</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label">StartGame_0</td>
+<td class="address-2"><span id="9811"></span>9811</td>
+<td class="instruction">LD A,($B88A)</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9814"></span>9814</td>
+<td class="instruction">CP H</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9815"></span>9815</td>
+<td class="instruction">JP C,<a href="97AC.html#987f">StartGame_5</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9818"></span>9818</td>
+<td class="instruction">JP NZ,<a href="97AC.html#9822">StartGame_1</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="981b"></span>981B</td>
+<td class="instruction">LD A,($B889)</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="981e"></span>981E</td>
+<td class="instruction">CP L</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="981f"></span>981F</td>
+<td class="instruction">JP C,<a href="97AC.html#987f">StartGame_5</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label">StartGame_1</td>
+<td class="address-2"><span id="9822"></span>9822</td>
+<td class="instruction">LD A,($B898)</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9825"></span>9825</td>
+<td class="instruction">CP H</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9826"></span>9826</td>
+<td class="instruction">JP C,<a href="97AC.html#98a6">StartGame_6</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9829"></span>9829</td>
+<td class="instruction">JP NZ,<a href="97AC.html#9833">StartGame_2</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="982c"></span>982C</td>
+<td class="instruction">LD A,($B897)</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="982f"></span>982F</td>
+<td class="instruction">CP L</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9830"></span>9830</td>
+<td class="instruction">JP C,<a href="97AC.html#98a6">StartGame_6</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label">StartGame_2</td>
+<td class="address-2"><span id="9833"></span>9833</td>
+<td class="instruction">LD A,($B8A6)</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9836"></span>9836</td>
+<td class="instruction">CP H</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9837"></span>9837</td>
+<td class="instruction">JP C,<a href="97AC.html#98cd">StartGame_7</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="983a"></span>983A</td>
+<td class="instruction">JP NZ,<a href="97AC.html#9844">StartGame_3</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="983d"></span>983D</td>
+<td class="instruction">LD A,($B8A5)</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9840"></span>9840</td>
+<td class="instruction">CP L</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9841"></span>9841</td>
+<td class="instruction">JP C,<a href="97AC.html#98cd">StartGame_7</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label">StartGame_3</td>
+<td class="address-2"><span id="9844"></span>9844</td>
+<td class="instruction">LD A,($B8B4)</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9847"></span>9847</td>
+<td class="instruction">CP H</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9848"></span>9848</td>
+<td class="instruction">JP C,<a href="97AC.html#98f4">StartGame_8</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="984b"></span>984B</td>
+<td class="instruction">JP NZ,<a href="9750.html">BestScoresPrint</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="984e"></span>984E</td>
+<td class="instruction">LD A,($B8B3)</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9851"></span>9851</td>
+<td class="instruction">CP L</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9852"></span>9852</td>
+<td class="instruction">JP C,<a href="97AC.html#98f4">StartGame_8</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9855"></span>9855</td>
+<td class="instruction">JP <a href="9750.html">BestScoresPrint</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label">StartGame_4</td>
+<td class="address-2"><span id="9858"></span>9858</td>
+<td class="instruction">CALL <a href="B6D0.html">$B6D0</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="985b"></span>985B</td>
+<td class="instruction">LD HL,$B860</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="985e"></span>985E</td>
+<td class="instruction">LD DE,$B86F</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9861"></span>9861</td>
+<td class="instruction">LD BC,$000C</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9864"></span>9864</td>
+<td class="instruction">LDIR</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9866"></span>9866</td>
+<td class="instruction">LD HL,($5B8E)</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9869"></span>9869</td>
+<td class="instruction">LD A,L</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="986a"></span>986A</td>
+<td class="instruction">LD ($B87B),A</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="986d"></span>986D</td>
+<td class="instruction">LD A,H</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="986e"></span>986E</td>
+<td class="instruction">LD ($B87C),A</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9871"></span>9871</td>
+<td class="instruction">LD HL,$915F</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9874"></span>9874</td>
+<td class="instruction">LD DE,$B87D</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9877"></span>9877</td>
+<td class="instruction">LD BC,$003C</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="987a"></span>987A</td>
+<td class="instruction">LDIR</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="987c"></span>987C</td>
+<td class="instruction">JP <a href="9750.html">BestScoresPrint</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label">StartGame_5</td>
+<td class="address-2"><span id="987f"></span>987F</td>
+<td class="instruction">CALL <a href="B6D0.html">$B6D0</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9882"></span>9882</td>
+<td class="instruction">LD HL,$B860</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9885"></span>9885</td>
+<td class="instruction">LD DE,$B87D</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9888"></span>9888</td>
+<td class="instruction">LD BC,$000C</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="988b"></span>988B</td>
+<td class="instruction">LDIR</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="988d"></span>988D</td>
+<td class="instruction">LD HL,($5B8E)</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9890"></span>9890</td>
+<td class="instruction">LD A,L</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9891"></span>9891</td>
+<td class="instruction">LD ($B889),A</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9894"></span>9894</td>
+<td class="instruction">LD A,H</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9895"></span>9895</td>
+<td class="instruction">LD ($B88A),A</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9898"></span>9898</td>
+<td class="instruction">LD HL,$916D</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="989b"></span>989B</td>
+<td class="instruction">LD DE,$B88B</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="989e"></span>989E</td>
+<td class="instruction">LD BC,$002D</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="98a1"></span>98A1</td>
+<td class="instruction">LDIR</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="98a3"></span>98A3</td>
+<td class="instruction">JP <a href="9750.html">BestScoresPrint</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label">StartGame_6</td>
+<td class="address-2"><span id="98a6"></span>98A6</td>
+<td class="instruction">CALL <a href="B6D0.html">$B6D0</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="98a9"></span>98A9</td>
+<td class="instruction">LD HL,$B860</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="98ac"></span>98AC</td>
+<td class="instruction">LD DE,$B88B</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="98af"></span>98AF</td>
+<td class="instruction">LD BC,$000C</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="98b2"></span>98B2</td>
+<td class="instruction">LDIR</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="98b4"></span>98B4</td>
+<td class="instruction">LD HL,($5B8E)</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="98b7"></span>98B7</td>
+<td class="instruction">LD A,L</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="98b8"></span>98B8</td>
+<td class="instruction">LD ($B897),A</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="98bb"></span>98BB</td>
+<td class="instruction">LD A,H</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="98bc"></span>98BC</td>
+<td class="instruction">LD ($B898),A</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="98bf"></span>98BF</td>
+<td class="instruction">LD HL,$917B</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="98c2"></span>98C2</td>
+<td class="instruction">LD DE,$B899</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="98c5"></span>98C5</td>
+<td class="instruction">LD BC,$001E</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="98c8"></span>98C8</td>
+<td class="instruction">LDIR</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="98ca"></span>98CA</td>
+<td class="instruction">JP <a href="9750.html">BestScoresPrint</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label">StartGame_7</td>
+<td class="address-2"><span id="98cd"></span>98CD</td>
+<td class="instruction">CALL <a href="B6D0.html">$B6D0</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="98d0"></span>98D0</td>
+<td class="instruction">LD HL,$B860</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="98d3"></span>98D3</td>
+<td class="instruction">LD DE,$B899</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="98d6"></span>98D6</td>
+<td class="instruction">LD BC,$000C</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="98d9"></span>98D9</td>
+<td class="instruction">LDIR</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="98db"></span>98DB</td>
+<td class="instruction">LD HL,($5B8E)</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="98de"></span>98DE</td>
+<td class="instruction">LD A,L</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="98df"></span>98DF</td>
+<td class="instruction">LD ($B8A5),A</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="98e2"></span>98E2</td>
+<td class="instruction">LD A,H</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="98e3"></span>98E3</td>
+<td class="instruction">LD ($B8A6),A</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="98e6"></span>98E6</td>
+<td class="instruction">LD HL,$9189</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="98e9"></span>98E9</td>
+<td class="instruction">LD DE,$B8A7</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="98ec"></span>98EC</td>
+<td class="instruction">LD BC,$000F</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="98ef"></span>98EF</td>
+<td class="instruction">LDIR</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="98f1"></span>98F1</td>
+<td class="instruction">JP <a href="9750.html">BestScoresPrint</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label">StartGame_8</td>
+<td class="address-2"><span id="98f4"></span>98F4</td>
+<td class="instruction">CALL <a href="B6D0.html">$B6D0</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="98f7"></span>98F7</td>
+<td class="instruction">LD HL,$B860</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="98fa"></span>98FA</td>
+<td class="instruction">LD DE,$B8A7</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="98fd"></span>98FD</td>
+<td class="instruction">LD BC,$000C</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9900"></span>9900</td>
+<td class="instruction">LDIR</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9902"></span>9902</td>
+<td class="instruction">LD HL,($5B8E)</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9905"></span>9905</td>
+<td class="instruction">LD A,L</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9906"></span>9906</td>
+<td class="instruction">LD ($B8B3),A</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9909"></span>9909</td>
+<td class="instruction">LD A,H</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="990a"></span>990A</td>
+<td class="instruction">LD ($B8B4),A</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="990d"></span>990D</td>
+<td class="instruction">JP <a href="9750.html">BestScoresPrint</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="9798.html">9798</a>
+</td>
+<td class="up">Up: <a href="../maps/all.html#97ac">Map</a></td>
+<td class="next">
+Next: <a href="9910.html">9910</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&copy; Mastertronic Ltd 1985 &copy; 2023 ArcadeGeek LTD.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.10.</div>
+<div><a href="../dec/asm/38828.html">Switch to decimal</a>.</div>
+</footer>
+</body>
+</html>

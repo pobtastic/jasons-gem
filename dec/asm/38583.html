@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Jason's Gem: Routine at 38583</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-dark.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-dark.css" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-75RERFCHBG"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-75RERFCHBG');
+</script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="38556.html">38556</a>
+</td>
+<td class="up">Up: <a href="../maps/all.html#38583">Map</a></td>
+<td class="next">
+Next: <a href="38610.html">38610</a>
+</td>
+</tr>
+</table>
+<div class="description">38583: Routine at 96B7</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="38000.html">GameEntry</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="address-2"><span id="38583"></span>38583</td>
+<td class="instruction">LD A,(23464)</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=<a href="23464.html">23464</a>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="38586"></span>38586</td>
+<td class="instruction">CP 5</td>
+<td class="comment-1" rowspan="2">If this is 5 then jump to <a href="38000.html#38080">GameEntry_1</a>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="38588"></span>38588</td>
+<td class="instruction">JP Z,<a href="38000.html#38080">GameEntry_1</a></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="38591"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routine at <a href="38000.html">GameEntry</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="address-2"><span id="38591"></span>38591</td>
+<td class="instruction">LD A,5</td>
+<td class="comment-1" rowspan="2">Write 5 to <a href="23464.html">23464</a>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="38593"></span>38593</td>
+<td class="instruction">LD (23464),A</td>
+</tr>
+<tr>
+<td class="address-1"><span id="38596"></span>38596</td>
+<td class="instruction">CALL <a href="38307.html">TitleScreenPrint</a></td>
+<td class="comment-1" rowspan="1">Call <a href="38307.html">TitleScreenPrint</a>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="38599"></span>38599</td>
+<td class="instruction">LD HL,22951</td>
+<td class="comment-1" rowspan="1"><span class="register">HL</span>=22951.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="38602"></span>38602</td>
+<td class="instruction">LD A,14</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=14.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="38604"></span>38604</td>
+<td class="instruction">CALL <a href="38610.html">38610</a></td>
+<td class="comment-1" rowspan="1">Call <a href="38610.html">38610</a>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="38607"></span>38607</td>
+<td class="instruction">JP <a href="38000.html#38080">GameEntry_1</a></td>
+<td class="comment-1" rowspan="1">Jump to <a href="38000.html#38080">GameEntry_1</a>.</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="38556.html">38556</a>
+</td>
+<td class="up">Up: <a href="../maps/all.html#38583">Map</a></td>
+<td class="next">
+Next: <a href="38610.html">38610</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&copy; Mastertronic Ltd 1985 &copy; 2023 ArcadeGeek LTD.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.10.</div>
+<div><a href="../../asm/96B7.html">Switch to hexadecimal</a>.</div>
+</footer>
+</body>
+</html>

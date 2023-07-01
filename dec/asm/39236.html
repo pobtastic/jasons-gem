@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Jason's Gem: Routine at 39236</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-dark.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-dark.css" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-75RERFCHBG"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-75RERFCHBG');
+</script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="39184.html">39184</a>
+</td>
+<td class="up">Up: <a href="../maps/all.html#39236">Map</a></td>
+<td class="next">
+Next: <a href="39271.html">39271</a>
+</td>
+</tr>
+</table>
+<div class="description">39236: Routine at 9944</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="38000.html">GameEntry</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="address-2"><span id="39236"></span>39236</td>
+<td class="instruction">LD A,254</td>
+<td class="comment-1" rowspan="2">Read from the keyboard; <table class="default">
+<tr>
+<th colspan="1" rowspan="2">Port Number</th>
+<th colspan="5" rowspan="1">Bit</th>
+</tr>
+<tr>
+<th colspan="1" rowspan="1">0</th>
+<th colspan="1" rowspan="1">1</th>
+<th colspan="1" rowspan="1">2</th>
+<th colspan="1" rowspan="1">3</th>
+<th colspan="1" rowspan="1">4</th>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">254</td>
+<td class="centre" colspan="1" rowspan="1">SHIFT</td>
+<td class="centre" colspan="1" rowspan="1">Z</td>
+<td class="centre" colspan="1" rowspan="1">X</td>
+<td class="centre" colspan="1" rowspan="1">C</td>
+<td class="centre" colspan="1" rowspan="1">V</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<td class="address-1"><span id="39238"></span>39238</td>
+<td class="instruction">IN A,(254)</td>
+</tr>
+<tr>
+<td class="address-1"><span id="39240"></span>39240</td>
+<td class="instruction">AND %00000100</td>
+<td class="comment-1" rowspan="1">Keep only bit 2.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="39242"></span>39242</td>
+<td class="instruction">JP NZ,<a href="38000.html#38080">GameEntry_1</a></td>
+<td class="comment-1" rowspan="1">If "X" hasn't been pressed, jump back to <a href="38000.html#38080">GameEntry_1</a>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="39245"></span>39245</td>
+<td class="instruction">LD A,251</td>
+<td class="comment-1" rowspan="2">Read from the keyboard; <table class="default">
+<tr>
+<th colspan="1" rowspan="2">Port Number</th>
+<th colspan="5" rowspan="1">Bit</th>
+</tr>
+<tr>
+<th colspan="1" rowspan="1">0</th>
+<th colspan="1" rowspan="1">1</th>
+<th colspan="1" rowspan="1">2</th>
+<th colspan="1" rowspan="1">3</th>
+<th colspan="1" rowspan="1">4</th>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">251</td>
+<td class="centre" colspan="1" rowspan="1">Q</td>
+<td class="centre" colspan="1" rowspan="1">W</td>
+<td class="centre" colspan="1" rowspan="1">E</td>
+<td class="centre" colspan="1" rowspan="1">R</td>
+<td class="centre" colspan="1" rowspan="1">T</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<td class="address-1"><span id="39247"></span>39247</td>
+<td class="instruction">IN A,(254)</td>
+</tr>
+<tr>
+<td class="address-1"><span id="39249"></span>39249</td>
+<td class="instruction">AND %00000100</td>
+<td class="comment-1" rowspan="1">Keep only bit 2.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="39251"></span>39251</td>
+<td class="instruction">JP NZ,<a href="38000.html#38080">GameEntry_1</a></td>
+<td class="comment-1" rowspan="1">If "E" hasn't been pressed, jump back to <a href="38000.html#38080">GameEntry_1</a>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="39254"></span>39254</td>
+<td class="instruction">LD A,4</td>
+<td class="comment-1" rowspan="2">Write 4 to 48205.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="39256"></span>39256</td>
+<td class="instruction">LD (48205),A</td>
+</tr>
+<tr>
+<td class="address-1"><span id="39259"></span>39259</td>
+<td class="instruction">LD HL,500</td>
+<td class="comment-1" rowspan="1"><span class="register">HL</span>=500.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="39262"></span>39262</td>
+<td class="instruction">LD DE,75</td>
+<td class="comment-1" rowspan="1"><span class="register">DE</span>=75.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="39265"></span>39265</td>
+<td class="instruction">CALL 949</td>
+<td class="comment-1" rowspan="1">Call <a href="https://skoolkit.ca/disassemblies/rom/hex/asm/03B5.html">BEEPER</a>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="39268"></span>39268</td>
+<td class="instruction">JP <a href="38000.html#38080">GameEntry_1</a></td>
+<td class="comment-1" rowspan="1">Jump to <a href="38000.html#38080">GameEntry_1</a>.</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="39184.html">39184</a>
+</td>
+<td class="up">Up: <a href="../maps/all.html#39236">Map</a></td>
+<td class="next">
+Next: <a href="39271.html">39271</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&copy; Mastertronic Ltd 1985 &copy; 2023 ArcadeGeek LTD.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.10.</div>
+<div><a href="../../asm/9944.html">Switch to hexadecimal</a>.</div>
+</footer>
+</body>
+</html>

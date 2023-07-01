@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Jason's Gem: Routine at 38736</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-dark.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-dark.css" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-75RERFCHBG"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-75RERFCHBG');
+</script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="38652.html">38652</a>
+</td>
+<td class="up">Up: <a href="../maps/all.html#38736">Map</a></td>
+<td class="next">
+Next: <a href="38808.html">38808</a>
+</td>
+</tr>
+</table>
+<div class="description">38736: Best Scores Print</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="38000.html">GameEntry</a> and <a href="38828.html">StartGame</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">BestScoresPrint</td>
+<td class="address-2"><span id="38736"></span>38736</td>
+<td class="instruction">LD HL,16384</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="38739"></span>38739</td>
+<td class="instruction">LD DE,16385</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="38742"></span>38742</td>
+<td class="instruction">LD BC,6143</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="38745"></span>38745</td>
+<td class="instruction">LD (HL),0</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="38747"></span>38747</td>
+<td class="instruction">LDIR</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="38749"></span>38749</td>
+<td class="instruction">CALL <a href="38234.html">38234</a></td>
+<td class="comment-1" rowspan="1">Call <a href="38234.html">38234</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="38752"></span>38752</td>
+<td class="instruction">CALL <a href="38652.html">BestScoresTablePrint</a></td>
+<td class="comment-1" rowspan="1">Call <a href="38652.html">BestScoresTablePrint</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="38755"></span>38755</td>
+<td class="instruction">LD DE,38808</td>
+<td class="comment-1" rowspan="1"><span class="register">DE</span>=<a href="38808.html">BestScoresCopy</a> (text).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="38758"></span>38758</td>
+<td class="instruction">LD BC,20</td>
+<td class="comment-1" rowspan="1"><span class="register">BC</span>=20 (counter).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="38761"></span>38761</td>
+<td class="instruction">CALL 8252</td>
+<td class="comment-1" rowspan="1">Call <a href="https://skoolkit.ca/disassemblies/rom/hex/asm/1FFC.html#203C">PR_STRING</a>.</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="38764"></span>
+<div class="comments">
+<div class="paragraph">
+Loop through and print out the stored five best scores.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="38764"></span>38764</td>
+<td class="instruction">LD A,5</td>
+<td class="comment-1" rowspan="2">Write 5 to <a href="23482.html">TemporaryCounter</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="38766"></span>38766</td>
+<td class="instruction">LD (23482),A</td>
+</tr>
+<tr>
+<td class="asm-label">BestScoresPrint_Loop</td>
+<td class="address-2"><span id="38769"></span>38769</td>
+<td class="instruction">XOR A</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="38770"></span>38770</td>
+<td class="instruction">IN A,(254)</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="38772"></span>38772</td>
+<td class="instruction">AND 23</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="38774"></span>38774</td>
+<td class="instruction">XOR 23</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="38776"></span>38776</td>
+<td class="instruction">JP NZ,<a href="38000.html#38016">GameEntry_0</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="38779"></span>38779</td>
+<td class="instruction">LD HL,(23480)</td>
+<td class="comment-1" rowspan="3">Increment <a href="23480.html">TemporaryAddress</a> by one.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="38782"></span>38782</td>
+<td class="instruction">INC HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="38783"></span>38783</td>
+<td class="instruction">LD (23480),HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="38786"></span>38786</td>
+<td class="instruction">XOR A</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=0.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="38787"></span>38787</td>
+<td class="instruction">CP H</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="38788"></span>38788</td>
+<td class="instruction">JP NZ,<a href="38736.html#38769">BestScoresPrint_Loop</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="38791"></span>38791</td>
+<td class="instruction">CP L</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="38792"></span>38792</td>
+<td class="instruction">JP NZ,<a href="38736.html#38769">BestScoresPrint_Loop</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="38795"></span>38795</td>
+<td class="instruction">LD A,(23482)</td>
+<td class="comment-1" rowspan="3">Decrease <a href="23482.html">TemporaryCounter</a> by one.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="38798"></span>38798</td>
+<td class="instruction">DEC A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="38799"></span>38799</td>
+<td class="instruction">LD (23482),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="38802"></span>38802</td>
+<td class="instruction">JP NZ,<a href="38736.html#38769">BestScoresPrint_Loop</a></td>
+<td class="comment-1" rowspan="1">Jump back to <a href="38736.html#38769">BestScoresPrint_Loop</a> if this is not yet zero.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="38805"></span>38805</td>
+<td class="instruction">JP <a href="38000.html#38016">GameEntry_0</a></td>
+<td class="comment-1" rowspan="1">Jump to <a href="38000.html#38016">GameEntry_0</a>.</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="38652.html">38652</a>
+</td>
+<td class="up">Up: <a href="../maps/all.html#38736">Map</a></td>
+<td class="next">
+Next: <a href="38808.html">38808</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&copy; Mastertronic Ltd 1985 &copy; 2023 ArcadeGeek LTD.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.10.</div>
+<div><a href="../../asm/9750.html">Switch to hexadecimal</a>.</div>
+</footer>
+</body>
+</html>

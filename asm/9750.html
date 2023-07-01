@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Jason's Gem: Routine at 9750</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-dark.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-dark.css" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-75RERFCHBG"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-75RERFCHBG');
+</script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="96FC.html">96FC</a>
+</td>
+<td class="up">Up: <a href="../maps/all.html#9750">Map</a></td>
+<td class="next">
+Next: <a href="9798.html">9798</a>
+</td>
+</tr>
+</table>
+<div class="description">9750: Best Scores Print</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="9470.html">GameEntry</a> and <a href="97AC.html">StartGame</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">BestScoresPrint</td>
+<td class="address-2"><span id="9750"></span>9750</td>
+<td class="instruction">LD HL,$4000</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9753"></span>9753</td>
+<td class="instruction">LD DE,$4001</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9756"></span>9756</td>
+<td class="instruction">LD BC,$17FF</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9759"></span>9759</td>
+<td class="instruction">LD (HL),$00</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="975b"></span>975B</td>
+<td class="instruction">LDIR</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="975d"></span>975D</td>
+<td class="instruction">CALL <a href="955A.html">$955A</a></td>
+<td class="comment-1" rowspan="1">Call <a href="955A.html">955A</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9760"></span>9760</td>
+<td class="instruction">CALL <a href="96FC.html">BestScoresTablePrint</a></td>
+<td class="comment-1" rowspan="1">Call <a href="96FC.html">BestScoresTablePrint</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9763"></span>9763</td>
+<td class="instruction">LD DE,$9798</td>
+<td class="comment-1" rowspan="1"><span class="register">DE</span>=<a href="9798.html">BestScoresCopy</a> (text).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9766"></span>9766</td>
+<td class="instruction">LD BC,$0014</td>
+<td class="comment-1" rowspan="1"><span class="register">BC</span>=14 (counter).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9769"></span>9769</td>
+<td class="instruction">CALL $203C</td>
+<td class="comment-1" rowspan="1">Call <a href="https://skoolkit.ca/disassemblies/rom/hex/asm/1FFC.html#203C">PR_STRING</a>.</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="976c"></span>
+<div class="comments">
+<div class="paragraph">
+Loop through and print out the stored five best scores.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="976c"></span>976C</td>
+<td class="instruction">LD A,$05</td>
+<td class="comment-1" rowspan="2">Write 05 to <a href="5BBA.html">TemporaryCounter</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="976e"></span>976E</td>
+<td class="instruction">LD ($5BBA),A</td>
+</tr>
+<tr>
+<td class="asm-label">BestScoresPrint_Loop</td>
+<td class="address-2"><span id="9771"></span>9771</td>
+<td class="instruction">XOR A</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9772"></span>9772</td>
+<td class="instruction">IN A,($FE)</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9774"></span>9774</td>
+<td class="instruction">AND $17</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9776"></span>9776</td>
+<td class="instruction">XOR $17</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9778"></span>9778</td>
+<td class="instruction">JP NZ,<a href="9470.html#9480">GameEntry_0</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="977b"></span>977B</td>
+<td class="instruction">LD HL,($5BB8)</td>
+<td class="comment-1" rowspan="3">Increment <a href="5BB8.html">TemporaryAddress</a> by one.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="977e"></span>977E</td>
+<td class="instruction">INC HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="977f"></span>977F</td>
+<td class="instruction">LD ($5BB8),HL</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9782"></span>9782</td>
+<td class="instruction">XOR A</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=00.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9783"></span>9783</td>
+<td class="instruction">CP H</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9784"></span>9784</td>
+<td class="instruction">JP NZ,<a href="9750.html#9771">BestScoresPrint_Loop</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9787"></span>9787</td>
+<td class="instruction">CP L</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9788"></span>9788</td>
+<td class="instruction">JP NZ,<a href="9750.html#9771">BestScoresPrint_Loop</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="978b"></span>978B</td>
+<td class="instruction">LD A,($5BBA)</td>
+<td class="comment-1" rowspan="3">Decrease <a href="5BBA.html">TemporaryCounter</a> by one.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="978e"></span>978E</td>
+<td class="instruction">DEC A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="978f"></span>978F</td>
+<td class="instruction">LD ($5BBA),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9792"></span>9792</td>
+<td class="instruction">JP NZ,<a href="9750.html#9771">BestScoresPrint_Loop</a></td>
+<td class="comment-1" rowspan="1">Jump back to <a href="9750.html#9771">BestScoresPrint_Loop</a> if this is not yet zero.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="9795"></span>9795</td>
+<td class="instruction">JP <a href="9470.html#9480">GameEntry_0</a></td>
+<td class="comment-1" rowspan="1">Jump to <a href="9470.html#9480">GameEntry_0</a>.</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="96FC.html">96FC</a>
+</td>
+<td class="up">Up: <a href="../maps/all.html#9750">Map</a></td>
+<td class="next">
+Next: <a href="9798.html">9798</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&copy; Mastertronic Ltd 1985 &copy; 2023 ArcadeGeek LTD.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.10.</div>
+<div><a href="../dec/asm/38736.html">Switch to decimal</a>.</div>
+</footer>
+</body>
+</html>
