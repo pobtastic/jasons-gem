@@ -305,7 +305,7 @@ c $97AC Start Game
   $97C6,$06 Writes #R$B87B to #R$5BA4.
   $97CC,$04 Write #N$00 to #R$5BA0.
   $97D0,$03 Call #R$BC48.
-  $97D3,$05 Write #N$.
+  $97D3,$05
 
 c $9910
 

@@ -27,4 +27,8 @@ def run_skool2asm():
 
 def run_skool2html():
     options = "-c Config/InitModule={}:publish -d {}/build/html".format(SKOOLKIT_TOOLS, GEM_HOME)
-    skool2html.main(options.split() + sys.argv[1:] + [GEM_SKOOL])
+    art.tprint("Jason's Gem")
+    hex = '-H -c Config/GameDir=jasons-gem --var pub=2'
+    dec = '-D -c Config/GameDir=jasons-gem/dec --var pub=4'
+    skool2html.main(options.split() + hex.split() + sys.argv[1:] + [GEM_SKOOL])
+    skool2html.main(options.split() + dec.split() + sys.argv[1:] + [GEM_SKOOL])
