@@ -8,6 +8,12 @@ D $4000 #UDGTABLE { =h Jason's Gem Loading Screen. } { #SCR$02(loading) } UDGTAB
 
 b $5B00
 
+g $5B99
+W $5B99,$02
+
+g $5BA0
+B $5BA0,$01
+
 g $5BA4 Score?
 @ $5BA4 label=Score
 W $5BA4,$02
@@ -40,6 +46,7 @@ c $9470 Game entry point
   $94B0,$08 If #R$5BA8 is #N$03, jump to #R$96A4.
   $94B8,$08 If #R$5BA8 is #N$05, jump to #R$96BF.
 N $94C0 Handles selecting "1. KEYBOARD".
+@ $94C0 label=TitleSelectInput
   $94C0,$04 Read from the keyboard;
 . #TABLE(default,centre,centre,centre,centre,centre,centre)
 . { =h,r2 Port Number | =h,c5 Bit }
@@ -307,7 +314,31 @@ c $97AC Start Game
   $97D0,$03 Call #R$BC48.
   $97D3,$05
 
-c $9910
+c $9910 Initialise Paper/ Ink For Best Scores Table
+@ $9910 label=Init_BestScoresTable
+  $9910,$06 PAPER #N$00.
+  $9916,$06 INK #N$03.
+  $991C,$06 BRIGHT "OFF".
+  $9922,$01 Return.
+
+c $9923
+  $9923,$06 Writes #N$0000 to #R$5B99.
+  $9929,$01 Return.
+
+c $992A
+  $992A,$04 Read from the keyboard;
+. #TABLE(default,centre,centre,centre,centre,centre,centre)
+. { =h,r2 Port Number | =h,c5 Bit }
+. { =h 0 | =h 1 | =h 2 | =h 3 | =h 4 }
+. { #N$FB | Q | W | E | R | T }
+. TABLE#
+  $992E,$02,b$01 Keep only bit 1.
+  $9930,$03 If "W" hasn't been pressed, jump back to #R$94C0.
+  $9933,$05 Write #N$FF to #N$BC4D.
+  $9938,$03 #REGhl=#N$0190 (loop delay).
+  $993B,$03 #REGde=#N$00C8 (passes).
+  $993E,$03 #HTML(Call <a href="https://skoolkit.ca/disassemblies/rom/hex/asm/03B5.html">BEEPER</a>.)
+  $9941,$03 Jump to #R$94C0.
 
 c $9944
   $9944,$04 Read from the keyboard;
@@ -327,8 +358,8 @@ c $9944
   $9951,$02,b$01 Keep only bit 2.
   $9953,$03 If "E" hasn't been pressed, jump back to #R$94C0.
   $9956,$05 Write #N$04 to #N$BC4D.
-  $995B,$03 #REGhl=#N$01F4.
-  $995E,$03 #REGde=#N$004B.
+  $995B,$03 #REGhl=#N$01F4 (loop delay).
+  $995E,$03 #REGde=#N$004B (passes).
   $9961,$03 #HTML(Call <a href="https://skoolkit.ca/disassemblies/rom/hex/asm/03B5.html">BEEPER</a>.)
   $9964,$03 Jump to #R$94C0.
 

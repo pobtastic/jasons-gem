@@ -1,4 +1,5 @@
 @org=$4000
+@start=$9470
 
 ; Loading screen
 ;
@@ -244,8 +245,15 @@ b$5B00 DEFB $00,$00,$00,$00,$00,$00,$00,$00
  $5B80 DEFB $00,$00,$00,$00,$00,$00,$00,$00
  $5B88 DEFB $00,$00,$00,$00,$00,$00,$00,$00
  $5B90 DEFB $00,$00,$00,$00,$00,$00,$00,$00
- $5B98 DEFB $00,$00,$00,$00,$00,$00,$00,$00
- $5BA0 DEFB $00,$00,$00,$00
+ $5B98 DEFB $00
+
+; Game status buffer entry at 5B99
+g$5B99 DEFW $0000
+ $5B9B DEFB $00,$00,$00,$00,$00
+
+; Game status buffer entry at 5BA0
+g$5BA0 DEFB $00
+ $5BA1 DEFB $00,$00,$00
 
 ; Score?
 @label=Score
@@ -2119,6 +2127,7 @@ c$9470 LD HL,$FAF4   ; {#HTML(Write #N$FAF4 to <a
  $94BB CP $05        ;
  $94BD JP Z,$96BF    ; }
 ; Handles selecting "1. KEYBOARD".
+@label=TitleSelectInput
 *$94C0 LD A,$F7      ; {Read from the keyboard;
  $94C2 IN A,($FE)    ; #TABLE(default,centre,centre,centre,centre,centre,centre)
                      ; { =h,r2 Port Number | =h,c5 Bit }
@@ -2578,7 +2587,7 @@ c$97AC LD HL,$4000   ; {Writes #N$00 to all #N$1800 screen buffer address
  $97C9 LD ($5BA4),HL ; }
  $97CC XOR A         ; {Write #N$00 to #R$5BA0.
  $97CD LD ($5BA0),A  ; }
- $97D0 CALL $BC48    ;
+ $97D0 CALL $BC48    ; Call #R$BC48.
  $97D3 LD A,$01      ;
  $97D5 LD ($5C6B),A  ;
  $97D8 LD A,($5BA9)  ;
@@ -2705,37 +2714,49 @@ c$97AC LD HL,$4000   ; {Writes #N$00 to all #N$1800 screen buffer address
  $990A LD ($B8B4),A  ;
  $990D JP $9750      ;
 
-; Routine at 9910
+; Initialise Paper/ Ink For Best Scores Table
 ;
 ; Used by the routine at #R$96FC.
-c$9910 LD A,$11      ;
+@label=Init_BestScoresTable
+c$9910 LD A,$11      ; {PAPER #N$00.
  $9912 RST $10       ;
  $9913 LD A,$00      ;
- $9915 RST $10       ;
- $9916 LD A,$10      ;
+ $9915 RST $10       ; }
+ $9916 LD A,$10      ; {INK #N$03.
  $9918 RST $10       ;
  $9919 LD A,$03      ;
- $991B RST $10       ;
- $991C LD A,$13      ;
+ $991B RST $10       ; }
+ $991C LD A,$13      ; {BRIGHT "OFF".
  $991E RST $10       ;
  $991F LD A,$00      ;
- $9921 RST $10       ;
- $9922 RET           ;
-; This entry point is used by the routine at #R$9470.
-*$9923 LD HL,$0000   ;
- $9926 LD ($5B99),HL ;
- $9929 RET           ;
-; This entry point is used by the routine at #R$9470.
-*$992A LD A,$FB      ;
- $992C IN A,($FE)    ;
- $992E AND $02       ;
- $9930 JP NZ,$94C0   ;
- $9933 LD A,$FF      ;
- $9935 LD ($BC4D),A  ;
- $9938 LD HL,$0190   ;
- $993B LD DE,$00C8   ;
- $993E CALL $03B5    ;
- $9941 JP $94C0      ;
+ $9921 RST $10       ; }
+ $9922 RET           ; Return.
+
+; Routine at 9923
+;
+; Used by the routine at #R$9470.
+c$9923 LD HL,$0000   ; {Writes #N$0000 to #R$5B99.
+ $9926 LD ($5B99),HL ; }
+ $9929 RET           ; Return.
+
+; Routine at 992A
+;
+; Used by the routine at #R$9470.
+c$992A LD A,$FB      ; {Read from the keyboard;
+ $992C IN A,($FE)    ; #TABLE(default,centre,centre,centre,centre,centre,centre)
+                     ; { =h,r2 Port Number | =h,c5 Bit }
+                     ; { =h 0 | =h 1 | =h 2 | =h 3 | =h 4 }
+                     ; { #N$FB | Q | W | E | R | T }
+                     ; TABLE#}
+ $992E AND %00000010 ; Keep only bit 1.
+ $9930 JP NZ,$94C0   ; If "W" hasn't been pressed, jump back to #R$94C0.
+ $9933 LD A,$FF      ; {Write #N$FF to #N$BC4D.
+ $9935 LD ($BC4D),A  ; }
+ $9938 LD HL,$0190   ; #REGhl=#N$0190 (loop delay).
+ $993B LD DE,$00C8   ; #REGde=#N$00C8 (passes).
+ $993E CALL $03B5    ; #HTML(Call <a
+                     ; href="https://skoolkit.ca/disassemblies/rom/hex/asm/03B5.html">BEEPER</a>.)
+ $9941 JP $94C0      ; Jump to #R$94C0.
 
 ; Routine at 9944
 ;
@@ -2758,8 +2779,8 @@ c$9944 LD A,$FE      ; {Read from the keyboard;
  $9953 JP NZ,$94C0   ; If "E" hasn't been pressed, jump back to #R$94C0.
  $9956 LD A,$04      ; {Write #N$04 to #N$BC4D.
  $9958 LD ($BC4D),A  ; }
- $995B LD HL,$01F4   ; #REGhl=#N$01F4.
- $995E LD DE,$004B   ; #REGde=#N$004B.
+ $995B LD HL,$01F4   ; #REGhl=#N$01F4 (loop delay).
+ $995E LD DE,$004B   ; #REGde=#N$004B (passes).
  $9961 CALL $03B5    ; #HTML(Call <a
                      ; href="https://skoolkit.ca/disassemblies/rom/hex/asm/03B5.html">BEEPER</a>.)
  $9964 JP $94C0      ; Jump to #R$94C0.
