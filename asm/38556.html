@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Jason's Gem: Routine at 969C</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-dark.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-wide.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-dark.css" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-75RERFCHBG"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-75RERFCHBG');
+</script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="38529.html">9681</a>
+</td>
+<td class="up">Up: <a href="../maps/all.html#38556">Map</a></td>
+<td class="next">
+Next: <a href="38583.html">96B7</a>
+</td>
+</tr>
+</table>
+<div class="description">969C: Routine at 969C</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="38000.html">GameEntry</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="address-2"><span id="38556"></span>969C</td>
+<td class="instruction">LD A,($5BA8)</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=<a href="23464.html">5BA8</a>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="38559"></span>969F</td>
+<td class="instruction">CP $03</td>
+<td class="comment-1" rowspan="2">If this is 3 then jump to <a href="38000.html#38080">GameEntry_1</a>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="38561"></span>96A1</td>
+<td class="instruction">JP Z,<a href="38000.html#38080">GameEntry_1</a></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="38564"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routine at <a href="38000.html">GameEntry</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="address-2"><span id="38564"></span>96A4</td>
+<td class="instruction">LD A,$03</td>
+<td class="comment-1" rowspan="2">Write 3 to <a href="23464.html">5BA8</a>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="38566"></span>96A6</td>
+<td class="instruction">LD ($5BA8),A</td>
+</tr>
+<tr>
+<td class="address-1"><span id="38569"></span>96A9</td>
+<td class="instruction">CALL <a href="38307.html">TitleScreenPrint</a></td>
+<td class="comment-1" rowspan="1">Call <a href="38307.html">TitleScreenPrint</a>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="38572"></span>96AC</td>
+<td class="instruction">LD HL,$5967</td>
+<td class="comment-1" rowspan="1"><span class="register">HL</span>=22887.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="38575"></span>96AF</td>
+<td class="instruction">LD A,$12</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=18.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="38577"></span>96B1</td>
+<td class="instruction">CALL <a href="38610.html">$96D2</a></td>
+<td class="comment-1" rowspan="1">Call <a href="38610.html">96D2</a>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="38580"></span>96B4</td>
+<td class="instruction">JP <a href="38000.html#38080">GameEntry_1</a></td>
+<td class="comment-1" rowspan="1">Jump to <a href="38000.html#38080">GameEntry_1</a>.</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="38529.html">9681</a>
+</td>
+<td class="up">Up: <a href="../maps/all.html#38556">Map</a></td>
+<td class="next">
+Next: <a href="38583.html">96B7</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&copy; Mastertronic Ltd 1985 &copy; 2023 ArcadeGeek LTD.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.10.</div>
+<div><a href="../../asm/969C.html">Switch to hexadecimal</a>.</div>
+</footer>
+</body>
+</html>
