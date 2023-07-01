@@ -1,0 +1,30 @@
+;
+; SkoolKit ref file for Jason's Gem
+;
+; To build the HTML disassembly, run these commands:
+;   tap2sna.py @jasons-gem.t2s
+;   sna2skool.py -H -c sources/jasons-gem.ctl jasons-gem.z80 > sources/jasons-gem.skool
+;   skool2html.py -H sources/jasons-gem.skool -T dark
+
+[Config]
+RefFiles=analytics.ref;bases.ref
+GameDir=jasons-gem
+
+[Game]
+Game=Jason's Gem
+Logo=#SCR2,$00,$00,$20,$04,$4000,$5800(/images/logo)
+Copyright=&copy; Mastertronic Ltd 1985 &copy; 2023 ArcadeGeek LTD.
+LinkInternalOperands=1
+AddressAnchor={address#IF({base}==16)(:04x)}
+StyleSheet=skoolkit.css;skoolkit-dark.css
+
+[PageHeaders]
+GameIndex=The complete<>RAM disassembly (work in progress)
+
+[Paths]
+PlayAreaImagePath={ImagePath}/play_area
+
+[Page:Changelog]
+SectionType=BulletPoints
+[Changelog:20230629]
+- First draft created in SkoolKit 8.10.
