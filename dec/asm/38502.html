@@ -29,11 +29,11 @@ Prev: <a href="38322.html">38322</a>
 </td>
 <td class="up">Up: <a href="../maps/all.html#38502">Map</a></td>
 <td class="next">
-Next: <a href="38529.html">38529</a>
+Next: <a href="38515.html">38515</a>
 </td>
 </tr>
 </table>
-<div class="description">38502: Routine at 9666</div>
+<div class="description">38502: Input: Keyboard</div>
 <table class="disassembly">
 <tr>
 <td class="routine-comment" colspan="5">
@@ -45,62 +45,41 @@ Used by the routine at <a href="38000.html">GameEntry</a>.
 </td>
 </tr>
 <tr>
+<td class="asm-label">InputTest_Keyboard</td>
 <td class="address-2"><span id="38502"></span>38502</td>
 <td class="instruction">LD A,(23464)</td>
-<td class="comment-1" rowspan="1"><span class="register">A</span>=<a href="23464.html">23464</a>.</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=<a href="23464.html">ControlMethod</a>.</td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="38505"></span>38505</td>
 <td class="instruction">CP 1</td>
-<td class="comment-1" rowspan="2">If this is 1 then jump to <a href="38000.html#38080">TitleSelectInput</a>.</td>
+<td class="comment-1" rowspan="2">If this is already 1 then jump back to <a href="38000.html#38080">TitleSelectInput</a>.</td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="38507"></span>38507</td>
 <td class="instruction">JP Z,<a href="38000.html#38080">TitleSelectInput</a></td>
 </tr>
 <tr>
+<td class="asm-label">Input_Keyboard</td>
 <td class="address-1"><span id="38510"></span>38510</td>
 <td class="instruction">LD A,1</td>
-<td class="comment-1" rowspan="2">Write 1 to <a href="23464.html">23464</a>.</td>
+<td class="comment-1" rowspan="2">Write 1 to <a href="23464.html">ControlMethod</a>.</td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="38512"></span>38512</td>
 <td class="instruction">LD (23464),A</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
-<span id="38515"></span>
 <div class="comments">
 <div class="paragraph">
-This entry point is used by the routine at <a href="38000.html">GameEntry</a>.
+Continue on to <a href="38515.html">TitleScreenInit</a>.
 </div>
 </div>
 </td>
-</tr>
-<tr>
-<td class="address-2"><span id="38515"></span>38515</td>
-<td class="instruction">CALL <a href="38307.html">TitleScreenPrint</a></td>
-<td class="comment-1" rowspan="1">Call <a href="38307.html">TitleScreenPrint</a>.</td>
-</tr>
-<tr>
-<td class="address-1"><span id="38518"></span>38518</td>
-<td class="instruction">LD HL,22759</td>
-<td class="comment-1" rowspan="1"><span class="register">HL</span>=22759.</td>
-</tr>
-<tr>
-<td class="address-1"><span id="38521"></span>38521</td>
-<td class="instruction">LD A,11</td>
-<td class="comment-1" rowspan="1"><span class="register">A</span>=11.</td>
-</tr>
-<tr>
-<td class="address-1"><span id="38523"></span>38523</td>
-<td class="instruction">CALL <a href="38610.html">38610</a></td>
-<td class="comment-1" rowspan="1">Call <a href="38610.html">38610</a>.</td>
-</tr>
-<tr>
-<td class="address-1"><span id="38526"></span>38526</td>
-<td class="instruction">JP <a href="38000.html#38080">TitleSelectInput</a></td>
-<td class="comment-1" rowspan="1">Jump to <a href="38000.html#38080">TitleSelectInput</a>.</td>
 </tr>
 </table>
 <table class="asm-navigation">
@@ -110,7 +89,7 @@ Prev: <a href="38322.html">38322</a>
 </td>
 <td class="up">Up: <a href="../maps/all.html#38502">Map</a></td>
 <td class="next">
-Next: <a href="38529.html">38529</a>
+Next: <a href="38515.html">38515</a>
 </td>
 </tr>
 </table>

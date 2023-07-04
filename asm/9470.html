@@ -25,7 +25,7 @@ gtag('config', 'G-75RERFCHBG');
 <table class="asm-navigation">
 <tr>
 <td class="prev">
-Prev: <a href="5BBB.html">5BBB</a>
+Prev: <a href="9301.html">9301</a>
 </td>
 <td class="up">Up: <a href="../maps/all.html#9470">Map</a></td>
 <td class="next">
@@ -67,7 +67,7 @@ Next: <a href="9532.html">9532</a>
 <td class="asm-label"></td>
 <td class="address-1"><span id="947b"></span>947B</td>
 <td class="instruction">LD A,$01</td>
-<td class="comment-1" rowspan="2">Write 01 to <a href="5BA8.html">5BA8</a>.</td>
+<td class="comment-1" rowspan="2">Write 01 to <a href="5BA8.html">ControlMethod</a>.</td>
 </tr>
 <tr>
 <td class="asm-label"></td>
@@ -88,31 +88,27 @@ This entry point is used by the routines at <a href="96DB.html">InstructionsPrin
 <td class="asm-label">GameEntry_0</td>
 <td class="address-2"><span id="9480"></span>9480</td>
 <td class="instruction">LD HL,$4000</td>
-<td class="comment-1" rowspan="1"></td>
+<td class="comment-1" rowspan="5">Writes 00 to all 1800 screen buffer address locations (clears the screen).</td>
 </tr>
 <tr>
 <td class="asm-label"></td>
 <td class="address-1"><span id="9483"></span>9483</td>
 <td class="instruction">LD DE,$4001</td>
-<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label"></td>
 <td class="address-1"><span id="9486"></span>9486</td>
 <td class="instruction">LD (HL),$00</td>
-<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label"></td>
 <td class="address-1"><span id="9488"></span>9488</td>
 <td class="instruction">LD BC,$17FF</td>
-<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label"></td>
 <td class="address-1"><span id="948b"></span>948B</td>
 <td class="instruction">LDIR</td>
-<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label"></td>
@@ -163,7 +159,7 @@ This entry point is used by the routines at <a href="96DB.html">InstructionsPrin
 <td class="asm-label"></td>
 <td class="address-1"><span id="94a0"></span>94A0</td>
 <td class="instruction">LD A,($5BA8)</td>
-<td class="comment-1" rowspan="3">If <a href="5BA8.html">5BA8</a> is 01 jump to <a href="9666.html#9673">9673</a>.</td>
+<td class="comment-1" rowspan="3">If <a href="5BA8.html">ControlMethod</a> is 01 jump to <a href="9673.html">TitleScreenInit</a>.</td>
 </tr>
 <tr>
 <td class="asm-label"></td>
@@ -173,13 +169,13 @@ This entry point is used by the routines at <a href="96DB.html">InstructionsPrin
 <tr>
 <td class="asm-label"></td>
 <td class="address-1"><span id="94a5"></span>94A5</td>
-<td class="instruction">JP Z,<a href="9666.html#9673">$9673</a></td>
+<td class="instruction">JP Z,<a href="9673.html">TitleScreenInit</a></td>
 </tr>
 <tr>
 <td class="asm-label"></td>
 <td class="address-1"><span id="94a8"></span>94A8</td>
 <td class="instruction">LD A,($5BA8)</td>
-<td class="comment-1" rowspan="3">If <a href="5BA8.html">5BA8</a> is 02 jump to <a href="9681.html#9689">9689</a>.</td>
+<td class="comment-1" rowspan="3">If <a href="5BA8.html">ControlMethod</a> is 02 jump to <a href="9681.html#9689">Input_KempstonJoystick</a>.</td>
 </tr>
 <tr>
 <td class="asm-label"></td>
@@ -189,13 +185,13 @@ This entry point is used by the routines at <a href="96DB.html">InstructionsPrin
 <tr>
 <td class="asm-label"></td>
 <td class="address-1"><span id="94ad"></span>94AD</td>
-<td class="instruction">JP Z,<a href="9681.html#9689">$9689</a></td>
+<td class="instruction">JP Z,<a href="9681.html#9689">Input_KempstonJoystick</a></td>
 </tr>
 <tr>
 <td class="asm-label"></td>
 <td class="address-1"><span id="94b0"></span>94B0</td>
 <td class="instruction">LD A,($5BA8)</td>
-<td class="comment-1" rowspan="3">If <a href="5BA8.html">5BA8</a> is 03 jump to <a href="969C.html#96a4">96A4</a>.</td>
+<td class="comment-1" rowspan="3">If <a href="5BA8.html">ControlMethod</a> is 03 jump to <a href="969C.html#96a4">Input_ProtekJoystick</a>.</td>
 </tr>
 <tr>
 <td class="asm-label"></td>
@@ -205,13 +201,13 @@ This entry point is used by the routines at <a href="96DB.html">InstructionsPrin
 <tr>
 <td class="asm-label"></td>
 <td class="address-1"><span id="94b5"></span>94B5</td>
-<td class="instruction">JP Z,<a href="969C.html#96a4">$96A4</a></td>
+<td class="instruction">JP Z,<a href="969C.html#96a4">Input_ProtekJoystick</a></td>
 </tr>
 <tr>
 <td class="asm-label"></td>
 <td class="address-1"><span id="94b8"></span>94B8</td>
 <td class="instruction">LD A,($5BA8)</td>
-<td class="comment-1" rowspan="3">If <a href="5BA8.html">5BA8</a> is 05 jump to <a href="96B7.html#96bf">96BF</a>.</td>
+<td class="comment-1" rowspan="3">If <a href="5BA8.html">ControlMethod</a> is 05 jump to <a href="96B7.html#96bf">Input_Interface2</a>.</td>
 </tr>
 <tr>
 <td class="asm-label"></td>
@@ -221,7 +217,7 @@ This entry point is used by the routines at <a href="96DB.html">InstructionsPrin
 <tr>
 <td class="asm-label"></td>
 <td class="address-1"><span id="94bd"></span>94BD</td>
-<td class="instruction">JP Z,<a href="96B7.html#96bf">$96BF</a></td>
+<td class="instruction">JP Z,<a href="96B7.html#96bf">Input_Interface2</a></td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -273,8 +269,8 @@ Handles selecting "1. KEYBOARD".
 <tr>
 <td class="asm-label"></td>
 <td class="address-1"><span id="94c6"></span>94C6</td>
-<td class="instruction">JP Z,<a href="9666.html">$9666</a></td>
-<td class="comment-1" rowspan="1">If "1" was pressed then jump to <a href="9666.html">9666</a>.</td>
+<td class="instruction">JP Z,<a href="9666.html">InputTest_Keyboard</a></td>
+<td class="comment-1" rowspan="1">If "1" was pressed then jump to <a href="9666.html">InputTest_Keyboard</a>.</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -326,8 +322,8 @@ Handles selecting "2. KEMPSTON JOYSTICK".
 <tr>
 <td class="asm-label"></td>
 <td class="address-1"><span id="94cf"></span>94CF</td>
-<td class="instruction">JP Z,<a href="9681.html">$9681</a></td>
-<td class="comment-1" rowspan="1">If "2" was pressed then jump to <a href="9681.html">9681</a>.</td>
+<td class="instruction">JP Z,<a href="9681.html">InputTest_KempstonJoystick</a></td>
+<td class="comment-1" rowspan="1">If "2" was pressed then jump to <a href="9681.html">InputTest_KempstonJoystick</a>.</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -379,8 +375,8 @@ Handles selecting "3. PROTEK JOYSTICK".
 <tr>
 <td class="asm-label"></td>
 <td class="address-1"><span id="94d8"></span>94D8</td>
-<td class="instruction">JP Z,<a href="969C.html">$969C</a></td>
-<td class="comment-1" rowspan="1">If "3" was pressed then jump to <a href="969C.html">969C</a>.</td>
+<td class="instruction">JP Z,<a href="969C.html">InputTest_ProtekJoystick</a></td>
+<td class="comment-1" rowspan="1">If "3" was pressed then jump to <a href="969C.html">InputTest_ProtekJoystick</a>.</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -432,8 +428,8 @@ Handles selecting "4. INTERFACE 2".
 <tr>
 <td class="asm-label"></td>
 <td class="address-1"><span id="94e1"></span>94E1</td>
-<td class="instruction">JP Z,<a href="96B7.html">$96B7</a></td>
-<td class="comment-1" rowspan="1">If "4" was pressed then jump to <a href="96B7.html">96B7</a>.</td>
+<td class="instruction">JP Z,<a href="96B7.html">InputTest_Interface2</a></td>
+<td class="comment-1" rowspan="1">If "4" was pressed then jump to <a href="96B7.html">InputTest_Interface2</a>.</td>
 </tr>
 <tr>
 <td class="routine-comment" colspan="5">
@@ -462,7 +458,7 @@ Handles ... cheat codes?
 <th colspan="1" rowspan="1">4</th>
 </tr>
 <tr>
-<td class="centre" colspan="1" rowspan="1">$FD</td>
+<td class="centre" colspan="1" rowspan="1">FD</td>
 <td class="centre" colspan="1" rowspan="1">A</td>
 <td class="centre" colspan="1" rowspan="1">S</td>
 <td class="centre" colspan="1" rowspan="1">D</td>
@@ -505,7 +501,7 @@ Handles ... cheat codes?
 <th colspan="1" rowspan="1">4</th>
 </tr>
 <tr>
-<td class="centre" colspan="1" rowspan="1">$FD</td>
+<td class="centre" colspan="1" rowspan="1">FD</td>
 <td class="centre" colspan="1" rowspan="1">A</td>
 <td class="centre" colspan="1" rowspan="1">S</td>
 <td class="centre" colspan="1" rowspan="1">D</td>
@@ -641,25 +637,23 @@ Handles selecting "6. PLAY".
 <td class="asm-label"></td>
 <td class="address-1"><span id="9508"></span>9508</td>
 <td class="instruction">LD HL,($5B99)</td>
-<td class="comment-1" rowspan="1"></td>
+<td class="comment-1" rowspan="3">Increment the value at <a href="5B99.html">RandomNumberSeed</a> by one.</td>
 </tr>
 <tr>
 <td class="asm-label"></td>
 <td class="address-1"><span id="950b"></span>950B</td>
 <td class="instruction">INC HL</td>
-<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label"></td>
 <td class="address-1"><span id="950c"></span>950C</td>
 <td class="instruction">LD ($5B99),HL</td>
-<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label"></td>
 <td class="address-1"><span id="950f"></span>950F</td>
 <td class="instruction">LD A,$1F</td>
-<td class="comment-1" rowspan="1"></td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=1F.</td>
 </tr>
 <tr>
 <td class="asm-label"></td>
@@ -670,32 +664,30 @@ Handles selecting "6. PLAY".
 <tr>
 <td class="asm-label"></td>
 <td class="address-1"><span id="9512"></span>9512</td>
-<td class="instruction">CALL Z,<a href="9923.html">$9923</a></td>
+<td class="instruction">CALL Z,<a href="9923.html">ResetRandomSeed</a></td>
 <td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label"></td>
 <td class="address-1"><span id="9515"></span>9515</td>
 <td class="instruction">LD HL,($5BB8)</td>
-<td class="comment-1" rowspan="1"></td>
+<td class="comment-1" rowspan="3">Increment the value at <a href="5BB8.html">TemporaryAddress</a> by one.</td>
 </tr>
 <tr>
 <td class="asm-label"></td>
 <td class="address-1"><span id="9518"></span>9518</td>
 <td class="instruction">INC HL</td>
-<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label"></td>
 <td class="address-1"><span id="9519"></span>9519</td>
 <td class="instruction">LD ($5BB8),HL</td>
-<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label"></td>
 <td class="address-1"><span id="951c"></span>951C</td>
 <td class="instruction">XOR A</td>
-<td class="comment-1" rowspan="1"></td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=00.</td>
 </tr>
 <tr>
 <td class="asm-label"></td>
@@ -725,19 +717,17 @@ Handles selecting "6. PLAY".
 <td class="asm-label"></td>
 <td class="address-1"><span id="9525"></span>9525</td>
 <td class="instruction">LD A,($5BBA)</td>
-<td class="comment-1" rowspan="1"></td>
+<td class="comment-1" rowspan="3">Increment the value at <a href="5BBA.html">TemporaryCounter</a> by one.</td>
 </tr>
 <tr>
 <td class="asm-label"></td>
 <td class="address-1"><span id="9528"></span>9528</td>
 <td class="instruction">DEC A</td>
-<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label"></td>
 <td class="address-1"><span id="9529"></span>9529</td>
 <td class="instruction">LD ($5BBA),A</td>
-<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
 <td class="asm-label"></td>
@@ -755,7 +745,7 @@ Handles selecting "6. PLAY".
 <table class="asm-navigation">
 <tr>
 <td class="prev">
-Prev: <a href="5BBB.html">5BBB</a>
+Prev: <a href="9301.html">9301</a>
 </td>
 <td class="up">Up: <a href="../maps/all.html#9470">Map</a></td>
 <td class="next">

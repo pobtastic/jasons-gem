@@ -33,7 +33,7 @@ Next: <a href="39210.html">39210</a>
 </td>
 </tr>
 </table>
-<div class="description">39203: Routine at 9923</div>
+<div class="description">39203: Reset Random Number Seed?</div>
 <table class="disassembly">
 <tr>
 <td class="routine-comment" colspan="5">
@@ -45,15 +45,18 @@ Used by the routine at <a href="38000.html">GameEntry</a>.
 </td>
 </tr>
 <tr>
+<td class="asm-label">ResetRandomSeed</td>
 <td class="address-2"><span id="39203"></span>39203</td>
 <td class="instruction">LD HL,0</td>
-<td class="comment-1" rowspan="2">Writes 0 to <a href="23449.html">23449</a>.</td>
+<td class="comment-1" rowspan="2">Writes 0 to <a href="23449.html">RandomNumberSeed</a>.</td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="39206"></span>39206</td>
 <td class="instruction">LD (23449),HL</td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="39209"></span>39209</td>
 <td class="instruction">RET</td>
 <td class="comment-1" rowspan="1">Return.</td>

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Jason's Gem: Routine at 8B10</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-dark.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-dark.css" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-75RERFCHBG"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-75RERFCHBG');
+</script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="5BBB.html">5BBB</a>
+</td>
+<td class="up">Up: <a href="../maps/all.html#8b10">Map</a></td>
+<td class="next">
+Next: <a href="8B64.html">8B64</a>
+</td>
+</tr>
+</table>
+<div class="description">8B10: Stage 1: Success Print</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="BC48.html">BC48</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="8b10"></span>
+<div class="comments">
+<div class="paragraph">
+Open the upper screen channel.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">Stage1Print</td>
+<td class="address-2"><span id="8b10"></span>8B10</td>
+<td class="instruction">LD A,$02</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=02.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8b12"></span>8B12</td>
+<td class="instruction">CALL $1601</td>
+<td class="comment-1" rowspan="1">Call <a href="https://skoolkit.ca/disassemblies/rom/hex/asm/1601.html">CHAN_OPEN</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8b15"></span>8B15</td>
+<td class="instruction">LD HL,$4000</td>
+<td class="comment-1" rowspan="5">Writes 00 to all 1800 screen buffer address locations (clears the screen).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8b18"></span>8B18</td>
+<td class="instruction">LD DE,$4001</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8b1b"></span>8B1B</td>
+<td class="instruction">LD BC,$17FF</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8b1e"></span>8B1E</td>
+<td class="instruction">LD (HL),$00</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8b20"></span>8B20</td>
+<td class="instruction">LDIR</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8b22"></span>8B22</td>
+<td class="instruction">LD HL,$5800</td>
+<td class="comment-1" rowspan="5">Writes 07 to all 0300 attribute buffer address locations.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8b25"></span>8B25</td>
+<td class="instruction">LD DE,$5801</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8b28"></span>8B28</td>
+<td class="instruction">LD BC,$02FF</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8b2b"></span>8B2B</td>
+<td class="instruction">LD (HL),$07</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8b2d"></span>8B2D</td>
+<td class="instruction">LDIR</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8b2f"></span>8B2F</td>
+<td class="instruction">LD A,$07</td>
+<td class="comment-1" rowspan="2">Write 07 to <a href="https://skoolkit.ca/disassemblies/rom/hex/asm/5C48.html">BORDCR</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8b31"></span>8B31</td>
+<td class="instruction">LD ($5C48),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8b34"></span>8B34</td>
+<td class="instruction">XOR A</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8b35"></span>8B35</td>
+<td class="instruction">OUT ($FE),A</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8b37"></span>8B37</td>
+<td class="instruction">LD DE,$8B64</td>
+<td class="comment-1" rowspan="1"><span class="register">DE</span>=<a href="8B64.html">Stage1Copy</a> (text).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8b3a"></span>8B3A</td>
+<td class="instruction">LD BC,$00A5</td>
+<td class="comment-1" rowspan="1"><span class="register">BC</span>=A5 (counter).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8b3d"></span>8B3D</td>
+<td class="instruction">CALL $203C</td>
+<td class="comment-1" rowspan="1">Call <a href="https://skoolkit.ca/disassemblies/rom/hex/asm/1FFC.html#203C">PR_STRING</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8b40"></span>8B40</td>
+<td class="instruction">CALL <a href="8C21.html">Stage1Copy_Joystick</a></td>
+<td class="comment-1" rowspan="1">Call <a href="8C21.html">Stage1Copy_Joystick</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8b43"></span>8B43</td>
+<td class="instruction">LD A,($5BA8)</td>
+<td class="comment-1" rowspan="3">Jump to <a href="8B10.html#8b5c">Stage1Print_Joystick</a> if <a href="5BA8.html">ControlMethod</a> is 02 (Kempston Joystick).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8b46"></span>8B46</td>
+<td class="instruction">CP $02</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8b48"></span>8B48</td>
+<td class="instruction">JP Z,<a href="8B10.html#8b5c">Stage1Print_Joystick</a></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="8b4b"></span>
+<div class="comments">
+<div class="paragraph">
+Loops until "fire" is pressed from either the keyboard or Interface 2 joystick.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">Stage1Print_Keyboard</td>
+<td class="address-2"><span id="8b4b"></span>8B4B</td>
+<td class="instruction">LD A,$7F</td>
+<td class="comment-1" rowspan="2">Read from the keyboard; <table class="default">
+<tr>
+<th colspan="1" rowspan="2">Port Number</th>
+<th colspan="5" rowspan="1">Bit</th>
+</tr>
+<tr>
+<th colspan="1" rowspan="1">0</th>
+<th colspan="1" rowspan="1">1</th>
+<th colspan="1" rowspan="1">2</th>
+<th colspan="1" rowspan="1">3</th>
+<th colspan="1" rowspan="1">4</th>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">7F</td>
+<td class="centre" colspan="1" rowspan="1">SPACE</td>
+<td class="centre" colspan="1" rowspan="1">FULL-STOP</td>
+<td class="centre" colspan="1" rowspan="1">M</td>
+<td class="centre" colspan="1" rowspan="1">N</td>
+<td class="centre" colspan="1" rowspan="1">B</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8b4d"></span>8B4D</td>
+<td class="instruction">IN A,($FE)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8b4f"></span>8B4F</td>
+<td class="instruction">AND %00000001</td>
+<td class="comment-1" rowspan="1">Keep only bit 0.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8b51"></span>8B51</td>
+<td class="instruction">RET Z</td>
+<td class="comment-1" rowspan="1">Return if "SPACE" has been pressed.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8b52"></span>8B52</td>
+<td class="instruction">LD A,$EF</td>
+<td class="comment-1" rowspan="2">Read from the keyboard; <table class="default">
+<tr>
+<th colspan="1" rowspan="2">Port Number</th>
+<th colspan="5" rowspan="1">Bit</th>
+</tr>
+<tr>
+<th colspan="1" rowspan="1">0</th>
+<th colspan="1" rowspan="1">1</th>
+<th colspan="1" rowspan="1">2</th>
+<th colspan="1" rowspan="1">3</th>
+<th colspan="1" rowspan="1">4</th>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">EF</td>
+<td class="centre" colspan="1" rowspan="1">0</td>
+<td class="centre" colspan="1" rowspan="1">9</td>
+<td class="centre" colspan="1" rowspan="1">8</td>
+<td class="centre" colspan="1" rowspan="1">7</td>
+<td class="centre" colspan="1" rowspan="1">6</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8b54"></span>8B54</td>
+<td class="instruction">IN A,($FE)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8b56"></span>8B56</td>
+<td class="instruction">AND %00000001</td>
+<td class="comment-1" rowspan="1">Keep only bit 0.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8b58"></span>8B58</td>
+<td class="instruction">RET Z</td>
+<td class="comment-1" rowspan="1">Return if "0" has been pressed.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8b59"></span>8B59</td>
+<td class="instruction">JP <a href="8B10.html#8b4b">Stage1Print_Keyboard</a></td>
+<td class="comment-1" rowspan="1">Jump to <a href="8B10.html#8b4b">Stage1Print_Keyboard</a>.</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="8b5c"></span>
+<div class="comments">
+<div class="paragraph">
+Loops until "fire" is pressed from the Kempston joystick.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">Stage1Print_Joystick</td>
+<td class="address-2"><span id="8b5c"></span>8B5C</td>
+<td class="instruction">IN A,($1F)</td>
+<td class="comment-1" rowspan="1">Read Kempston Joystick input.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8b5e"></span>8B5E</td>
+<td class="instruction">AND %00010000</td>
+<td class="comment-1" rowspan="1">Keep only bit 4.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8b60"></span>8B60</td>
+<td class="instruction">JP Z,<a href="8B10.html#8b5c">Stage1Print_Joystick</a></td>
+<td class="comment-1" rowspan="1">Jump back to <a href="8B10.html#8b5c">Stage1Print_Joystick</a> until fire button is pressed.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="8b63"></span>8B63</td>
+<td class="instruction">RET</td>
+<td class="comment-1" rowspan="1">Return.</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="5BBB.html">5BBB</a>
+</td>
+<td class="up">Up: <a href="../maps/all.html#8b10">Map</a></td>
+<td class="next">
+Next: <a href="8B64.html">8B64</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&copy; Mastertronic Ltd 1985 &copy; 2023 ArcadeGeek LTD.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.10.</div>
+<div><a href="../dec/asm/35600.html">Switch to decimal</a>.</div>
+</footer>
+</body>
+</html>

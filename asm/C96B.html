@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Jason's Gem: Routine at C96B</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-dark.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-dark.css" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-75RERFCHBG"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-75RERFCHBG');
+</script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="C8C0.html">C8C0</a>
+</td>
+<td class="up">Up: <a href="../maps/all.html#c96b">Map</a></td>
+<td class="next">
+Next: <a href="C98F.html">C98F</a>
+</td>
+</tr>
+</table>
+<div class="description">C96B: Routine at C96B</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="BC74.html">BC74</a> and <a href="BF85.html">BF85</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="address-2"><span id="c96b"></span>C96B</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-1" rowspan="3">Stash <span class="register">HL</span>, <span class="register">DE</span> and <span class="register">BC</span> on the stack.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="c96c"></span>C96C</td>
+<td class="instruction">PUSH DE</td>
+</tr>
+<tr>
+<td class="address-1"><span id="c96d"></span>C96D</td>
+<td class="instruction">PUSH BC</td>
+</tr>
+<tr>
+<td class="address-1"><span id="c96e"></span>C96E</td>
+<td class="instruction">LD DE,$C983</td>
+<td class="comment-1" rowspan="1"><span class="register">DE</span>=<a href="C96B.html#c983">C983</a> (text).</td>
+</tr>
+<tr>
+<td class="address-1"><span id="c971"></span>C971</td>
+<td class="instruction">LD BC,$000C</td>
+<td class="comment-1" rowspan="1"><span class="register">BC</span>=0C (counter).</td>
+</tr>
+<tr>
+<td class="address-1"><span id="c974"></span>C974</td>
+<td class="instruction">CALL $203C</td>
+<td class="comment-1" rowspan="1">Call <a href="https://skoolkit.ca/disassemblies/rom/hex/asm/1FFC.html#203C">PR_STRING</a>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="c977"></span>C977</td>
+<td class="instruction">POP BC</td>
+<td class="comment-1" rowspan="3">Restore <span class="register">BC</span>, <span class="register">DE</span> and <span class="register">HL</span> from the stack.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="c978"></span>C978</td>
+<td class="instruction">POP DE</td>
+</tr>
+<tr>
+<td class="address-1"><span id="c979"></span>C979</td>
+<td class="instruction">POP HL</td>
+</tr>
+<tr>
+<td class="address-1"><span id="c97a"></span>C97A</td>
+<td class="instruction">CALL <a href="C98F.html">$C98F</a></td>
+<td class="comment-1" rowspan="1">Call <a href="C98F.html">C98F</a>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="c97d"></span>C97D</td>
+<td class="instruction">LD A,$4A</td>
+<td class="comment-1" rowspan="2">Write 4A to 5B95.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="c97f"></span>C97F</td>
+<td class="instruction">LD ($5B95),A</td>
+</tr>
+<tr>
+<td class="address-1"><span id="c982"></span>C982</td>
+<td class="instruction">RET</td>
+<td class="comment-1" rowspan="1">Return.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="c983"></span>C983</td>
+<td class="instruction">DEFB $12,$00</td>
+<td class="comment-1" rowspan="1">FLASH "OFF".</td>
+</tr>
+<tr>
+<td class="address-1"><span id="c985"></span>C985</td>
+<td class="instruction">DEFB $16,$13,$1A</td>
+<td class="comment-1" rowspan="1">PRINT AT (19, 26).</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="c988"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routine at <a href="CA6F.html">CA6F</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="address-2"><span id="c988"></span>C988</td>
+<td class="instruction">DEFB $10,$05</td>
+<td class="comment-1" rowspan="1">INK 5.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="c98a"></span>C98A</td>
+<td class="instruction">DEFM "BONUS"</td>
+<td class="comment-1" rowspan="1">"BONUS".</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="C8C0.html">C8C0</a>
+</td>
+<td class="up">Up: <a href="../maps/all.html#c96b">Map</a></td>
+<td class="next">
+Next: <a href="C98F.html">C98F</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&copy; Mastertronic Ltd 1985 &copy; 2023 ArcadeGeek LTD.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.10.</div>
+<div><a href="../dec/asm/51563.html">Switch to decimal</a>.</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Jason's Gem: Routine at 35873</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-dark.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-dark.css" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-75RERFCHBG"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-75RERFCHBG');
+</script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="35684.html">35684</a>
+</td>
+<td class="up">Up: <a href="../maps/all.html#35873">Map</a></td>
+<td class="next">
+Next: <a href="35889.html">35889</a>
+</td>
+</tr>
+</table>
+<div class="description">35873: Routine at 8C21</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="35600.html">Stage1Print</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">Stage1Copy_Joystick</td>
+<td class="address-2"><span id="35873"></span>35873</td>
+<td class="instruction">LD A,(23464)</td>
+<td class="comment-1" rowspan="3">Return if <a href="23464.html">ControlMethod</a> is 1 (keyboard).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="35876"></span>35876</td>
+<td class="instruction">CP 1</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="35878"></span>35878</td>
+<td class="instruction">RET Z</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="35879"></span>35879</td>
+<td class="instruction">LD DE,35849</td>
+<td class="comment-1" rowspan="1"><span class="register">DE</span>=<a href="35684.html#35849">35849</a> (text).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="35882"></span>35882</td>
+<td class="instruction">LD BC,24</td>
+<td class="comment-1" rowspan="1"><span class="register">BC</span>=24 (counter).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="35885"></span>35885</td>
+<td class="instruction">CALL 8252</td>
+<td class="comment-1" rowspan="1">Call <a href="https://skoolkit.ca/disassemblies/rom/hex/asm/1FFC.html#203C">PR_STRING</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="35888"></span>35888</td>
+<td class="instruction">RET</td>
+<td class="comment-1" rowspan="1">Return.</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="35684.html">35684</a>
+</td>
+<td class="up">Up: <a href="../maps/all.html#35873">Map</a></td>
+<td class="next">
+Next: <a href="35889.html">35889</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&copy; Mastertronic Ltd 1985 &copy; 2023 ArcadeGeek LTD.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.10.</div>
+<div><a href="../../asm/8C21.html">Switch to hexadecimal</a>.</div>
+</footer>
+</body>
+</html>

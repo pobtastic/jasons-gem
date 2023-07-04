@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Jason's Gem: Routine at 36000</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-dark.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-dark.css" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-75RERFCHBG"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-75RERFCHBG');
+</script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="35889.html">35889</a>
+</td>
+<td class="up">Up: <a href="../maps/all.html#36000">Map</a></td>
+<td class="next">
+Next: <a href="36628.html">36628</a>
+</td>
+</tr>
+</table>
+<div class="description">36000: Game Over Print</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="38828.html">StartGame</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">GameOverPrint</td>
+<td class="address-2"><span id="36000"></span>36000</td>
+<td class="instruction">LD HL,16384</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36003"></span>36003</td>
+<td class="instruction">LD DE,16385</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36006"></span>36006</td>
+<td class="instruction">LD BC,6143</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36009"></span>36009</td>
+<td class="instruction">LD (HL),0</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36011"></span>36011</td>
+<td class="instruction">LDIR</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36013"></span>36013</td>
+<td class="instruction">LD HL,22528</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36016"></span>36016</td>
+<td class="instruction">LD DE,22529</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36019"></span>36019</td>
+<td class="instruction">LD (HL),7</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36021"></span>36021</td>
+<td class="instruction">LD BC,767</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36024"></span>36024</td>
+<td class="instruction">LDIR</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36026"></span>36026</td>
+<td class="instruction">XOR A</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36027"></span>36027</td>
+<td class="instruction">OUT (254),A</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="36029"></span>
+<div class="comments">
+<div class="paragraph">
+Open the upper screen channel.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36029"></span>36029</td>
+<td class="instruction">LD A,2</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=2.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36031"></span>36031</td>
+<td class="instruction">CALL 5633</td>
+<td class="comment-1" rowspan="1">Call <a href="https://skoolkit.ca/disassemblies/rom/hex/asm/1601.html">CHAN_OPEN</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36034"></span>36034</td>
+<td class="instruction">LD DE,36071</td>
+<td class="comment-1" rowspan="1"><span class="register">DE</span>=<a href="36000.html#36071">GameOver_Copy</a> (text).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36037"></span>36037</td>
+<td class="instruction">LD BC,509</td>
+<td class="comment-1" rowspan="1"><span class="register">BC</span>=509 (counter).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36040"></span>36040</td>
+<td class="instruction">CALL 8252</td>
+<td class="comment-1" rowspan="1">Call <a href="https://skoolkit.ca/disassemblies/rom/hex/asm/1FFC.html#203C">PR_STRING</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36043"></span>36043</td>
+<td class="instruction">CALL <a href="36000.html#36604">GameOver_Keyboard</a></td>
+<td class="comment-1" rowspan="1">Call <a href="36000.html#36604">GameOver_Keyboard</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36046"></span>36046</td>
+<td class="instruction">LD A,(23464)</td>
+<td class="comment-1" rowspan="3">If <a href="23464.html">ControlMethod</a> is 2 then jump to <a href="36000.html#36620">GameOver_Joystick</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36049"></span>36049</td>
+<td class="instruction">CP 2</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36051"></span>36051</td>
+<td class="instruction">JP Z,<a href="36000.html#36620">GameOver_Joystick</a></td>
+</tr>
+<tr>
+<td class="asm-label">GameOverPrint_Loop</td>
+<td class="address-2"><span id="36054"></span>36054</td>
+<td class="instruction">LD A,127</td>
+<td class="comment-1" rowspan="2">Read from the keyboard; <table class="default">
+<tr>
+<th colspan="1" rowspan="2">Port Number</th>
+<th colspan="5" rowspan="1">Bit</th>
+</tr>
+<tr>
+<th colspan="1" rowspan="1">0</th>
+<th colspan="1" rowspan="1">1</th>
+<th colspan="1" rowspan="1">2</th>
+<th colspan="1" rowspan="1">3</th>
+<th colspan="1" rowspan="1">4</th>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">127</td>
+<td class="centre" colspan="1" rowspan="1">SPACE</td>
+<td class="centre" colspan="1" rowspan="1">FULL-STOP</td>
+<td class="centre" colspan="1" rowspan="1">M</td>
+<td class="centre" colspan="1" rowspan="1">N</td>
+<td class="centre" colspan="1" rowspan="1">B</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36056"></span>36056</td>
+<td class="instruction">IN A,(254)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36058"></span>36058</td>
+<td class="instruction">AND %00000001</td>
+<td class="comment-1" rowspan="1">Keep only bit 0.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36060"></span>36060</td>
+<td class="instruction">RET Z</td>
+<td class="comment-1" rowspan="1">Return if "SPACE" has been pressed.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36061"></span>36061</td>
+<td class="instruction">LD A,239</td>
+<td class="comment-1" rowspan="2">Read from the keyboard; <table class="default">
+<tr>
+<th colspan="1" rowspan="2">Port Number</th>
+<th colspan="5" rowspan="1">Bit</th>
+</tr>
+<tr>
+<th colspan="1" rowspan="1">0</th>
+<th colspan="1" rowspan="1">1</th>
+<th colspan="1" rowspan="1">2</th>
+<th colspan="1" rowspan="1">3</th>
+<th colspan="1" rowspan="1">4</th>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">239</td>
+<td class="centre" colspan="1" rowspan="1">0</td>
+<td class="centre" colspan="1" rowspan="1">9</td>
+<td class="centre" colspan="1" rowspan="1">8</td>
+<td class="centre" colspan="1" rowspan="1">7</td>
+<td class="centre" colspan="1" rowspan="1">6</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36063"></span>36063</td>
+<td class="instruction">IN A,(254)</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36065"></span>36065</td>
+<td class="instruction">AND %00000001</td>
+<td class="comment-1" rowspan="1">Keep only bit 0.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36067"></span>36067</td>
+<td class="instruction">RET Z</td>
+<td class="comment-1" rowspan="1">Return if "0" has been pressed.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36068"></span>36068</td>
+<td class="instruction">JP <a href="36000.html#36054">GameOverPrint_Loop</a></td>
+<td class="comment-1" rowspan="1">Jump to <a href="36000.html#36054">GameOverPrint_Loop</a>.</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="36071"></span>
+<div class="comments">
+<div class="paragraph">
+Handles printing the "THE EPITAPH INSCRIBED ON POOR" text.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">GameOver_Copy</td>
+<td class="address-1"><span id="36071"></span>36071</td>
+<td class="instruction">DEFB 17,0</td>
+<td class="comment-1" rowspan="1">PAPER 0.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36073"></span>36073</td>
+<td class="instruction">DEFB 22,0,0</td>
+<td class="comment-1" rowspan="1">PRINT AT (0, 0).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36076"></span>36076</td>
+<td class="instruction">DEFB 16,6</td>
+<td class="comment-1" rowspan="1">INK 6.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36078"></span>36078</td>
+<td class="instruction">DEFM "THE EPITAPH INSCRIBED ON POOR"</td>
+<td class="comment-1" rowspan="1">"<img alt="gameover-1" src="../../images/font/gameover-1.png" />".</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="36107"></span>
+<div class="comments">
+<div class="paragraph">
+Handles printing the "JASON'S TOMB," text.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36107"></span>36107</td>
+<td class="instruction">DEFB 22,1,19</td>
+<td class="comment-1" rowspan="1">PRINT AT (1, 19).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36110"></span>36110</td>
+<td class="instruction">DEFM "JASON'S TOMB,"</td>
+<td class="comment-1" rowspan="1">"<img alt="gameover-2" src="../../images/font/gameover-2.png" />".</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="36123"></span>
+<div class="comments">
+<div class="paragraph">
+Handles printing the "DOES NOT SPEAK OF HIS EVENTFUL" text.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36123"></span>36123</td>
+<td class="instruction">DEFB 16,5</td>
+<td class="comment-1" rowspan="1">INK 5.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36125"></span>36125</td>
+<td class="instruction">DEFM "DOES NOT SPEAK OF HIS EVENTFUL"</td>
+<td class="comment-1" rowspan="1">"<img alt="gameover-3" src="../../images/font/gameover-3.png" />".</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="36155"></span>
+<div class="comments">
+<div class="paragraph">
+Handles printing the " LIFE," text.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36155"></span>36155</td>
+<td class="instruction">DEFB 22,3,26</td>
+<td class="comment-1" rowspan="1">PRINT AT (3, 26).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36158"></span>36158</td>
+<td class="instruction">DEFM " LIFE,"</td>
+<td class="comment-1" rowspan="1">"<img alt="gameover-4" src="../../images/font/gameover-4.png" />".</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="36164"></span>
+<div class="comments">
+<div class="paragraph">
+Handles printing the "BUT OF HIS CARELESS DOOM..." text.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36164"></span>36164</td>
+<td class="instruction">DEFB 22,4,1</td>
+<td class="comment-1" rowspan="1">PRINT AT (4, 1).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36167"></span>36167</td>
+<td class="instruction">DEFB 16,6</td>
+<td class="comment-1" rowspan="1">INK 6.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36169"></span>36169</td>
+<td class="instruction">DEFM "BUT OF HIS CARELESS DOOM..."</td>
+<td class="comment-1" rowspan="1">"<img alt="gameover-5" src="../../images/font/gameover-5.png" />".</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="36196"></span>
+<div class="comments">
+<div class="paragraph">
+Handles printing the "'ON EMBARKING ON HIS MISSION HE" text.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36196"></span>36196</td>
+<td class="instruction">DEFB 22,7,0</td>
+<td class="comment-1" rowspan="1">PRINT AT (7, 0).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36199"></span>36199</td>
+<td class="instruction">DEFB 16,5</td>
+<td class="comment-1" rowspan="1">INK 5.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36201"></span>36201</td>
+<td class="instruction">DEFM "'ON EMBARKING ON HIS MISSION HE"</td>
+<td class="comment-1" rowspan="1">"'ON EMBARKING ON HIS MISSION HE".</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="36232"></span>
+<div class="comments">
+<div class="paragraph">
+Handles printing the "WAS GIVEN CHANCES FOUR," text.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36232"></span>36232</td>
+<td class="instruction">DEFB 22,8,9</td>
+<td class="comment-1" rowspan="1">PRINT AT (8, 9).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36235"></span>36235</td>
+<td class="instruction">DEFM "WAS GIVEN CHANCES FOUR,"</td>
+<td class="comment-1" rowspan="1">"WAS GIVEN CHANCES FOUR,".</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="36258"></span>
+<div class="comments">
+<div class="paragraph">
+Handles printing the "BUT THE GEM WAS UNDISTURBED" text.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36258"></span>36258</td>
+<td class="instruction">DEFB 22,9,0</td>
+<td class="comment-1" rowspan="1">PRINT AT (9, 0).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36261"></span>36261</td>
+<td class="instruction">DEFB 16,6</td>
+<td class="comment-1" rowspan="1">INK 6.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36263"></span>36263</td>
+<td class="instruction">DEFM "BUT THE GEM WAS UNDISTURBED"</td>
+<td class="comment-1" rowspan="1">"BUT THE GEM WAS UNDISTURBED".</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="36290"></span>
+<div class="comments">
+<div class="paragraph">
+Handles printing the "(FOR HE NEEDED SOMEWHAT MORE!)'" text.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36290"></span>36290</td>
+<td class="instruction">DEFB 22,10,1</td>
+<td class="comment-1" rowspan="1">PRINT AT (10, 1).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36293"></span>36293</td>
+<td class="instruction">DEFM "(FOR HE NEEDED SOMEWHAT MORE!)'"</td>
+<td class="comment-1" rowspan="1">"(FOR HE NEEDED SOMEWHAT MORE!)'".</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="36324"></span>
+<div class="comments">
+<div class="paragraph">
+Handles printing the "HOW SAD A TALE OF FAILURE FOR " text.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36324"></span>36324</td>
+<td class="instruction">DEFB 22,12,0</td>
+<td class="comment-1" rowspan="1">PRINT AT (12, 0).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36327"></span>36327</td>
+<td class="instruction">DEFB 16,5</td>
+<td class="comment-1" rowspan="1">INK 5.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36329"></span>36329</td>
+<td class="instruction">DEFM "HOW SAD A TALE OF FAILURE FOR "</td>
+<td class="comment-1" rowspan="1">"HOW SAD A TALE OF FAILURE FOR ".</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="36359"></span>
+<div class="comments">
+<div class="paragraph">
+Handles printing the "ONE SO CLOSE TO GLORY!" text.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36359"></span>36359</td>
+<td class="instruction">DEFB 22,13,10</td>
+<td class="comment-1" rowspan="1">PRINT AT (13, 10).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36362"></span>36362</td>
+<td class="instruction">DEFM "ONE SO CLOSE TO GLORY!"</td>
+<td class="comment-1" rowspan="1">"ONE SO CLOSE TO GLORY!".</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="36384"></span>
+<div class="comments">
+<div class="paragraph">
+Handles printing the "BUT YOU COULD YET REWRITE THE" text.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36384"></span>36384</td>
+<td class="instruction">DEFB 22,14,1</td>
+<td class="comment-1" rowspan="1">PRINT AT (14, 1).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36387"></span>36387</td>
+<td class="instruction">DEFB 16,6</td>
+<td class="comment-1" rowspan="1">INK 6.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36389"></span>36389</td>
+<td class="instruction">DEFM "BUT YOU COULD YET REWRITE THE"</td>
+<td class="comment-1" rowspan="1">"BUT YOU COULD YET REWRITE THE".</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="36418"></span>
+<div class="comments">
+<div class="paragraph">
+Handles printing the " HISTORY OF THIS STORY..." text.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36418"></span>36418</td>
+<td class="instruction">DEFB 22,15,7</td>
+<td class="comment-1" rowspan="1">PRINT AT (15, 7).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36421"></span>36421</td>
+<td class="instruction">DEFM " HISTORY OF THIS STORY..."</td>
+<td class="comment-1" rowspan="1">" HISTORY OF THIS STORY...".</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="36446"></span>
+<div class="comments">
+<div class="paragraph">
+Handles printing the "SO PRESS THE " text.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36446"></span>36446</td>
+<td class="instruction">DEFB 22,17,0</td>
+<td class="comment-1" rowspan="1">PRINT AT (17, 0).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36449"></span>36449</td>
+<td class="instruction">DEFB 16,5</td>
+<td class="comment-1" rowspan="1">INK 5.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36451"></span>36451</td>
+<td class="instruction">DEFM "SO PRESS THE "</td>
+<td class="comment-1" rowspan="1">"SO PRESS THE ".</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="36464"></span>
+<div class="comments">
+<div class="paragraph">
+Handles printing the "SPACE" text.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36464"></span>36464</td>
+<td class="instruction">DEFB 19,1</td>
+<td class="comment-1" rowspan="1">BRIGHT "ON".</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36466"></span>36466</td>
+<td class="instruction">DEFB 16,6</td>
+<td class="comment-1" rowspan="1">INK 6.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36468"></span>36468</td>
+<td class="instruction">DEFB 17,2</td>
+<td class="comment-1" rowspan="1">PAPER 2.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36470"></span>36470</td>
+<td class="instruction">DEFB 18,1</td>
+<td class="comment-1" rowspan="1">FLASH "ON".</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36472"></span>36472</td>
+<td class="instruction">DEFM "SPACE"</td>
+<td class="comment-1" rowspan="1">"SPACE".</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="36477"></span>
+<div class="comments">
+<div class="paragraph">
+Handles printing the " KEY FOR" text.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36477"></span>36477</td>
+<td class="instruction">DEFB 19,0</td>
+<td class="comment-1" rowspan="1">BRIGHT "OFF".</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36479"></span>36479</td>
+<td class="instruction">DEFB 16,5</td>
+<td class="comment-1" rowspan="1">INK 5.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36481"></span>36481</td>
+<td class="instruction">DEFB 17,0</td>
+<td class="comment-1" rowspan="1">PAPER 0.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36483"></span>36483</td>
+<td class="instruction">DEFB 18,0</td>
+<td class="comment-1" rowspan="1">FLASH "OFF".</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36485"></span>36485</td>
+<td class="instruction">DEFM " KEY FOR"</td>
+<td class="comment-1" rowspan="1">" KEY FOR".</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="36493"></span>
+<div class="comments">
+<div class="paragraph">
+Handles printing the "JASON'S REINCARNATION," text.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36493"></span>36493</td>
+<td class="instruction">DEFB 22,18,9</td>
+<td class="comment-1" rowspan="1">PRINT AT (18, 9).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36496"></span>36496</td>
+<td class="instruction">DEFM "JASON'S REINCARNATION,"</td>
+<td class="comment-1" rowspan="1">"JASON'S REINCARNATION,".</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="36518"></span>
+<div class="comments">
+<div class="paragraph">
+Handles printing the "AND THEN YOU MAY BEGIN A BRAND" text.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36518"></span>36518</td>
+<td class="instruction">DEFB 22,19,0</td>
+<td class="comment-1" rowspan="1">PRINT AT (19, 0).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36521"></span>36521</td>
+<td class="instruction">DEFB 16,6</td>
+<td class="comment-1" rowspan="1">INK 6.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36523"></span>36523</td>
+<td class="instruction">DEFM "AND THEN YOU MAY BEGIN A BRAND"</td>
+<td class="comment-1" rowspan="1">"AND THEN YOU MAY BEGIN A BRAND".</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="36553"></span>
+<div class="comments">
+<div class="paragraph">
+Handles printing the "NEW MISSION EMBARKATION." text.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36553"></span>36553</td>
+<td class="instruction">DEFB 22,20,7</td>
+<td class="comment-1" rowspan="1">PRINT AT (20, 7).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36556"></span>36556</td>
+<td class="instruction">DEFM "NEW MISSION EMBARKATION."</td>
+<td class="comment-1" rowspan="1">"NEW MISSION EMBARKATION.".</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="36580"></span>
+<div class="comments">
+<div class="paragraph">
+Handles printing the "FIRE" text.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36580"></span>36580</td>
+<td class="instruction">DEFB 19,1</td>
+<td class="comment-1" rowspan="1">BRIGHT "ON".</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36582"></span>36582</td>
+<td class="instruction">DEFB 16,6</td>
+<td class="comment-1" rowspan="1">INK 6.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36584"></span>36584</td>
+<td class="instruction">DEFB 17,2</td>
+<td class="comment-1" rowspan="1">PAPER 2.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36586"></span>36586</td>
+<td class="instruction">DEFB 18,1</td>
+<td class="comment-1" rowspan="1">FLASH "ON".</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36588"></span>36588</td>
+<td class="instruction">DEFB 22,17,13</td>
+<td class="comment-1" rowspan="1">PRINT AT (17, 13).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36591"></span>36591</td>
+<td class="instruction">DEFM "FIRE"</td>
+<td class="comment-1" rowspan="1">"FIRE".</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="36595"></span>
+<div class="comments">
+<div class="paragraph">
+Handles printing the " " text.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36595"></span>36595</td>
+<td class="instruction">DEFB 19,0</td>
+<td class="comment-1" rowspan="1">BRIGHT "OFF".</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36597"></span>36597</td>
+<td class="instruction">DEFB 16,5</td>
+<td class="comment-1" rowspan="1">INK 5.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36599"></span>36599</td>
+<td class="instruction">DEFB 17,0</td>
+<td class="comment-1" rowspan="1">PAPER 0.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36601"></span>36601</td>
+<td class="instruction">DEFB 18,0</td>
+<td class="comment-1" rowspan="1">FLASH "OFF".</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36603"></span>36603</td>
+<td class="instruction">DEFM " "</td>
+<td class="comment-1" rowspan="1">" ".</td>
+</tr>
+<tr>
+<td class="asm-label">GameOver_Keyboard</td>
+<td class="address-2"><span id="36604"></span>36604</td>
+<td class="instruction">LD A,(23464)</td>
+<td class="comment-1" rowspan="3">Return if <a href="23464.html">ControlMethod</a> is 1 (keyboard).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36607"></span>36607</td>
+<td class="instruction">CP 1</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36609"></span>36609</td>
+<td class="instruction">RET Z</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36610"></span>36610</td>
+<td class="instruction">LD DE,36580</td>
+<td class="comment-1" rowspan="1"><span class="register">DE</span>=<a href="36000.html#36071">GameOver_Copy</a> (text).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36613"></span>36613</td>
+<td class="instruction">LD BC,24</td>
+<td class="comment-1" rowspan="1"><span class="register">BC</span>=24 (counter).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36616"></span>36616</td>
+<td class="instruction">CALL 8252</td>
+<td class="comment-1" rowspan="1">Call <a href="https://skoolkit.ca/disassemblies/rom/hex/asm/1FFC.html#203C">PR_STRING</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36619"></span>36619</td>
+<td class="instruction">RET</td>
+<td class="comment-1" rowspan="1">Return.</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="36620"></span>
+<div class="comments">
+<div class="paragraph">
+Loops until "fire" is pressed from the Kempston joystick.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">GameOver_Joystick</td>
+<td class="address-2"><span id="36620"></span>36620</td>
+<td class="instruction">IN A,(31)</td>
+<td class="comment-1" rowspan="1">Read Kempston Joystick input.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36622"></span>36622</td>
+<td class="instruction">AND %00010000</td>
+<td class="comment-1" rowspan="1">Keep only bit 4.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36624"></span>36624</td>
+<td class="instruction">RET NZ</td>
+<td class="comment-1" rowspan="1">Only return when fire button is pressed.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36625"></span>36625</td>
+<td class="instruction">JP <a href="36000.html#36620">GameOver_Joystick</a></td>
+<td class="comment-1" rowspan="1">Jump to <a href="36000.html#36620">GameOver_Joystick</a>.</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="35889.html">35889</a>
+</td>
+<td class="up">Up: <a href="../maps/all.html#36000">Map</a></td>
+<td class="next">
+Next: <a href="36628.html">36628</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&copy; Mastertronic Ltd 1985 &copy; 2023 ArcadeGeek LTD.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.10.</div>
+<div><a href="../../asm/8CA0.html">Switch to hexadecimal</a>.</div>
+</footer>
+</body>
+</html>

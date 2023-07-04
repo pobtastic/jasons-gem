@@ -33,7 +33,7 @@ Next: <a href="96B7.html">96B7</a>
 </td>
 </tr>
 </table>
-<div class="description">969C: Routine at 969C</div>
+<div class="description">969C: Input: Protek Joystick</div>
 <table class="disassembly">
 <tr>
 <td class="routine-comment" colspan="5">
@@ -45,16 +45,19 @@ Used by the routine at <a href="9470.html">GameEntry</a>.
 </td>
 </tr>
 <tr>
+<td class="asm-label">InputTest_ProtekJoystick</td>
 <td class="address-2"><span id="969c"></span>969C</td>
 <td class="instruction">LD A,($5BA8)</td>
-<td class="comment-1" rowspan="1"><span class="register">A</span>=<a href="5BA8.html">5BA8</a>.</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=<a href="5BA8.html">ControlMethod</a>.</td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="969f"></span>969F</td>
 <td class="instruction">CP $03</td>
-<td class="comment-1" rowspan="2">If this is 03 then jump to <a href="9470.html#94c0">TitleSelectInput</a>.</td>
+<td class="comment-1" rowspan="2">If this is already 03 then jump back to <a href="9470.html#94c0">TitleSelectInput</a>.</td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="96a1"></span>96A1</td>
 <td class="instruction">JP Z,<a href="9470.html#94c0">TitleSelectInput</a></td>
 </tr>
@@ -69,35 +72,42 @@ This entry point is used by the routine at <a href="9470.html">GameEntry</a>.
 </td>
 </tr>
 <tr>
+<td class="asm-label">Input_ProtekJoystick</td>
 <td class="address-2"><span id="96a4"></span>96A4</td>
 <td class="instruction">LD A,$03</td>
-<td class="comment-1" rowspan="2">Write 03 to <a href="5BA8.html">5BA8</a>.</td>
+<td class="comment-1" rowspan="2">Write 03 to <a href="5BA8.html">ControlMethod</a>.</td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="96a6"></span>96A6</td>
 <td class="instruction">LD ($5BA8),A</td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="96a9"></span>96A9</td>
 <td class="instruction">CALL <a href="95A3.html">TitleScreenPrint</a></td>
 <td class="comment-1" rowspan="1">Call <a href="95A3.html">TitleScreenPrint</a>.</td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="96ac"></span>96AC</td>
 <td class="instruction">LD HL,$5967</td>
 <td class="comment-1" rowspan="1"><span class="register">HL</span>=5967.</td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="96af"></span>96AF</td>
 <td class="instruction">LD A,$12</td>
 <td class="comment-1" rowspan="1"><span class="register">A</span>=12.</td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="96b1"></span>96B1</td>
 <td class="instruction">CALL <a href="96D2.html">$96D2</a></td>
 <td class="comment-1" rowspan="1">Call <a href="96D2.html">96D2</a>.</td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="96b4"></span>96B4</td>
 <td class="instruction">JP <a href="9470.html#94c0">TitleSelectInput</a></td>
 <td class="comment-1" rowspan="1">Jump to <a href="9470.html#94c0">TitleSelectInput</a>.</td>

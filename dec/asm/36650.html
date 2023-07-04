@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Jason's Gem: Routine at 36650</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-dark.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-dark.css" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-75RERFCHBG"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-75RERFCHBG');
+</script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="36628.html">36628</a>
+</td>
+<td class="up">Up: <a href="../maps/all.html#36650">Map</a></td>
+<td class="next">
+Next: <a href="36960.html">36960</a>
+</td>
+</tr>
+</table>
+<div class="description">36650: Routine at 8F2A</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="38828.html">StartGame</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">Congrats_Print</td>
+<td class="address-2"><span id="36650"></span>36650</td>
+<td class="instruction">LD HL,16384</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36653"></span>36653</td>
+<td class="instruction">LD DE,16385</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36656"></span>36656</td>
+<td class="instruction">LD (HL),0</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36658"></span>36658</td>
+<td class="instruction">LD BC,6143</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36661"></span>36661</td>
+<td class="instruction">LDIR</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36663"></span>36663</td>
+<td class="instruction">LD HL,22528</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36666"></span>36666</td>
+<td class="instruction">LD DE,22529</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36669"></span>36669</td>
+<td class="instruction">LD BC,767</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36672"></span>36672</td>
+<td class="instruction">LD (HL),7</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36674"></span>36674</td>
+<td class="instruction">LDIR</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36676"></span>36676</td>
+<td class="instruction">XOR A</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36677"></span>36677</td>
+<td class="instruction">OUT (254),A</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="36679"></span>
+<div class="comments">
+<div class="paragraph">
+Open the upper screen channel.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36679"></span>36679</td>
+<td class="instruction">LD A,2</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=2.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36681"></span>36681</td>
+<td class="instruction">CALL 5633</td>
+<td class="comment-1" rowspan="1">Call <a href="https://skoolkit.ca/disassemblies/rom/hex/asm/1601.html">CHAN_OPEN</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36684"></span>36684</td>
+<td class="instruction">LD DE,36721</td>
+<td class="comment-1" rowspan="1"><span class="register">DE</span>=<a href="36650.html#36721">36721</a> (text).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36687"></span>36687</td>
+<td class="instruction">LD BC,191</td>
+<td class="comment-1" rowspan="1"><span class="register">BC</span>=191 (counter).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36690"></span>36690</td>
+<td class="instruction">CALL 8252</td>
+<td class="comment-1" rowspan="1">Call <a href="https://skoolkit.ca/disassemblies/rom/hex/asm/1FFC.html#203C">PR_STRING</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36693"></span>36693</td>
+<td class="instruction">CALL <a href="36650.html#36936">Congrats_Keyboard</a></td>
+<td class="comment-1" rowspan="1">Call <a href="36650.html#36936">Congrats_Keyboard</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36696"></span>36696</td>
+<td class="instruction">LD A,(23464)</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36699"></span>36699</td>
+<td class="instruction">CP 2</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36701"></span>36701</td>
+<td class="instruction">JP Z,<a href="36650.html#36952">Congrats_Joystick</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label">Congrats_Keyboard_Loop</td>
+<td class="address-2"><span id="36704"></span>36704</td>
+<td class="instruction">LD A,127</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36706"></span>36706</td>
+<td class="instruction">IN A,(254)</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36708"></span>36708</td>
+<td class="instruction">AND 1</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36710"></span>36710</td>
+<td class="instruction">RET Z</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36711"></span>36711</td>
+<td class="instruction">LD A,239</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36713"></span>36713</td>
+<td class="instruction">IN A,(254)</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36715"></span>36715</td>
+<td class="instruction">AND 1</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36717"></span>36717</td>
+<td class="instruction">RET Z</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36718"></span>36718</td>
+<td class="instruction">JP <a href="36650.html#36704">Congrats_Keyboard_Loop</a></td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36721"></span>36721</td>
+<td class="instruction">DEFB 17,0</td>
+<td class="comment-1" rowspan="1">PAPER 0.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36723"></span>36723</td>
+<td class="instruction">DEFB 22,6,0</td>
+<td class="comment-1" rowspan="1">PRINT AT (6, 0).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36726"></span>36726</td>
+<td class="instruction">DEFB 16,5</td>
+<td class="comment-1" rowspan="1">INK 5.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36728"></span>36728</td>
+<td class="instruction">DEFM "THE MISSION HAS NOW BEEN "</td>
+<td class="comment-1" rowspan="1">"<img alt="congratscopy-1" src="../../images/font/congratscopy-1.png" />".</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36753"></span>36753</td>
+<td class="instruction">DEFB 22,7,19</td>
+<td class="comment-1" rowspan="1">PRINT AT (7, 19).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36756"></span>36756</td>
+<td class="instruction">DEFM "ACCOMPLISHED,"</td>
+<td class="comment-1" rowspan="1">"<img alt="congratscopy-2" src="../../images/font/congratscopy-2.png" />".</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36769"></span>36769</td>
+<td class="instruction">DEFB 22,9,0</td>
+<td class="comment-1" rowspan="1">PRINT AT (9, 0).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36772"></span>36772</td>
+<td class="instruction">DEFB 16,6</td>
+<td class="comment-1" rowspan="1">INK 6.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36774"></span>36774</td>
+<td class="instruction">DEFM "WITH A BONUS OF 3000 TO YOUR"</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36802"></span>36802</td>
+<td class="instruction">DEFB 22,10,26</td>
+<td class="comment-1" rowspan="1">PRINT AT (10, 26).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36805"></span>36805</td>
+<td class="instruction">DEFM "SCORE,"</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36811"></span>36811</td>
+<td class="instruction">DEFB 22,12,0</td>
+<td class="comment-1" rowspan="1">PRINT AT (12, 0).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36814"></span>36814</td>
+<td class="instruction">DEFB 16,5</td>
+<td class="comment-1" rowspan="1">INK 5.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36816"></span>36816</td>
+<td class="instruction">DEFM "BUT I AM SURE YOUR SCORE COULD"</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36846"></span>36846</td>
+<td class="instruction">DEFB 22,13,22</td>
+<td class="comment-1" rowspan="1">PRINT AT (13, 22).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36849"></span>36849</td>
+<td class="instruction">DEFM "BE HIGHER,"</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36859"></span>36859</td>
+<td class="instruction">DEFB 22,15,0</td>
+<td class="comment-1" rowspan="1">PRINT AT (15, 0).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36862"></span>36862</td>
+<td class="instruction">DEFB 16,6</td>
+<td class="comment-1" rowspan="1">INK 6.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36864"></span>36864</td>
+<td class="instruction">DEFM "SO PRESS THE "</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36877"></span>36877</td>
+<td class="instruction">DEFB 16,6</td>
+<td class="comment-1" rowspan="1">INK 6.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36879"></span>36879</td>
+<td class="instruction">DEFB 17,2</td>
+<td class="comment-1" rowspan="1">PAPER 2.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36881"></span>36881</td>
+<td class="instruction">DEFB 18,1</td>
+<td class="comment-1" rowspan="1">FLASH "ON".</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36883"></span>36883</td>
+<td class="instruction">DEFB 19,1</td>
+<td class="comment-1" rowspan="1">BRIGHT "ON".</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36885"></span>36885</td>
+<td class="instruction">DEFM "SPACE"</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36890"></span>36890</td>
+<td class="instruction">DEFB 16,6</td>
+<td class="comment-1" rowspan="1">INK 6.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36892"></span>36892</td>
+<td class="instruction">DEFB 17,0</td>
+<td class="comment-1" rowspan="1">PAPER 0.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36894"></span>36894</td>
+<td class="instruction">DEFB 18,0</td>
+<td class="comment-1" rowspan="1">FLASH "OFF".</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36896"></span>36896</td>
+<td class="instruction">DEFB 19,0</td>
+<td class="comment-1" rowspan="1">BRIGHT "OFF".</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36898"></span>36898</td>
+<td class="instruction">DEFM " KEY FOR MORE!"</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36912"></span>36912</td>
+<td class="instruction">DEFB 22,15,13</td>
+<td class="comment-1" rowspan="1">PRINT AT (15, 13).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36915"></span>36915</td>
+<td class="instruction">DEFB 16,6</td>
+<td class="comment-1" rowspan="1">INK 6.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36917"></span>36917</td>
+<td class="instruction">DEFB 17,2</td>
+<td class="comment-1" rowspan="1">PAPER 2.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36919"></span>36919</td>
+<td class="instruction">DEFB 18,1</td>
+<td class="comment-1" rowspan="1">FLASH "ON".</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36921"></span>36921</td>
+<td class="instruction">DEFB 19,1</td>
+<td class="comment-1" rowspan="1">BRIGHT "ON".</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36923"></span>36923</td>
+<td class="instruction">DEFM "FIRE"</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36927"></span>36927</td>
+<td class="instruction">DEFB 16,6</td>
+<td class="comment-1" rowspan="1">INK 6.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36929"></span>36929</td>
+<td class="instruction">DEFB 17,0</td>
+<td class="comment-1" rowspan="1">PAPER 0.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36931"></span>36931</td>
+<td class="instruction">DEFB 18,0</td>
+<td class="comment-1" rowspan="1">FLASH "OFF".</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36933"></span>36933</td>
+<td class="instruction">DEFB 19,0</td>
+<td class="comment-1" rowspan="1">BRIGHT "OFF".</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36935"></span>36935</td>
+<td class="instruction">DEFM " "</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label">Congrats_Keyboard</td>
+<td class="address-2"><span id="36936"></span>36936</td>
+<td class="instruction">LD A,(23464)</td>
+<td class="comment-1" rowspan="3">Return if <a href="23464.html">ControlMethod</a> is 1 (keyboard).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36939"></span>36939</td>
+<td class="instruction">CP 1</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36941"></span>36941</td>
+<td class="instruction">RET Z</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36942"></span>36942</td>
+<td class="instruction">LD DE,36912</td>
+<td class="comment-1" rowspan="1"><span class="register">DE</span>=<a href="36650.html#36912">36912</a> (text).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36945"></span>36945</td>
+<td class="instruction">LD BC,24</td>
+<td class="comment-1" rowspan="1"><span class="register">BC</span>=24 (counter).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36948"></span>36948</td>
+<td class="instruction">CALL 8252</td>
+<td class="comment-1" rowspan="1">Call <a href="https://skoolkit.ca/disassemblies/rom/hex/asm/1FFC.html#203C">PR_STRING</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36951"></span>36951</td>
+<td class="instruction">RET</td>
+<td class="comment-1" rowspan="1">Return.</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="36952"></span>
+<div class="comments">
+<div class="paragraph">
+Loops until "fire" is pressed from the Kempston joystick.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">Congrats_Joystick</td>
+<td class="address-2"><span id="36952"></span>36952</td>
+<td class="instruction">IN A,(31)</td>
+<td class="comment-1" rowspan="1">Read Kempston Joystick input.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36954"></span>36954</td>
+<td class="instruction">AND %00010000</td>
+<td class="comment-1" rowspan="1">Keep only bit 4.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36956"></span>36956</td>
+<td class="instruction">RET NZ</td>
+<td class="comment-1" rowspan="1">Only return when fire button is pressed.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36957"></span>36957</td>
+<td class="instruction">JP <a href="36650.html#36952">Congrats_Joystick</a></td>
+<td class="comment-1" rowspan="1">Jump to <a href="36650.html#36952">Congrats_Joystick</a>.</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="36628.html">36628</a>
+</td>
+<td class="up">Up: <a href="../maps/all.html#36650">Map</a></td>
+<td class="next">
+Next: <a href="36960.html">36960</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&copy; Mastertronic Ltd 1985 &copy; 2023 ArcadeGeek LTD.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 8.10.</div>
+<div><a href="../../asm/8F2A.html">Switch to hexadecimal</a>.</div>
+</footer>
+</body>
+</html>
