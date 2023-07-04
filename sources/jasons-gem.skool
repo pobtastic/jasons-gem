@@ -243,11 +243,15 @@ b$5B00 DEFB $00,$00,$00,$00,$00,$00,$00,$00
  $5B70 DEFB $00,$00,$00,$00,$00,$00,$00,$00
  $5B78 DEFB $00,$00,$00,$00,$00,$00,$00,$00
  $5B80 DEFB $00,$00,$00,$00,$00,$00,$00,$00
- $5B88 DEFB $00,$00,$00,$00,$00,$00,$00,$00
+ $5B88 DEFB $00,$00,$00,$00,$00,$00
+
+; Game status buffer entry at 5B8E
+g$5B8E DEFW $0000
  $5B90 DEFB $00,$00,$00,$00,$00,$00,$00,$00
  $5B98 DEFB $00
 
-; Game status buffer entry at 5B99
+; Random Number Seed
+@label=RandomNumberSeed
 g$5B99 DEFW $0000
  $5B9B DEFB $00,$00,$00,$00,$00
 
@@ -260,9 +264,18 @@ g$5BA0 DEFB $00
 g$5BA4 DEFW $0000
  $5BA6 DEFB $00,$00
 
-; Game status buffer entry at 5BA8
-g$5BA8 DEFB $00,$00,$00,$00,$00,$00,$00,$00
- $5BB0 DEFB $00,$00,$00,$00,$00,$00,$00,$00
+; Control Method
+@label=ControlMethod
+g$5BA8 DEFB $00      ; #TABLE(default,centre,centre) { =h Byte Value | =h Input }
+                     ; { #N$01 | Keyboard }
+                     ; { #N$02 | Kempston Joystick }
+                     ; { #N$03 | Protek Joystick }
+                     ; { #N$05 | Interface 2 }
+                     ; TABLE#
+
+; Game status buffer entry at 5BA9
+g$5BA9 DEFB $00,$00,$00,$00,$00,$00,$00,$00
+ $5BB1 DEFB $00,$00,$00,$00,$00,$00,$00
 
 ; Temporary Address
 @label=TemporaryAddress
@@ -1787,307 +1800,639 @@ b$5BBB DEFB $00,$00,$00,$00,$00,$00,$00,$00
  $8AF3 DEFB $00,$00,$00,$00,$00,$FF,$E0,$00
  $8AFB DEFB $00,$00,$00,$01,$FF,$C0,$00,$FF
  $8B03 DEFB $E0,$00,$00,$00,$00,$00,$0F,$FE
- $8B0B DEFB $00,$00,$00,$00,$00,$3E,$02,$CD
- $8B13 DEFB $01,$16,$21,$00,$40,$11,$01,$40
- $8B1B DEFB $01,$FF,$17,$36,$00,$ED,$B0,$21
- $8B23 DEFB $00,$58,$11,$01,$58,$01,$FF,$02
- $8B2B DEFB $36,$07,$ED,$B0,$3E,$07,$32,$48
- $8B33 DEFB $5C,$AF,$D3,$FE,$11,$64,$8B,$01
- $8B3B DEFB $A5,$00,$CD,$3C,$20,$CD,$21,$8C
- $8B43 DEFB $3A,$A8,$5B,$FE,$02,$CA,$5C,$8B
- $8B4B DEFB $3E,$7F,$DB,$FE,$E6,$01,$C8,$3E
- $8B53 DEFB $EF,$DB,$FE,$E6,$01,$C8,$C3,$4B
- $8B5B DEFB $8B,$DB,$1F,$E6,$10,$CA,$5C,$8B
- $8B63 DEFB $C9,$16,$08,$00,$10,$05,$54,$48
- $8B6B DEFB $45,$20,$43,$41,$52,$47,$4F,$20
- $8B73 DEFB $42,$45,$41,$52,$53,$20,$41,$20
- $8B7B DEFB $4D,$45,$53,$53,$41,$47,$45,$2C
- $8B83 DEFB $16,$0A,$01,$10,$06,$41,$20,$54
- $8B8B DEFB $41,$4C,$45,$20,$4F,$46,$20,$4C
- $8B93 DEFB $4F,$4E,$47,$20,$4C,$4F,$53,$54
- $8B9B DEFB $20,$54,$52,$45,$41,$53,$55,$52
- $8BA3 DEFB $45,$2C,$16,$0C,$00,$10,$05,$54
- $8BAB DEFB $4F,$20,$53,$54,$41,$52,$54,$20
- $8BB3 DEFB $59,$4F,$55,$52,$20,$47,$41,$4C
- $8BBB DEFB $4C,$41,$4E,$54,$20,$53,$45,$41
- $8BC3 DEFB $52,$43,$48,$16,$0D,$19,$46,$4F
- $8BCB DEFB $52,$20,$49,$54,$2C,$16,$0F,$01
- $8BD3 DEFB $10,$06,$50,$52,$45,$53,$53,$20
- $8BDB DEFB $54,$48,$45,$20,$10,$06,$11,$02
- $8BE3 DEFB $13,$01,$12,$01,$53,$50,$41,$43
- $8BEB DEFB $45,$11,$00,$13,$00,$12,$00,$20
- $8BF3 DEFB $4B,$45,$59,$20,$41,$54,$20,$16
- $8BFB DEFB $10,$14,$59,$4F,$55,$52,$20,$4C
- $8C03 DEFB $45,$49,$53,$55,$52,$45,$16,$0F
- $8C0B DEFB $0B,$10,$06,$11,$02,$13,$01,$12
- $8C13 DEFB $01,$46,$49,$52,$45,$11,$00,$13
- $8C1B DEFB $00,$12,$00,$10,$06,$20,$3A,$A8
- $8C23 DEFB $5B,$FE,$01,$C8,$11,$09,$8C,$01
- $8C2B DEFB $18,$00,$CD,$3C,$20,$C9,$2D,$FF
- $8C33 DEFB $00,$00,$00,$00,$00,$FF,$E0,$00
- $8C3B DEFB $0F,$FC,$00,$01,$FF,$C0,$00,$FF
- $8C43 DEFB $FF,$FF,$FE,$00,$00,$00,$0F,$FE
- $8C4B DEFB $00,$00,$00,$00,$00,$00,$07,$FF
- $8C53 DEFB $00,$00,$00,$00,$00,$FF,$E0,$00
- $8C5B DEFB $7F,$FF,$80,$01,$FF,$C0,$00,$FF
- $8C63 DEFB $FF,$FF,$FE,$00,$00,$00,$0F,$FE
- $8C6B DEFB $00,$00,$00,$00,$00,$00,$07,$FF
- $8C73 DEFB $00,$00,$00,$00,$00,$FF,$E0,$03
- $8C7B DEFB $FE,$1F,$F0,$01,$FF,$C0,$00,$FF
- $8C83 DEFB $E0,$00,$00,$00,$00,$00,$0F,$FE
- $8C8B DEFB $00,$00,$00,$00,$00,$00,$07,$FF
- $8C93 DEFB $00,$00,$00,$00,$00,$FF,$E0,$1F
- $8C9B DEFB $F0,$03,$FE,$01,$FF,$21,$00,$40
- $8CA3 DEFB $11,$01,$40,$01,$FF,$17,$36,$00
- $8CAB DEFB $ED,$B0,$21,$00,$58,$11,$01,$58
- $8CB3 DEFB $36,$07,$01,$FF,$02,$ED,$B0,$AF
- $8CBB DEFB $D3,$FE,$3E,$02,$CD,$01,$16,$11
- $8CC3 DEFB $E7,$8C,$01,$FD,$01,$CD,$3C,$20
- $8CCB DEFB $CD,$FC,$8E,$3A,$A8,$5B,$FE,$02
- $8CD3 DEFB $CA,$0C,$8F,$3E,$7F,$DB,$FE,$E6
- $8CDB DEFB $01,$C8,$3E,$EF,$DB,$FE,$E6,$01
- $8CE3 DEFB $C8,$C3,$D6,$8C,$11,$00,$16,$00
- $8CEB DEFB $00,$10,$06,$54,$48,$45,$20,$45
- $8CF3 DEFB $50,$49,$54,$41,$50,$48,$20,$49
- $8CFB DEFB $4E,$53,$43,$52,$49,$42,$45,$44
- $8D03 DEFB $20,$4F,$4E,$20,$50,$4F,$4F,$52
- $8D0B DEFB $16,$01,$13,$4A,$41,$53,$4F,$4E
- $8D13 DEFB $27,$53,$20,$54,$4F,$4D,$42,$2C
- $8D1B DEFB $10,$05,$44,$4F,$45,$53,$20,$4E
- $8D23 DEFB $4F,$54,$20,$53,$50,$45,$41,$4B
- $8D2B DEFB $20,$4F,$46,$20,$48,$49,$53,$20
- $8D33 DEFB $45,$56,$45,$4E,$54,$46,$55,$4C
- $8D3B DEFB $16,$03,$1A,$20,$4C,$49,$46,$45
- $8D43 DEFB $2C,$16,$04,$01,$10,$06,$42,$55
- $8D4B DEFB $54,$20,$4F,$46,$20,$48,$49,$53
- $8D53 DEFB $20,$43,$41,$52,$45,$4C,$45,$53
- $8D5B DEFB $53,$20,$44,$4F,$4F,$4D,$2E,$2E
- $8D63 DEFB $2E,$16,$07,$00,$10,$05,$27,$4F
- $8D6B DEFB $4E,$20,$45,$4D,$42,$41,$52,$4B
- $8D73 DEFB $49,$4E,$47,$20,$4F,$4E,$20,$48
- $8D7B DEFB $49,$53,$20,$4D,$49,$53,$53,$49
- $8D83 DEFB $4F,$4E,$20,$48,$45,$16,$08,$09
- $8D8B DEFB $57,$41,$53,$20,$47,$49,$56,$45
- $8D93 DEFB $4E,$20,$43,$48,$41,$4E,$43,$45
- $8D9B DEFB $53,$20,$46,$4F,$55,$52,$2C,$16
- $8DA3 DEFB $09,$00,$10,$06,$42,$55,$54,$20
- $8DAB DEFB $54,$48,$45,$20,$47,$45,$4D,$20
- $8DB3 DEFB $57,$41,$53,$20,$55,$4E,$44,$49
- $8DBB DEFB $53,$54,$55,$52,$42,$45,$44,$16
- $8DC3 DEFB $0A,$01,$28,$46,$4F,$52,$20,$48
- $8DCB DEFB $45,$20,$4E,$45,$45,$44,$45,$44
- $8DD3 DEFB $20,$53,$4F,$4D,$45,$57,$48,$41
- $8DDB DEFB $54,$20,$4D,$4F,$52,$45,$21,$29
- $8DE3 DEFB $27,$16,$0C,$00,$10,$05,$48,$4F
- $8DEB DEFB $57,$20,$53,$41,$44,$20,$41,$20
- $8DF3 DEFB $54,$41,$4C,$45,$20,$4F,$46,$20
- $8DFB DEFB $46,$41,$49,$4C,$55,$52,$45,$20
- $8E03 DEFB $46,$4F,$52,$20,$16,$0D,$0A,$4F
- $8E0B DEFB $4E,$45,$20,$53,$4F,$20,$43,$4C
- $8E13 DEFB $4F,$53,$45,$20,$54,$4F,$20,$47
- $8E1B DEFB $4C,$4F,$52,$59,$21,$16,$0E,$01
- $8E23 DEFB $10,$06,$42,$55,$54,$20,$59,$4F
- $8E2B DEFB $55,$20,$43,$4F,$55,$4C,$44,$20
- $8E33 DEFB $59,$45,$54,$20,$52,$45,$57,$52
- $8E3B DEFB $49,$54,$45,$20,$54,$48,$45,$16
- $8E43 DEFB $0F,$07,$20,$48,$49,$53,$54,$4F
- $8E4B DEFB $52,$59,$20,$4F,$46,$20,$54,$48
- $8E53 DEFB $49,$53,$20,$53,$54,$4F,$52,$59
- $8E5B DEFB $2E,$2E,$2E,$16,$11,$00,$10,$05
- $8E63 DEFB $53,$4F,$20,$50,$52,$45,$53,$53
- $8E6B DEFB $20,$54,$48,$45,$20,$13,$01,$10
- $8E73 DEFB $06,$11,$02,$12,$01,$53,$50,$41
- $8E7B DEFB $43,$45,$13,$00,$10,$05,$11,$00
- $8E83 DEFB $12,$00,$20,$4B,$45,$59,$20,$46
- $8E8B DEFB $4F,$52,$16,$12,$09,$4A,$41,$53
- $8E93 DEFB $4F,$4E,$27,$53,$20,$52,$45,$49
- $8E9B DEFB $4E,$43,$41,$52,$4E,$41,$54,$49
- $8EA3 DEFB $4F,$4E,$2C,$16,$13,$00,$10,$06
- $8EAB DEFB $41,$4E,$44,$20,$54,$48,$45,$4E
- $8EB3 DEFB $20,$59,$4F,$55,$20,$4D,$41,$59
- $8EBB DEFB $20,$42,$45,$47,$49,$4E,$20,$41
- $8EC3 DEFB $20,$42,$52,$41,$4E,$44,$16,$14
- $8ECB DEFB $07,$4E,$45,$57,$20,$4D,$49,$53
- $8ED3 DEFB $53,$49,$4F,$4E,$20,$45,$4D,$42
- $8EDB DEFB $41,$52,$4B,$41,$54,$49,$4F,$4E
- $8EE3 DEFB $2E,$13,$01,$10,$06,$11,$02,$12
- $8EEB DEFB $01,$16,$11,$0D,$46,$49,$52,$45
- $8EF3 DEFB $13,$00,$10,$05,$11,$00,$12,$00
- $8EFB DEFB $20,$3A,$A8,$5B,$FE,$01,$C8,$11
- $8F03 DEFB $E4,$8E,$01,$18,$00,$CD,$3C,$20
- $8F0B DEFB $C9,$DB,$1F,$E6,$10,$C0,$C3,$0C
- $8F13 DEFB $8F,$00,$00,$00,$00,$00,$00,$00
- $8F1B DEFB $CD,$3C,$20,$C9,$00,$C0,$00,$FF
- $8F23 DEFB $E0,$00,$00,$00,$00,$00,$0F,$21
- $8F2B DEFB $00,$40,$11,$01,$40,$36,$00,$01
- $8F33 DEFB $FF,$17,$ED,$B0,$21,$00,$58,$11
- $8F3B DEFB $01,$58,$01,$FF,$02,$36,$07,$ED
- $8F43 DEFB $B0,$AF,$D3,$FE,$3E,$02,$CD,$01
- $8F4B DEFB $16,$11,$71,$8F,$01,$BF,$00,$CD
- $8F53 DEFB $3C,$20,$CD,$48,$90,$3A,$A8,$5B
- $8F5B DEFB $FE,$02,$CA,$58,$90,$3E,$7F,$DB
- $8F63 DEFB $FE,$E6,$01,$C8,$3E,$EF,$DB,$FE
- $8F6B DEFB $E6,$01,$C8,$C3,$60,$8F,$11,$00
- $8F73 DEFB $16,$06,$00,$10,$05,$54,$48,$45
- $8F7B DEFB $20,$4D,$49,$53,$53,$49,$4F,$4E
- $8F83 DEFB $20,$48,$41,$53,$20,$4E,$4F,$57
- $8F8B DEFB $20,$42,$45,$45,$4E,$20,$16,$07
- $8F93 DEFB $13,$41,$43,$43,$4F,$4D,$50,$4C
- $8F9B DEFB $49,$53,$48,$45,$44,$2C,$16,$09
- $8FA3 DEFB $00,$10,$06,$57,$49,$54,$48,$20
- $8FAB DEFB $41,$20,$42,$4F,$4E,$55,$53,$20
- $8FB3 DEFB $4F,$46,$20,$33,$30,$30,$30,$20
- $8FBB DEFB $54,$4F,$20,$59,$4F,$55,$52,$16
- $8FC3 DEFB $0A,$1A,$53,$43,$4F,$52,$45,$2C
- $8FCB DEFB $16,$0C,$00,$10,$05,$42,$55,$54
- $8FD3 DEFB $20,$49,$20,$41,$4D,$20,$53,$55
- $8FDB DEFB $52,$45,$20,$59,$4F,$55,$52,$20
- $8FE3 DEFB $53,$43,$4F,$52,$45,$20,$43,$4F
- $8FEB DEFB $55,$4C,$44,$16,$0D,$16,$42,$45
- $8FF3 DEFB $20,$48,$49,$47,$48,$45,$52,$2C
- $8FFB DEFB $16,$0F,$00,$10,$06,$53,$4F,$20
- $9003 DEFB $50,$52,$45,$53,$53,$20,$54,$48
- $900B DEFB $45,$20,$10,$06,$11,$02,$12,$01
- $9013 DEFB $13,$01,$53,$50,$41,$43,$45,$10
- $901B DEFB $06,$11,$00,$12,$00,$13,$00,$20
- $9023 DEFB $4B,$45,$59,$20,$46,$4F,$52,$20
- $902B DEFB $4D,$4F,$52,$45,$21,$16,$0F,$0D
- $9033 DEFB $10,$06,$11,$02,$12,$01,$13,$01
- $903B DEFB $46,$49,$52,$45,$10,$06,$11,$00
- $9043 DEFB $12,$00,$13,$00,$20,$3A,$A8,$5B
- $904B DEFB $FE,$01,$C8,$11,$30,$90,$01,$18
- $9053 DEFB $00,$CD,$3C,$20,$C9,$DB,$1F,$E6
- $905B DEFB $10,$C0,$C3,$58,$90,$C0,$00,$FF
- $9063 DEFB $E0,$00,$00,$00,$00,$00,$0F,$FE
- $906B DEFB $00,$00,$00,$00,$00,$00,$07,$FF
- $9073 DEFB $00,$00,$00,$00,$00,$FF,$E0,$07
- $907B DEFB $F8,$07,$F8,$01,$FF,$C0,$00,$FF
- $9083 DEFB $E0,$00,$00,$00,$00,$21,$00,$40
- $908B DEFB $11,$01,$40,$01,$FF,$17,$36,$00
- $9093 DEFB $ED,$B0,$21,$00,$58,$11,$01,$58
- $909B DEFB $36,$07,$01,$FF,$02,$ED,$B0,$AF
- $90A3 DEFB $D3,$FE,$3E,$02,$CD,$01,$16,$11
- $90AB DEFB $D4,$90,$01,$FD,$01,$CD,$3C,$20
- $90B3 DEFB $CD,$E9,$92,$3A,$A8,$5B,$FE,$02
- $90BB DEFB $CA,$F9,$92,$3E,$7F,$DB,$FE,$E6
- $90C3 DEFB $01,$C8,$3E,$EF,$DB,$FE,$E6,$01
- $90CB DEFB $C8,$DB,$1F,$E6,$10,$C0,$C3,$BE
- $90D3 DEFB $90,$11,$00,$16,$00,$00,$10,$06
- $90DB DEFB $54,$48,$45,$20,$45,$50,$49,$54
- $90E3 DEFB $41,$50,$48,$20,$49,$4E,$53,$43
- $90EB DEFB $52,$49,$42,$45,$44,$20,$4F,$4E
- $90F3 DEFB $20,$50,$4F,$4F,$52,$16,$01,$13
- $90FB DEFB $4A,$41,$53,$4F,$4E,$27,$53,$20
- $9103 DEFB $54,$4F,$4D,$42,$2C,$10,$05,$44
- $910B DEFB $4F,$45,$53,$20,$4E,$4F,$54,$20
- $9113 DEFB $53,$50,$45,$41,$4B,$20,$4F,$46
- $911B DEFB $20,$48,$49,$53,$20,$45,$56,$45
- $9123 DEFB $4E,$54,$46,$55,$4C,$16,$03,$1A
- $912B DEFB $20,$4C,$49,$46,$45,$2C,$16,$04
- $9133 DEFB $01,$10,$06,$42,$55,$54,$20,$4F
- $913B DEFB $46,$20,$48,$49,$53,$20,$43,$41
- $9143 DEFB $52,$45,$4C,$45,$53,$53,$20,$44
- $914B DEFB $4F,$4F,$4D,$2E,$2E,$2E,$16,$07
- $9153 DEFB $00,$10,$05,$27,$4F,$4E,$20,$45
- $915B DEFB $4D,$42,$41,$52,$4B,$49,$4E,$47
- $9163 DEFB $20,$4F,$4E,$20,$48,$49,$53,$20
- $916B DEFB $4D,$49,$53,$53,$49,$4F,$4E,$20
- $9173 DEFB $48,$45,$16,$08,$09,$57,$41,$53
- $917B DEFB $20,$47,$49,$56,$45,$4E,$20,$43
- $9183 DEFB $48,$41,$4E,$43,$45,$53,$20,$46
- $918B DEFB $4F,$55,$52,$2C,$16,$09,$00,$10
- $9193 DEFB $06,$42,$55,$54,$20,$54,$48,$45
- $919B DEFB $20,$47,$45,$4D,$20,$57,$41,$53
- $91A3 DEFB $20,$55,$4E,$44,$49,$53,$54,$55
- $91AB DEFB $52,$42,$45,$44,$16,$0A,$01,$28
- $91B3 DEFB $46,$4F,$52,$20,$48,$45,$20,$4E
- $91BB DEFB $45,$45,$44,$45,$44,$20,$53,$4F
- $91C3 DEFB $4D,$45,$57,$48,$41,$54,$20,$4D
- $91CB DEFB $4F,$52,$45,$21,$29,$27,$16,$0C
- $91D3 DEFB $00,$10,$05,$48,$4F,$57,$20,$53
- $91DB DEFB $41,$44,$20,$41,$20,$54,$41,$4C
- $91E3 DEFB $45,$20,$4F,$46,$20,$46,$41,$49
- $91EB DEFB $4C,$55,$52,$45,$20,$46,$4F,$52
- $91F3 DEFB $20,$16,$0D,$0A,$4F,$4E,$45,$20
- $91FB DEFB $53,$4F,$20,$43,$4C,$4F,$53,$45
- $9203 DEFB $20,$54,$4F,$20,$47,$4C,$4F,$52
- $920B DEFB $59,$21,$16,$0E,$01,$10,$06,$42
- $9213 DEFB $55,$54,$20,$59,$4F,$55,$20,$43
- $921B DEFB $4F,$55,$4C,$44,$20,$59,$45,$54
- $9223 DEFB $20,$52,$45,$57,$52,$49,$54,$45
- $922B DEFB $20,$54,$48,$45,$16,$0F,$07,$20
- $9233 DEFB $48,$49,$53,$54,$4F,$52,$59,$20
- $923B DEFB $4F,$46,$20,$54,$48,$49,$53,$20
- $9243 DEFB $53,$54,$4F,$52,$59,$2E,$2E,$2E
- $924B DEFB $16,$11,$00,$10,$05,$53,$4F,$20
- $9253 DEFB $50,$52,$45,$53,$53,$20,$54,$48
- $925B DEFB $45,$20,$13,$01,$10,$06,$11,$02
- $9263 DEFB $12,$01,$53,$50,$41,$43,$45,$13
- $926B DEFB $00,$10,$05,$11,$00,$12,$00,$20
- $9273 DEFB $4B,$45,$59,$20,$46,$4F,$52,$16
- $927B DEFB $12,$09,$4A,$41,$53,$4F,$4E,$27
- $9283 DEFB $53,$20,$52,$45,$49,$4E,$43,$41
- $928B DEFB $52,$4E,$41,$54,$49,$4F,$4E,$2C
- $9293 DEFB $16,$13,$00,$10,$06,$41,$4E,$44
- $929B DEFB $20,$54,$48,$45,$4E,$20,$59,$4F
- $92A3 DEFB $55,$20,$4D,$41,$59,$20,$42,$45
- $92AB DEFB $47,$49,$4E,$20,$41,$20,$42,$52
- $92B3 DEFB $41,$4E,$44,$16,$14,$07,$4E,$45
- $92BB DEFB $57,$20,$4D,$49,$53,$53,$49,$4F
- $92C3 DEFB $4E,$20,$45,$4D,$42,$41,$52,$4B
- $92CB DEFB $41,$54,$49,$4F,$4E,$2E,$13,$01
- $92D3 DEFB $10,$06,$11,$02,$12,$01,$16,$11
- $92DB DEFB $0D,$46,$49,$52,$45,$13,$00,$10
- $92E3 DEFB $05,$11,$00,$12,$00,$20,$3A,$A8
- $92EB DEFB $5B,$FE,$01,$C8,$11,$D1,$92,$01
- $92F3 DEFB $18,$00,$CD,$3C,$20,$C9,$DB,$1F
- $92FB DEFB $E6,$10,$C0,$C3,$F9,$92,$29,$00
- $9303 DEFB $00,$00,$00,$00,$00,$00,$00,$00
- $930B DEFB $00,$00,$00,$00,$00,$00,$00,$00
- $9313 DEFB $00,$00,$00,$00,$00,$00,$00,$00
- $931B DEFB $00,$00,$00,$00,$00,$00,$00,$00
- $9323 DEFB $00,$00,$00,$00,$00,$00,$00,$00
- $932B DEFB $00,$00,$00,$00,$00,$00,$00,$00
- $9333 DEFB $00,$00,$00,$00,$00,$FF,$FF,$FF
- $933B DEFB $FF,$FF,$F0,$00,$00,$00,$FF,$FF
- $9343 DEFB $FF,$FF,$F8,$00,$00,$3F,$FE,$00
- $934B DEFB $00,$00,$01,$FF,$C0,$00,$FF,$FF
- $9353 DEFB $FF,$FF,$FF,$FF,$FF,$FF,$E0,$00
- $935B DEFB $00,$0F,$FF,$E0,$00,$7F,$FF,$00
- $9363 DEFB $00,$07,$FF,$F0,$00,$3F,$FF,$E0
- $936B DEFB $00,$00,$01,$FF,$C0,$00,$FF,$E0
- $9373 DEFB $00,$00,$00,$00,$00,$FF,$E0,$00
- $937B DEFB $00,$00,$FF,$E0,$00,$7F,$F0,$00
- $9383 DEFB $00,$00,$7F,$F0,$00,$3F,$FF,$FF
- $938B DEFB $00,$00,$01,$FF,$C0,$00,$FF,$E0
- $9393 DEFB $00,$00,$00,$00,$00,$FF,$E0,$00
- $939B DEFB $00,$00,$FF,$E0,$00,$7F,$F0,$00
- $93A3 DEFB $00,$00,$7F,$F0,$00,$3F,$F8,$FF
- $93AB DEFB $F8,$00,$01,$FF,$C0,$00,$FF,$E0
- $93B3 DEFB $00,$00,$00,$00,$00,$FF,$E0,$FF
- $93BB DEFB $80,$00,$7F,$C1,$FF,$C0,$00,$FF
- $93C3 DEFB $E0,$00,$00,$00,$00,$00,$0F,$FE
- $93CB DEFB $00,$00,$00,$00,$00,$00,$07,$FF
- $93D3 DEFB $00,$00,$00,$00,$00,$FF,$FF,$FE
- $93DB DEFB $00,$00,$1F,$FF,$FF,$C0,$00,$FF
- $93E3 DEFB $FF,$FF,$FF,$FF,$FC,$00,$0F,$FF
- $93EB DEFB $FF,$FF,$FF,$FF,$FE,$00,$07,$FF
- $93F3 DEFB $FF,$FF,$FF,$FF,$FF,$00,$00,$00
- $93FB DEFB $00,$00,$00,$00,$00,$00,$00,$00
- $9403 DEFB $00,$00,$00,$00,$00,$00,$00,$00
- $940B DEFB $00,$00,$00,$00,$00,$00,$00,$00
- $9413 DEFB $00,$00,$00,$00,$00,$00,$00,$00
- $941B DEFB $00,$00,$00,$00,$00,$00,$00,$00
- $9423 DEFB $00,$00,$00,$00,$00,$00,$00,$00
- $942B DEFB $00,$00,$00,$00,$00,$00,$00,$00
- $9433 DEFB $00,$00,$00,$00,$00,$FF,$FF,$FF
- $943B DEFB $FF,$FF,$F8,$00,$00,$01,$FF,$FF
- $9443 DEFB $FF,$FF,$FC,$00,$00,$3F,$FE,$00
- $944B DEFB $00,$00,$01,$FF,$C0,$00,$FF,$FF
- $9453 DEFB $FF,$FF,$FF,$FF,$FF,$FF,$E0,$00
- $945B DEFB $00,$07,$FF,$E0,$00,$7F,$FE,$00
- $9463 DEFB $00,$03,$FF,$F0,$00,$3F,$FF,$F0
- $946B DEFB $00,$00,$01,$FF,$C0
+ $8B0B DEFB $00,$00,$00,$00,$00
+
+; Stage 1: Success Print
+;
+; Used by the routine at #R$BC48.
+;
+; .
+;
+; Open the upper screen channel.
+@label=Stage1Print
+c$8B10 LD A,$02      ; #REGa=#N$02.
+ $8B12 CALL $1601    ; #HTML(Call <a
+                     ; href="https://skoolkit.ca/disassemblies/rom/hex/asm/1601.html">CHAN_OPEN</a>.)
+ $8B15 LD HL,$4000   ; {Writes #N$00 to all #N$1800 screen buffer address
+ $8B18 LD DE,$4001   ; locations (clears the screen).
+ $8B1B LD BC,$17FF   ;
+ $8B1E LD (HL),$00   ;
+ $8B20 LDIR          ; }
+ $8B22 LD HL,$5800   ; {Writes #N$07 to all #N$0300 attribute buffer address
+ $8B25 LD DE,$5801   ; locations.
+ $8B28 LD BC,$02FF   ;
+ $8B2B LD (HL),$07   ;
+ $8B2D LDIR          ; }
+ $8B2F LD A,$07      ; {#HTML(Write #N$07 to <a
+ $8B31 LD ($5C48),A  ; href="https://skoolkit.ca/disassemblies/rom/hex/asm/5C48.html">BORDCR</a>.)
+                     ; }
+ $8B34 XOR A         ;
+ $8B35 OUT ($FE),A   ;
+ $8B37 LD DE,$8B64   ; #REGde=#R$8B64 (text).
+ $8B3A LD BC,$00A5   ; #REGbc=#N$00A5 (counter).
+ $8B3D CALL $203C    ; #HTML(Call <a
+                     ; href="https://skoolkit.ca/disassemblies/rom/hex/asm/1FFC.html#203C">PR_STRING</a>.)
+ $8B40 CALL $8C21    ; Call #R$8C21.
+ $8B43 LD A,($5BA8)  ; {Jump to #R$8B5C if #R$5BA8 is #N$02 (Kempston
+ $8B46 CP $02        ; Joystick).
+ $8B48 JP Z,$8B5C    ; }
+; Loops until "fire" is pressed from either the keyboard or Interface 2
+; joystick.
+@label=Stage1Print_Keyboard
+*$8B4B LD A,$7F      ; {Read from the keyboard;
+ $8B4D IN A,($FE)    ; #TABLE(default,centre,centre,centre,centre,centre,centre)
+                     ; { =h,r2 Port Number | =h,c5 Bit }
+                     ; { =h 0 | =h 1 | =h 2 | =h 3 | =h 4 }
+                     ; { #N$7F | SPACE | FULL-STOP | M | N | B }
+                     ; TABLE#}
+ $8B4F AND %00000001 ; Keep only bit 0.
+ $8B51 RET Z         ; Return if "SPACE" has been pressed.
+ $8B52 LD A,$EF      ; {Read from the keyboard;
+ $8B54 IN A,($FE)    ; #TABLE(default,centre,centre,centre,centre,centre,centre)
+                     ; { =h,r2 Port Number | =h,c5 Bit }
+                     ; { =h 0 | =h 1 | =h 2 | =h 3 | =h 4 }
+                     ; { #N$EF | 0 | 9 | 8 | 7 | 6 }
+                     ; TABLE#}
+ $8B56 AND %00000001 ; Keep only bit 0.
+ $8B58 RET Z         ; Return if "0" has been pressed.
+ $8B59 JP $8B4B      ; Jump to #R$8B4B.
+; Loops until "fire" is pressed from the Kempston joystick.
+@label=Stage1Print_Joystick
+*$8B5C IN A,($1F)    ; Read Kempston Joystick input.
+ $8B5E AND %00010000 ; Keep only bit 4.
+ $8B60 JP Z,$8B5C    ; Jump back to #R$8B5C until fire button is pressed.
+ $8B63 RET           ; Return.
+
+; Stage 1: Success Copy
+;
+; .
+;
+; .
+;
+; Handles printing the "#STR$8B69,$00,$1A" text.
+@label=Stage1Copy
+b$8B64 DEFB $16,$08,$00                     ; PRINT AT (#PEEK(#PC + $01),
+                                            ; #PEEK(#PC + $02)).
+ $8B67 DEFB $10,$05                         ; INK #PEEK(#PC + $01).
+ $8B69 DEFM "THE CARGO BEARS A MESSAGE,"    ; "#FONT:(THE CARGO BEARS A
+                                            ; MESSAGE,)$FBF4,attr=$05(stage1copy1)".
+; Handles printing the "#STR$8B88,$00,$1D" text.
+ $8B83 DEFB $16,$0A,$01                     ; PRINT AT (#PEEK(#PC + $01),
+                                            ; #PEEK(#PC + $02)).
+ $8B86 DEFB $10,$06                         ; INK #PEEK(#PC + $01).
+ $8B88 DEFM "A TALE OF LONG LOST TREASURE," ; "#FONT:(A TALE OF LONG LOST
+                                            ; TREASURE,)$FBF4,attr=$06(stage1copy2)".
+; Handles printing the "#STR$8BAA,$00,$1C" text.
+ $8BA5 DEFB $16,$0C,$00                     ; PRINT AT (#PEEK(#PC + $01),
+                                            ; #PEEK(#PC + $02)).
+ $8BA8 DEFB $10,$05                         ; INK #PEEK(#PC + $01).
+ $8BAA DEFM "TO START YOUR GALLANT SEARCH"  ; "#STR$8BAA,$00,$1C".
+; Handles printing the "#STR$8BC9,$00,$07" text.
+ $8BC6 DEFB $16,$0D,$19                     ; PRINT AT (#PEEK(#PC + $01),
+                                            ; #PEEK(#PC + $02)).
+ $8BC9 DEFM "FOR IT,"                       ; "#STR$8BC9,$00,$07".
+; Handles printing the "#STR$8BD5,$00,$0A" text.
+ $8BD0 DEFB $16,$0F,$01                     ; PRINT AT (#PEEK(#PC + $01),
+                                            ; #PEEK(#PC + $02)).
+ $8BD3 DEFB $10,$06                         ; INK #PEEK(#PC + $01).
+ $8BD5 DEFM "PRESS THE "                    ; "#STR$8BD5,$00,$0A".
+; Handles printing the "#STR$8BE7,$00,$05" text.
+ $8BDF DEFB $10,$06                         ; INK #PEEK(#PC + $01).
+ $8BE1 DEFB $11,$02                         ; PAPER #PEEK(#PC + $01).
+ $8BE3 DEFB $13,$01                         ; BRIGHT "#MAP(#PEEK(#PC +
+                                            ; $01))(?,0:OFF,1:ON)".
+ $8BE5 DEFB $12,$01                         ; FLASH "#MAP(#PEEK(#PC +
+                                            ; $01))(?,0:OFF,1:ON)".
+ $8BE7 DEFM "SPACE"                         ; "#STR$8BE7,$00,$05".
+; Handles printing the "#STR$8BF2,$00,$08" text.
+ $8BEC DEFB $11,$00                         ; PAPER #PEEK(#PC + $01).
+ $8BEE DEFB $13,$00                         ; BRIGHT "#MAP(#PEEK(#PC +
+                                            ; $01))(?,0:OFF,1:ON)".
+ $8BF0 DEFB $12,$00                         ; FLASH "#MAP(#PEEK(#PC +
+                                            ; $01))(?,0:OFF,1:ON)".
+ $8BF2 DEFM " KEY AT "                      ; "#STR$8BF2,$00,$08".
+; Handles printing the "#STR$8BFD,$00,$0C" text.
+ $8BFA DEFB $16,$10,$14                     ; PRINT AT (#PEEK(#PC + $01),
+                                            ; #PEEK(#PC + $02)).
+ $8BFD DEFM "YOUR LEISURE"                  ; "#STR$8BFD,$00,$0C".
+; Handles printing the "#STR$8C14,$00,$04" text.
+ $8C09 DEFB $16,$0F,$0B                     ; PRINT AT (#PEEK(#PC + $01),
+                                            ; #PEEK(#PC + $02)).
+ $8C0C DEFB $10,$06                         ; INK #PEEK(#PC + $01).
+ $8C0E DEFB $11,$02                         ; PAPER #PEEK(#PC + $01).
+ $8C10 DEFB $13,$01                         ; BRIGHT "#MAP(#PEEK(#PC +
+                                            ; $01))(?,0:OFF,1:ON)".
+ $8C12 DEFB $12,$01                         ; FLASH "#MAP(#PEEK(#PC +
+                                            ; $01))(?,0:OFF,1:ON)".
+ $8C14 DEFM "FIRE"                          ; "#STR$8C14,$00,$04".
+; Handles printing the "#STR$8C20,$04,$01" text.
+ $8C18 DEFB $11,$00                         ; PAPER #PEEK(#PC + $01).
+ $8C1A DEFB $13,$00                         ; BRIGHT "#MAP(#PEEK(#PC +
+                                            ; $01))(?,0:OFF,1:ON)".
+ $8C1C DEFB $12,$00                         ; FLASH "#MAP(#PEEK(#PC +
+                                            ; $01))(?,0:OFF,1:ON)".
+ $8C1E DEFB $10,$06                         ; INK #PEEK(#PC + $01).
+ $8C20 DEFB $20                             ; "#STR$8C20,$04,$01".
+
+; Routine at 8C21
+;
+; Used by the routine at #R$8B10.
+@label=Stage1Copy_Joystick
+c$8C21 LD A,($5BA8)  ; {Return if #R$5BA8 is #N$01 (keyboard).
+ $8C24 CP $01        ;
+ $8C26 RET Z         ; }
+ $8C27 LD DE,$8C09   ; #REGde=#R$8C09 (text).
+ $8C2A LD BC,$0018   ; #REGbc=#N$0018 (counter).
+ $8C2D CALL $203C    ; #HTML(Call <a
+                     ; href="https://skoolkit.ca/disassemblies/rom/hex/asm/1FFC.html#203C">PR_STRING</a>.)
+ $8C30 RET           ; Return.
+
+; Data block at 8C31
+b$8C31 DEFB $2D,$FF,$00,$00,$00,$00,$00,$FF
+ $8C39 DEFB $E0,$00,$0F,$FC,$00,$01,$FF,$C0
+ $8C41 DEFB $00,$FF,$FF,$FF,$FE,$00,$00,$00
+ $8C49 DEFB $0F,$FE,$00,$00,$00,$00,$00,$00
+ $8C51 DEFB $07,$FF,$00,$00,$00,$00,$00,$FF
+ $8C59 DEFB $E0,$00,$7F,$FF,$80,$01,$FF,$C0
+ $8C61 DEFB $00,$FF,$FF,$FF,$FE,$00,$00,$00
+ $8C69 DEFB $0F,$FE,$00,$00,$00,$00,$00,$00
+ $8C71 DEFB $07,$FF,$00,$00,$00,$00,$00,$FF
+ $8C79 DEFB $E0,$03,$FE,$1F,$F0,$01,$FF,$C0
+ $8C81 DEFB $00,$FF,$E0,$00,$00,$00,$00,$00
+ $8C89 DEFB $0F,$FE,$00,$00,$00,$00,$00,$00
+ $8C91 DEFB $07,$FF,$00,$00,$00,$00,$00,$FF
+ $8C99 DEFB $E0,$1F,$F0,$03,$FE,$01,$FF
+
+; Game Over Print
+;
+; Used by the routine at #R$97AC.
+@label=GameOverPrint
+c$8CA0 LD HL,$4000                            ;
+ $8CA3 LD DE,$4001                            ;
+ $8CA6 LD BC,$17FF                            ;
+ $8CA9 LD (HL),$00                            ;
+ $8CAB LDIR                                   ;
+ $8CAD LD HL,$5800                            ;
+ $8CB0 LD DE,$5801                            ;
+ $8CB3 LD (HL),$07                            ;
+ $8CB5 LD BC,$02FF                            ;
+ $8CB8 LDIR                                   ;
+ $8CBA XOR A                                  ;
+ $8CBB OUT ($FE),A                            ;
+; Open the upper screen channel.
+ $8CBD LD A,$02                               ; #REGa=#N$02.
+ $8CBF CALL $1601                             ; #HTML(Call <a
+                                              ; href="https://skoolkit.ca/disassemblies/rom/hex/asm/1601.html">CHAN_OPEN</a>.)
+ $8CC2 LD DE,$8CE7                            ; #REGde=#R$8CE7 (text).
+ $8CC5 LD BC,$01FD                            ; #REGbc=#N$01FD (counter).
+ $8CC8 CALL $203C                             ; #HTML(Call <a
+                                              ; href="https://skoolkit.ca/disassemblies/rom/hex/asm/1FFC.html#203C">PR_STRING</a>.)
+ $8CCB CALL $8EFC                             ; Call #R$8EFC.
+ $8CCE LD A,($5BA8)                           ; {If #R$5BA8 is #N$02 then jump
+ $8CD1 CP $02                                 ; to #R$8F0C.
+ $8CD3 JP Z,$8F0C                             ; }
+@label=GameOverPrint_Loop
+*$8CD6 LD A,$7F                               ; {Read from the keyboard;
+ $8CD8 IN A,($FE)                             ; #TABLE(default,centre,centre,centre,centre,centre,centre)
+                                              ; { =h,r2 Port Number | =h,c5 Bit }
+                                              ; { =h 0 | =h 1 | =h 2 | =h 3 | =h 4 }
+                                              ; { #N$7F | SPACE | FULL-STOP | M | N | B }
+                                              ; TABLE#}
+ $8CDA AND %00000001                          ; Keep only bit 0.
+ $8CDC RET Z                                  ; Return if "SPACE" has been
+                                              ; pressed.
+ $8CDD LD A,$EF                               ; {Read from the keyboard;
+ $8CDF IN A,($FE)                             ; #TABLE(default,centre,centre,centre,centre,centre,centre)
+                                              ; { =h,r2 Port Number | =h,c5 Bit }
+                                              ; { =h 0 | =h 1 | =h 2 | =h 3 | =h 4 }
+                                              ; { #N$EF | 0 | 9 | 8 | 7 | 6 }
+                                              ; TABLE#}
+ $8CE1 AND %00000001                          ; Keep only bit 0.
+ $8CE3 RET Z                                  ; Return if "0" has been pressed.
+ $8CE4 JP $8CD6                               ; Jump to #R$8CD6.
+; Handles printing the "#STR$8CEE,$00,$1D" text.
+@label=GameOver_Copy
+ $8CE7 DEFB $11,$00                           ; PAPER #PEEK(#PC + $01).
+ $8CE9 DEFB $16,$00,$00                       ; PRINT AT (#PEEK(#PC + $01),
+                                              ; #PEEK(#PC + $02)).
+ $8CEC DEFB $10,$06                           ; INK #PEEK(#PC + $01).
+ $8CEE DEFM "THE EPITAPH INSCRIBED ON POOR"   ; "#FONT:(THE EPITAPH INSCRIBED
+                                              ; ON
+                                              ; POOR)$FBF4,attr=$06(gameover-1)".
+; Handles printing the "#STR$8D0E,$00,$0D" text.
+ $8D0B DEFB $16,$01,$13                       ; PRINT AT (#PEEK(#PC + $01),
+                                              ; #PEEK(#PC + $02)).
+ $8D0E DEFM "JASON'S TOMB,"                   ; "#FONT:(JASON'S
+                                              ; TOMB,)$FBF4,attr=$06(gameover-2)".
+; Handles printing the "#STR$8D1D,$00,$1E" text.
+ $8D1B DEFB $10,$05                           ; INK #PEEK(#PC + $01).
+ $8D1D DEFM "DOES NOT SPEAK OF HIS EVENTFUL"  ; "#FONT:(DOES NOT SPEAK OF HIS
+                                              ; EVENTFUL)$FBF4,attr=$05(gameover-3)".
+; Handles printing the "#STR$8D3E,$00,$06" text.
+ $8D3B DEFB $16,$03,$1A                       ; PRINT AT (#PEEK(#PC + $01),
+                                              ; #PEEK(#PC + $02)).
+ $8D3E DEFM " LIFE,"                          ; "#FONT:(
+                                              ; LIFE,)$FBF4,attr=$05(gameover-4)".
+; Handles printing the "#STR$8D49,$00,$1B" text.
+ $8D44 DEFB $16,$04,$01                       ; PRINT AT (#PEEK(#PC + $01),
+                                              ; #PEEK(#PC + $02)).
+ $8D47 DEFB $10,$06                           ; INK #PEEK(#PC + $01).
+ $8D49 DEFM "BUT OF HIS CARELESS DOOM..."     ; "#FONT:(BUT OF HIS CARELESS
+                                              ; DOOM...)$FBF4,attr=$06(gameover-5)".
+; Handles printing the "#STR$8D69,$00,$1F" text.
+ $8D64 DEFB $16,$07,$00                       ; PRINT AT (#PEEK(#PC + $01),
+                                              ; #PEEK(#PC + $02)).
+ $8D67 DEFB $10,$05                           ; INK #PEEK(#PC + $01).
+ $8D69 DEFM "'ON EMBARKING ON HIS MISSION HE" ; "#STR$8D69,$00,$1F".
+; Handles printing the "#STR$8D8B,$00,$17" text.
+ $8D88 DEFB $16,$08,$09                       ; PRINT AT (#PEEK(#PC + $01),
+                                              ; #PEEK(#PC + $02)).
+ $8D8B DEFM "WAS GIVEN CHANCES FOUR,"         ; "#STR$8D8B,$00,$17".
+; Handles printing the "#STR$8DA7,$00,$1B" text.
+ $8DA2 DEFB $16,$09,$00                       ; PRINT AT (#PEEK(#PC + $01),
+                                              ; #PEEK(#PC + $02)).
+ $8DA5 DEFB $10,$06                           ; INK #PEEK(#PC + $01).
+ $8DA7 DEFM "BUT THE GEM WAS UNDISTURBED"     ; "#STR$8DA7,$00,$1B".
+; Handles printing the "#STR$8DC5,$00,$1F" text.
+ $8DC2 DEFB $16,$0A,$01                       ; PRINT AT (#PEEK(#PC + $01),
+                                              ; #PEEK(#PC + $02)).
+ $8DC5 DEFM "(FOR HE NEEDED SOMEWHAT MORE!)'" ; "#STR$8DC5,$00,$1F".
+; Handles printing the "#STR$8DE9,$00,$1E" text.
+ $8DE4 DEFB $16,$0C,$00                       ; PRINT AT (#PEEK(#PC + $01),
+                                              ; #PEEK(#PC + $02)).
+ $8DE7 DEFB $10,$05                           ; INK #PEEK(#PC + $01).
+ $8DE9 DEFM "HOW SAD A TALE OF FAILURE FOR "  ; "#STR$8DE9,$00,$1E".
+; Handles printing the "#STR$8E0A,$00,$16" text.
+ $8E07 DEFB $16,$0D,$0A                       ; PRINT AT (#PEEK(#PC + $01),
+                                              ; #PEEK(#PC + $02)).
+ $8E0A DEFM "ONE SO CLOSE TO GLORY!"          ; "#STR$8E0A,$00,$16".
+; Handles printing the "#STR$8E25,$00,$1D" text.
+ $8E20 DEFB $16,$0E,$01                       ; PRINT AT (#PEEK(#PC + $01),
+                                              ; #PEEK(#PC + $02)).
+ $8E23 DEFB $10,$06                           ; INK #PEEK(#PC + $01).
+ $8E25 DEFM "BUT YOU COULD YET REWRITE THE"   ; "#STR$8E25,$00,$1D".
+; Handles printing the "#STR$8E45,$00,$19" text.
+ $8E42 DEFB $16,$0F,$07                       ; PRINT AT (#PEEK(#PC + $01),
+                                              ; #PEEK(#PC + $02)).
+ $8E45 DEFM " HISTORY OF THIS STORY..."       ; "#STR$8E45,$00,$19".
+; Handles printing the "#STR$8E63,$00,$0D" text.
+ $8E5E DEFB $16,$11,$00                       ; PRINT AT (#PEEK(#PC + $01),
+                                              ; #PEEK(#PC + $02)).
+ $8E61 DEFB $10,$05                           ; INK #PEEK(#PC + $01).
+ $8E63 DEFM "SO PRESS THE "                   ; "#STR$8E63,$00,$0D".
+; Handles printing the "#STR$8E78,$00,$05" text.
+ $8E70 DEFB $13,$01                           ; BRIGHT "#MAP(#PEEK(#PC +
+                                              ; $01))(?,0:OFF,1:ON)".
+ $8E72 DEFB $10,$06                           ; INK #PEEK(#PC + $01).
+ $8E74 DEFB $11,$02                           ; PAPER #PEEK(#PC + $01).
+ $8E76 DEFB $12,$01                           ; FLASH "#MAP(#PEEK(#PC +
+                                              ; $01))(?,0:OFF,1:ON)".
+ $8E78 DEFM "SPACE"                           ; "#STR$8E78,$00,$05".
+; Handles printing the "#STR$8E85,$00,$08" text.
+ $8E7D DEFB $13,$00                           ; BRIGHT "#MAP(#PEEK(#PC +
+                                              ; $01))(?,0:OFF,1:ON)".
+ $8E7F DEFB $10,$05                           ; INK #PEEK(#PC + $01).
+ $8E81 DEFB $11,$00                           ; PAPER #PEEK(#PC + $01).
+ $8E83 DEFB $12,$00                           ; FLASH "#MAP(#PEEK(#PC +
+                                              ; $01))(?,0:OFF,1:ON)".
+ $8E85 DEFM " KEY FOR"                        ; "#STR$8E85,$00,$08".
+; Handles printing the "#STR$8E90,$00,$16" text.
+ $8E8D DEFB $16,$12,$09                       ; PRINT AT (#PEEK(#PC + $01),
+                                              ; #PEEK(#PC + $02)).
+ $8E90 DEFM "JASON'S REINCARNATION,"          ; "#STR$8E90,$00,$16".
+; Handles printing the "#STR$8EAB,$00,$1E" text.
+ $8EA6 DEFB $16,$13,$00                       ; PRINT AT (#PEEK(#PC + $01),
+                                              ; #PEEK(#PC + $02)).
+ $8EA9 DEFB $10,$06                           ; INK #PEEK(#PC + $01).
+ $8EAB DEFM "AND THEN YOU MAY BEGIN A BRAND"  ; "#STR$8EAB,$00,$1E".
+; Handles printing the "#STR$8ECC,$00,$18" text.
+ $8EC9 DEFB $16,$14,$07                       ; PRINT AT (#PEEK(#PC + $01),
+                                              ; #PEEK(#PC + $02)).
+ $8ECC DEFM "NEW MISSION EMBARKATION."        ; "#STR$8ECC,$00,$18".
+; Handles printing the "#STR$8EEF,$00,$04" text.
+ $8EE4 DEFB $13,$01                           ; BRIGHT "#MAP(#PEEK(#PC +
+                                              ; $01))(?,0:OFF,1:ON)".
+ $8EE6 DEFB $10,$06                           ; INK #PEEK(#PC + $01).
+ $8EE8 DEFB $11,$02                           ; PAPER #PEEK(#PC + $01).
+ $8EEA DEFB $12,$01                           ; FLASH "#MAP(#PEEK(#PC +
+                                              ; $01))(?,0:OFF,1:ON)".
+ $8EEC DEFB $16,$11,$0D                       ; PRINT AT (#PEEK(#PC + $01),
+                                              ; #PEEK(#PC + $02)).
+ $8EEF DEFM "FIRE"                            ; "#STR$8EEF,$00,$04".
+; Handles printing the "#STR$8EFB,$04,$01" text.
+ $8EF3 DEFB $13,$00                           ; BRIGHT "#MAP(#PEEK(#PC +
+                                              ; $01))(?,0:OFF,1:ON)".
+ $8EF5 DEFB $10,$05                           ; INK #PEEK(#PC + $01).
+ $8EF7 DEFB $11,$00                           ; PAPER #PEEK(#PC + $01).
+ $8EF9 DEFB $12,$00                           ; FLASH "#MAP(#PEEK(#PC +
+                                              ; $01))(?,0:OFF,1:ON)".
+ $8EFB DEFM " "                               ; "#STR$8EFB,$04,$01".
+@label=GameOver_Keyboard
+*$8EFC LD A,($5BA8)                           ; {Return if #R$5BA8 is #N$01
+ $8EFF CP $01                                 ; (keyboard).
+ $8F01 RET Z                                  ; }
+ $8F02 LD DE,$8EE4                            ; #REGde=#R$8CE7 (text).
+ $8F05 LD BC,$0018                            ; #REGbc=#N$0018 (counter).
+ $8F08 CALL $203C                             ; #HTML(Call <a
+                                              ; href="https://skoolkit.ca/disassemblies/rom/hex/asm/1FFC.html#203C">PR_STRING</a>.)
+ $8F0B RET                                    ; Return.
+; Loops until "fire" is pressed from the Kempston joystick.
+@label=GameOver_Joystick
+*$8F0C IN A,($1F)                             ; Read Kempston Joystick input.
+ $8F0E AND %00010000                          ; Keep only bit 4.
+ $8F10 RET NZ                                 ; Only return when fire button is
+                                              ; pressed.
+ $8F11 JP $8F0C                               ; Jump to #R$8F0C.
+
+; Data block at 8F14
+b$8F14 DEFB $00,$00,$00,$00,$00,$00,$00,$CD
+ $8F1C DEFB $3C,$20,$C9,$00,$C0,$00,$FF,$E0
+ $8F24 DEFB $00,$00,$00,$00,$00,$0F
+
+; Routine at 8F2A
+;
+; Used by the routine at #R$97AC.
+@label=Congrats_Print
+c$8F2A LD HL,$4000                           ;
+ $8F2D LD DE,$4001                           ;
+ $8F30 LD (HL),$00                           ;
+ $8F32 LD BC,$17FF                           ;
+ $8F35 LDIR                                  ;
+ $8F37 LD HL,$5800                           ;
+ $8F3A LD DE,$5801                           ;
+ $8F3D LD BC,$02FF                           ;
+ $8F40 LD (HL),$07                           ;
+ $8F42 LDIR                                  ;
+ $8F44 XOR A                                 ;
+ $8F45 OUT ($FE),A                           ;
+; Open the upper screen channel.
+ $8F47 LD A,$02                              ; #REGa=#N$02.
+ $8F49 CALL $1601                            ; #HTML(Call <a
+                                             ; href="https://skoolkit.ca/disassemblies/rom/hex/asm/1601.html">CHAN_OPEN</a>.)
+ $8F4C LD DE,$8F71                           ; #REGde=#R$8F71 (text).
+ $8F4F LD BC,$00BF                           ; #REGbc=#N$00BF (counter).
+ $8F52 CALL $203C                            ; #HTML(Call <a
+                                             ; href="https://skoolkit.ca/disassemblies/rom/hex/asm/1FFC.html#203C">PR_STRING</a>.)
+ $8F55 CALL $9048                            ; Call #R$9048.
+ $8F58 LD A,($5BA8)                          ;
+ $8F5B CP $02                                ;
+ $8F5D JP Z,$9058                            ;
+@label=Congrats_Keyboard_Loop
+*$8F60 LD A,$7F                              ;
+ $8F62 IN A,($FE)                            ;
+ $8F64 AND $01                               ;
+ $8F66 RET Z                                 ;
+ $8F67 LD A,$EF                              ;
+ $8F69 IN A,($FE)                            ;
+ $8F6B AND $01                               ;
+ $8F6D RET Z                                 ;
+ $8F6E JP $8F60                              ;
+ $8F71 DEFB $11,$00                          ; PAPER #PEEK(#PC + $01).
+ $8F73 DEFB $16,$06,$00                      ; PRINT AT (#PEEK(#PC + $01),
+                                             ; #PEEK(#PC + $02)).
+ $8F76 DEFB $10,$05                          ; INK #PEEK(#PC + $01).
+ $8F78 DEFM "THE MISSION HAS NOW BEEN "      ; "#FONT:(THE MISSION HAS NOW BEEN
+                                             ; )$FBF4,attr=$05(congratscopy-1)".
+ $8F91 DEFB $16,$07,$13                      ; PRINT AT (#PEEK(#PC + $01),
+                                             ; #PEEK(#PC + $02)).
+ $8F94 DEFM "ACCOMPLISHED,"                  ; "#FONT:(ACCOMPLISHED,)$FBF4,attr=$05(congratscopy-2)".
+ $8FA1 DEFB $16,$09,$00                      ; PRINT AT (#PEEK(#PC + $01),
+                                             ; #PEEK(#PC + $02)).
+ $8FA4 DEFB $10,$06                          ; INK #PEEK(#PC + $01).
+ $8FA6 DEFM "WITH A BONUS OF 3000 TO YOUR"   ;
+ $8FC2 DEFB $16,$0A,$1A                      ; PRINT AT (#PEEK(#PC + $01),
+                                             ; #PEEK(#PC + $02)).
+ $8FC5 DEFM "SCORE,"                         ;
+ $8FCB DEFB $16,$0C,$00                      ; PRINT AT (#PEEK(#PC + $01),
+                                             ; #PEEK(#PC + $02)).
+ $8FCE DEFB $10,$05                          ; INK #PEEK(#PC + $01).
+ $8FD0 DEFM "BUT I AM SURE YOUR SCORE COULD" ;
+ $8FEE DEFB $16,$0D,$16                      ; PRINT AT (#PEEK(#PC + $01),
+                                             ; #PEEK(#PC + $02)).
+ $8FF1 DEFM "BE HIGHER,"                     ;
+ $8FFB DEFB $16,$0F,$00                      ; PRINT AT (#PEEK(#PC + $01),
+                                             ; #PEEK(#PC + $02)).
+ $8FFE DEFB $10,$06                          ; INK #PEEK(#PC + $01).
+ $9000 DEFM "SO PRESS THE "                  ;
+ $900D DEFB $10,$06                          ; INK #PEEK(#PC + $01).
+ $900F DEFB $11,$02                          ; PAPER #PEEK(#PC + $01).
+ $9011 DEFB $12,$01                          ; FLASH "#MAP(#PEEK(#PC +
+                                             ; $01))(?,0:OFF,1:ON)".
+ $9013 DEFB $13,$01                          ; BRIGHT "#MAP(#PEEK(#PC +
+                                             ; $01))(?,0:OFF,1:ON)".
+ $9015 DEFM "SPACE"                          ;
+ $901A DEFB $10,$06                          ; INK #PEEK(#PC + $01).
+ $901C DEFB $11,$00                          ; PAPER #PEEK(#PC + $01).
+ $901E DEFB $12,$00                          ; FLASH "#MAP(#PEEK(#PC +
+                                             ; $01))(?,0:OFF,1:ON)".
+ $9020 DEFB $13,$00                          ; BRIGHT "#MAP(#PEEK(#PC +
+                                             ; $01))(?,0:OFF,1:ON)".
+ $9022 DEFM " KEY FOR MORE!"                 ;
+ $9030 DEFB $16,$0F,$0D                      ; PRINT AT (#PEEK(#PC + $01),
+                                             ; #PEEK(#PC + $02)).
+ $9033 DEFB $10,$06                          ; INK #PEEK(#PC + $01).
+ $9035 DEFB $11,$02                          ; PAPER #PEEK(#PC + $01).
+ $9037 DEFB $12,$01                          ; FLASH "#MAP(#PEEK(#PC +
+                                             ; $01))(?,0:OFF,1:ON)".
+ $9039 DEFB $13,$01                          ; BRIGHT "#MAP(#PEEK(#PC +
+                                             ; $01))(?,0:OFF,1:ON)".
+ $903B DEFM "FIRE"                           ;
+ $903F DEFB $10,$06                          ; INK #PEEK(#PC + $01).
+ $9041 DEFB $11,$00                          ; PAPER #PEEK(#PC + $01).
+ $9043 DEFB $12,$00                          ; FLASH "#MAP(#PEEK(#PC +
+                                             ; $01))(?,0:OFF,1:ON)".
+ $9045 DEFB $13,$00                          ; BRIGHT "#MAP(#PEEK(#PC +
+                                             ; $01))(?,0:OFF,1:ON)".
+ $9047 DEFM " "                              ;
+@label=Congrats_Keyboard
+*$9048 LD A,($5BA8)                          ; {Return if #R$5BA8 is #N$01
+ $904B CP $01                                ; (keyboard).
+ $904D RET Z                                 ; }
+ $904E LD DE,$9030                           ; #REGde=#R$9030 (text).
+ $9051 LD BC,$0018                           ; #REGbc=#N$0018 (counter).
+ $9054 CALL $203C                            ; #HTML(Call <a
+                                             ; href="https://skoolkit.ca/disassemblies/rom/hex/asm/1FFC.html#203C">PR_STRING</a>.)
+ $9057 RET                                   ; Return.
+; Loops until "fire" is pressed from the Kempston joystick.
+@label=Congrats_Joystick
+*$9058 IN A,($1F)                            ; Read Kempston Joystick input.
+ $905A AND %00010000                         ; Keep only bit 4.
+ $905C RET NZ                                ; Only return when fire button is
+                                             ; pressed.
+ $905D JP $9058                              ; Jump to #R$9058.
+
+; Data block at 9060
+b$9060 DEFB $C0,$00,$FF,$E0,$00,$00,$00,$00
+ $9068 DEFB $00,$0F,$FE,$00,$00,$00,$00,$00
+ $9070 DEFB $00,$07,$FF,$00,$00,$00,$00,$00
+ $9078 DEFB $FF,$E0,$07,$F8,$07,$F8,$01,$FF
+ $9080 DEFB $C0,$00,$FF,$E0,$00,$00,$00,$00
+
+; Routine at 9088
+c$9088 LD HL,$4000                          ;
+ $908B LD DE,$4001                          ;
+ $908E LD BC,$17FF                          ;
+ $9091 LD (HL),$00                          ;
+ $9093 LDIR                                 ;
+ $9095 LD HL,$5800                          ;
+ $9098 LD DE,$5801                          ;
+ $909B LD (HL),$07                          ;
+ $909D LD BC,$02FF                          ;
+ $90A0 LDIR                                 ;
+ $90A2 XOR A                                ;
+ $90A3 OUT ($FE),A                          ;
+; Open the upper screen channel.
+ $90A5 LD A,$02                             ; #REGa=#N$02.
+ $90A7 CALL $1601                           ; #HTML(Call <a
+                                            ; href="https://skoolkit.ca/disassemblies/rom/hex/asm/1601.html">CHAN_OPEN</a>.)
+ $90AA LD DE,$90D4                          ; #REGde=#R$90D4 (text).
+ $90AD LD BC,$01FD                          ; #REGbc=#N$01FD (counter).
+ $90B0 CALL $203C                           ; #HTML(Call <a
+                                            ; href="https://skoolkit.ca/disassemblies/rom/hex/asm/1FFC.html#203C">PR_STRING</a>.)
+ $90B3 CALL $92E9                           ; Call #R$92E9.
+ $90B6 LD A,($5BA8)                         ;
+ $90B9 CP $02                               ;
+ $90BB JP Z,$92F9                           ;
+*$90BE LD A,$7F                             ;
+ $90C0 IN A,($FE)                           ;
+ $90C2 AND $01                              ;
+ $90C4 RET Z                                ;
+ $90C5 LD A,$EF                             ;
+ $90C7 IN A,($FE)                           ;
+ $90C9 AND $01                              ;
+ $90CB RET Z                                ;
+ $90CC IN A,($1F)                           ;
+ $90CE AND $10                              ;
+ $90D0 RET NZ                               ;
+ $90D1 JP $90BE                             ;
+ $90D4 DEFB $11,$00                         ;
+ $90D6 DEFB $16,$00,$00                     ;
+ $90D9 DEFB $10,$06                         ;
+ $90DB DEFB $54,$48,$45,$20,$45,$50,$49,$54 ;
+ $90E3 DEFB $41,$50,$48,$20,$49,$4E,$53,$43 ;
+ $90EB DEFB $52,$49,$42,$45,$44,$20,$4F,$4E ;
+ $90F3 DEFB $20,$50,$4F,$4F,$52,$16,$01,$13 ;
+ $90FB DEFB $4A,$41,$53,$4F,$4E,$27,$53,$20 ;
+ $9103 DEFB $54,$4F,$4D,$42,$2C,$10,$05,$44 ;
+ $910B DEFB $4F,$45,$53,$20,$4E,$4F,$54,$20 ;
+ $9113 DEFB $53,$50,$45,$41,$4B,$20,$4F,$46 ;
+ $911B DEFB $20,$48,$49,$53,$20,$45,$56,$45 ;
+ $9123 DEFB $4E,$54,$46,$55,$4C,$16,$03,$1A ;
+ $912B DEFB $20,$4C,$49,$46,$45,$2C,$16,$04 ;
+ $9133 DEFB $01,$10,$06,$42,$55,$54,$20,$4F ;
+ $913B DEFB $46,$20,$48,$49,$53,$20,$43,$41 ;
+ $9143 DEFB $52,$45,$4C,$45,$53,$53,$20,$44 ;
+ $914B DEFB $4F,$4F,$4D,$2E,$2E,$2E,$16,$07 ;
+ $9153 DEFB $00,$10,$05,$27,$4F,$4E,$20,$45 ;
+ $915B DEFB $4D,$42,$41,$52,$4B,$49,$4E,$47 ;
+ $9163 DEFB $20,$4F,$4E,$20,$48,$49,$53,$20 ;
+ $916B DEFB $4D,$49,$53,$53,$49,$4F,$4E,$20 ;
+ $9173 DEFB $48,$45,$16,$08,$09,$57,$41,$53 ;
+ $917B DEFB $20,$47,$49,$56,$45,$4E,$20,$43 ;
+ $9183 DEFB $48,$41,$4E,$43,$45,$53,$20,$46 ;
+ $918B DEFB $4F,$55,$52,$2C,$16,$09,$00,$10 ;
+ $9193 DEFB $06,$42,$55,$54,$20,$54,$48,$45 ;
+ $919B DEFB $20,$47,$45,$4D,$20,$57,$41,$53 ;
+ $91A3 DEFB $20,$55,$4E,$44,$49,$53,$54,$55 ;
+ $91AB DEFB $52,$42,$45,$44,$16,$0A,$01,$28 ;
+ $91B3 DEFB $46,$4F,$52,$20,$48,$45,$20,$4E ;
+ $91BB DEFB $45,$45,$44,$45,$44,$20,$53,$4F ;
+ $91C3 DEFB $4D,$45,$57,$48,$41,$54,$20,$4D ;
+ $91CB DEFB $4F,$52,$45,$21,$29,$27,$16,$0C ;
+ $91D3 DEFB $00,$10,$05,$48,$4F,$57,$20,$53 ;
+ $91DB DEFB $41,$44,$20,$41,$20,$54,$41,$4C ;
+ $91E3 DEFB $45,$20,$4F,$46,$20,$46,$41,$49 ;
+ $91EB DEFB $4C,$55,$52,$45,$20,$46,$4F,$52 ;
+ $91F3 DEFB $20,$16,$0D,$0A,$4F,$4E,$45,$20 ;
+ $91FB DEFB $53,$4F,$20,$43,$4C,$4F,$53,$45 ;
+ $9203 DEFB $20,$54,$4F,$20,$47,$4C,$4F,$52 ;
+ $920B DEFB $59,$21,$16,$0E,$01,$10,$06,$42 ;
+ $9213 DEFB $55,$54,$20,$59,$4F,$55,$20,$43 ;
+ $921B DEFB $4F,$55,$4C,$44,$20,$59,$45,$54 ;
+ $9223 DEFB $20,$52,$45,$57,$52,$49,$54,$45 ;
+ $922B DEFB $20,$54,$48,$45,$16,$0F,$07,$20 ;
+ $9233 DEFB $48,$49,$53,$54,$4F,$52,$59,$20 ;
+ $923B DEFB $4F,$46,$20,$54,$48,$49,$53,$20 ;
+ $9243 DEFB $53,$54,$4F,$52,$59,$2E,$2E,$2E ;
+ $924B DEFB $16,$11,$00,$10,$05,$53,$4F,$20 ;
+ $9253 DEFB $50,$52,$45,$53,$53,$20,$54,$48 ;
+ $925B DEFB $45,$20,$13,$01,$10,$06,$11,$02 ;
+ $9263 DEFB $12,$01,$53,$50,$41,$43,$45,$13 ;
+ $926B DEFB $00,$10,$05,$11,$00,$12,$00,$20 ;
+ $9273 DEFB $4B,$45,$59,$20,$46,$4F,$52,$16 ;
+ $927B DEFB $12,$09,$4A,$41,$53,$4F,$4E,$27 ;
+ $9283 DEFB $53,$20,$52,$45,$49,$4E,$43,$41 ;
+ $928B DEFB $52,$4E,$41,$54,$49,$4F,$4E,$2C ;
+ $9293 DEFB $16,$13,$00,$10,$06,$41,$4E,$44 ;
+ $929B DEFB $20,$54,$48,$45,$4E,$20,$59,$4F ;
+ $92A3 DEFB $55,$20,$4D,$41,$59,$20,$42,$45 ;
+ $92AB DEFB $47,$49,$4E,$20,$41,$20,$42,$52 ;
+ $92B3 DEFB $41,$4E,$44,$16,$14,$07,$4E,$45 ;
+ $92BB DEFB $57,$20,$4D,$49,$53,$53,$49,$4F ;
+ $92C3 DEFB $4E,$20,$45,$4D,$42,$41,$52,$4B ;
+ $92CB DEFB $41,$54,$49,$4F,$4E,$2E,$13,$01 ;
+ $92D3 DEFB $10,$06,$11,$02,$12,$01,$16,$11 ;
+ $92DB DEFB $0D,$46,$49,$52,$45,$13,$00,$10 ;
+ $92E3 DEFB $05,$11,$00,$12,$00,$20         ;
+*$92E9 LD A,($5BA8)                         ;
+ $92EC CP $01                               ;
+ $92EE RET Z                                ;
+ $92EF LD DE,$92D1                          ;
+ $92F2 LD BC,$0018                          ;
+ $92F5 CALL $203C                           ;
+ $92F8 RET                                  ;
+*$92F9 IN A,($1F)                           ;
+ $92FB AND $10                              ;
+ $92FD RET NZ                               ;
+ $92FE JP $92F9                             ;
+
+; Data block at 9301
+b$9301 DEFB $29,$00,$00,$00,$00,$00,$00,$00
+ $9309 DEFB $00,$00,$00,$00,$00,$00,$00,$00
+ $9311 DEFB $00,$00,$00,$00,$00,$00,$00,$00
+ $9319 DEFB $00,$00,$00,$00,$00,$00,$00,$00
+ $9321 DEFB $00,$00,$00,$00,$00,$00,$00,$00
+ $9329 DEFB $00,$00,$00,$00,$00,$00,$00,$00
+ $9331 DEFB $00,$00,$00,$00,$00,$00,$00,$FF
+ $9339 DEFB $FF,$FF,$FF,$FF,$F0,$00,$00,$00
+ $9341 DEFB $FF,$FF,$FF,$FF,$F8,$00,$00,$3F
+ $9349 DEFB $FE,$00,$00,$00,$01,$FF,$C0,$00
+ $9351 DEFB $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+ $9359 DEFB $E0,$00,$00,$0F,$FF,$E0,$00,$7F
+ $9361 DEFB $FF,$00,$00,$07,$FF,$F0,$00,$3F
+ $9369 DEFB $FF,$E0,$00,$00,$01,$FF,$C0,$00
+ $9371 DEFB $FF,$E0,$00,$00,$00,$00,$00,$FF
+ $9379 DEFB $E0,$00,$00,$00,$FF,$E0,$00,$7F
+ $9381 DEFB $F0,$00,$00,$00,$7F,$F0,$00,$3F
+ $9389 DEFB $FF,$FF,$00,$00,$01,$FF,$C0,$00
+ $9391 DEFB $FF,$E0,$00,$00,$00,$00,$00,$FF
+ $9399 DEFB $E0,$00,$00,$00,$FF,$E0,$00,$7F
+ $93A1 DEFB $F0,$00,$00,$00,$7F,$F0,$00,$3F
+ $93A9 DEFB $F8,$FF,$F8,$00,$01,$FF,$C0,$00
+ $93B1 DEFB $FF,$E0,$00,$00,$00,$00,$00,$FF
+ $93B9 DEFB $E0,$FF,$80,$00,$7F,$C1,$FF,$C0
+ $93C1 DEFB $00,$FF,$E0,$00,$00,$00,$00,$00
+ $93C9 DEFB $0F,$FE,$00,$00,$00,$00,$00,$00
+ $93D1 DEFB $07,$FF,$00,$00,$00,$00,$00,$FF
+ $93D9 DEFB $FF,$FE,$00,$00,$1F,$FF,$FF,$C0
+ $93E1 DEFB $00,$FF,$FF,$FF,$FF,$FF,$FC,$00
+ $93E9 DEFB $0F,$FF,$FF,$FF,$FF,$FF,$FE,$00
+ $93F1 DEFB $07,$FF,$FF,$FF,$FF,$FF,$FF,$00
+ $93F9 DEFB $00,$00,$00,$00,$00,$00,$00,$00
+ $9401 DEFB $00,$00,$00,$00,$00,$00,$00,$00
+ $9409 DEFB $00,$00,$00,$00,$00,$00,$00,$00
+ $9411 DEFB $00,$00,$00,$00,$00,$00,$00,$00
+ $9419 DEFB $00,$00,$00,$00,$00,$00,$00,$00
+ $9421 DEFB $00,$00,$00,$00,$00,$00,$00,$00
+ $9429 DEFB $00,$00,$00,$00,$00,$00,$00,$00
+ $9431 DEFB $00,$00,$00,$00,$00,$00,$00,$FF
+ $9439 DEFB $FF,$FF,$FF,$FF,$F8,$00,$00,$01
+ $9441 DEFB $FF,$FF,$FF,$FF,$FC,$00,$00,$3F
+ $9449 DEFB $FE,$00,$00,$00,$01,$FF,$C0,$00
+ $9451 DEFB $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+ $9459 DEFB $E0,$00,$00,$07,$FF,$E0,$00,$7F
+ $9461 DEFB $FE,$00,$00,$03,$FF,$F0,$00,$3F
+ $9469 DEFB $FF,$F0,$00,$00,$01,$FF,$C0
 
 ; Game entry point
 @label=GameEntry
@@ -2100,11 +2445,11 @@ c$9470 LD HL,$FAF4   ; {#HTML(Write #N$FAF4 to <a
  $947B LD A,$01      ; {Write #N$01 to #R$5BA8.
  $947D LD ($5BA8),A  ; }
 ; This entry point is used by the routines at #R$96DB, #R$9750 and #R$97AC.
-*$9480 LD HL,$4000   ;
- $9483 LD DE,$4001   ;
+*$9480 LD HL,$4000   ; {Writes #N$00 to all #N$1800 screen buffer address
+ $9483 LD DE,$4001   ; locations (clears the screen).
  $9486 LD (HL),$00   ;
  $9488 LD BC,$17FF   ;
- $948B LDIR          ;
+ $948B LDIR          ; }
  $948D LD A,$07      ; {#HTML(Write #N$07 to <a
  $948F LD ($5C48),A  ; href="https://skoolkit.ca/disassemblies/rom/hex/asm/5C48.html">BORDCR</a>.)
                      ; }
@@ -2169,7 +2514,7 @@ c$9470 LD HL,$FAF4   ; {#HTML(Write #N$FAF4 to <a
  $94E6 IN A,($FE)    ; #TABLE(default,centre,centre,centre,centre,centre,centre)
                      ; { =h,r2 Port Number | =h,c5 Bit }
                      ; { =h 0 | =h 1 | =h 2 | =h 3 | =h 4 }
-                     ; { $FD | A | S | D | F | G }
+                     ; { #N$FD | A | S | D | F | G }
                      ; TABLE#}
  $94E8 AND %00000011 ; Keep only bits 0-1.
  $94EA JP Z,$992A    ; If "A" and "S" was pressed then jump to #R$992A.
@@ -2177,7 +2522,7 @@ c$9470 LD HL,$FAF4   ; {#HTML(Write #N$FAF4 to <a
  $94EF IN A,($FE)    ; #TABLE(default,centre,centre,centre,centre,centre,centre)
                      ; { =h,r2 Port Number | =h,c5 Bit }
                      ; { =h 0 | =h 1 | =h 2 | =h 3 | =h 4 }
-                     ; { $FD | A | S | D | F | G }
+                     ; { #N$FD | A | S | D | F | G }
                      ; TABLE#}
  $94F1 AND %00000001 ; Keep only bit 0.
  $94F3 JP Z,$9944    ; If "A" was pressed then jump to #R$9944.
@@ -2199,23 +2544,23 @@ c$9470 LD HL,$FAF4   ; {#HTML(Write #N$FAF4 to <a
                      ; TABLE#}
  $9503 AND %00010000 ; Keep only bit 4.
  $9505 JP Z,$97AC    ; If "6" was pressed then jump to #R$97AC.
- $9508 LD HL,($5B99) ;
+ $9508 LD HL,($5B99) ; {Increment the value at #R$5B99 by one.
  $950B INC HL        ;
- $950C LD ($5B99),HL ;
- $950F LD A,$1F      ;
+ $950C LD ($5B99),HL ; }
+ $950F LD A,$1F      ; #REGa=#N$1F.
  $9511 CP H          ;
  $9512 CALL Z,$9923  ;
- $9515 LD HL,($5BB8) ;
+ $9515 LD HL,($5BB8) ; {Increment the value at #R$5BB8 by one.
  $9518 INC HL        ;
- $9519 LD ($5BB8),HL ;
- $951C XOR A         ;
+ $9519 LD ($5BB8),HL ; }
+ $951C XOR A         ; #REGa=#N$00.
  $951D CP H          ;
  $951E JP NZ,$94C0   ;
  $9521 CP L          ;
  $9522 JP NZ,$94C0   ;
- $9525 LD A,($5BBA)  ;
+ $9525 LD A,($5BBA)  ; {Increment the value at #R$5BBA by one.
  $9528 DEC A         ;
- $9529 LD ($5BBA),A  ;
+ $9529 LD ($5BBA),A  ; }
  $952C JP NZ,$94C0   ;
  $952F JP $9750      ; Jump to #R$9750.
 
@@ -2258,11 +2603,14 @@ c$9551 LD A,H        ;
 ; Routine at 955A
 ;
 ; Used by the routines at #R$9470 and #R$9750.
-c$955A LD HL,$5800   ;
- $955D LD DE,$5801   ;
+c$955A LD HL,$5800   ; {Writes #N$00 to all #N$0300 attribute buffer address
+ $955D LD DE,$5801   ; locations.
  $9560 LD BC,$02FF   ;
  $9563 LD (HL),$00   ;
- $9565 LDIR          ;
+ $9565 LDIR          ; }
+; #UDGTABLE
+; { #SCR$02,$00,$00,$20,$04,$9B78,$B378(logo) }
+; UDGTABLE#
  $9567 LD HL,$9B78   ; {Copies #N$07FF bytes of data from #R$9B78 to the screen
  $956A LD BC,$07FF   ; buffer.
  $956D LD DE,$4000   ;
@@ -2294,7 +2642,7 @@ c$955A LD HL,$5800   ;
 
 ; Title Screen Print
 ;
-; Used by the routines at #R$9470, #R$9666, #R$9681, #R$969C and #R$96B7.
+; Used by the routines at #R$9470, #R$9673, #R$9681, #R$969C and #R$96B7.
 ;
 ; .
 ;
@@ -2361,28 +2709,37 @@ b$95B2 DEFB $16,$07,$07                      ; PRINT AT (#PEEK(#PC + $01),
  $9646 DEFB $10,$03                          ; INK #PEEK(#PC + $01).
  $9648 DEFM "PROGRAM WRITTEN BY SIMON WHITE" ; "#STR$9648,$00,$1E".
 
-; Routine at 9666
+; Input: Keyboard
 ;
 ; Used by the routine at #R$9470.
+@label=InputTest_Keyboard
 c$9666 LD A,($5BA8)  ; #REGa=#R$5BA8.
- $9669 CP $01        ; {If this is #N$01 then jump to #R$94C0.
+ $9669 CP $01        ; {If this is already #N$01 then jump back to #R$94C0.
  $966B JP Z,$94C0    ; }
+@label=Input_Keyboard
  $966E LD A,$01      ; {Write #N$01 to #R$5BA8.
  $9670 LD ($5BA8),A  ; }
-; This entry point is used by the routine at #R$9470.
-*$9673 CALL $95A3    ; Call #R$95A3.
+; Continue on to #R$9673.
+
+; Initialise Title Screen
+;
+; Used by the routine at #R$9470.
+@label=TitleScreenInit
+c$9673 CALL $95A3    ; Call #R$95A3.
  $9676 LD HL,$58E7   ; #REGhl=#N$58E7.
  $9679 LD A,$0B      ; #REGa=#N$0B.
  $967B CALL $96D2    ; Call #R$96D2.
  $967E JP $94C0      ; Jump to #R$94C0.
 
-; Routine at 9681
+; Input: Kempston Joystick
 ;
 ; Used by the routine at #R$9470.
+@label=InputTest_KempstonJoystick
 c$9681 LD A,($5BA8)  ; #REGa=#R$5BA8.
- $9684 CP $02        ; {If this is #N$02 then jump to #R$94C0.
+ $9684 CP $02        ; {If this is already #N$02 then jump back to #R$94C0.
  $9686 JP Z,$94C0    ; }
 ; This entry point is used by the routine at #R$9470.
+@label=Input_KempstonJoystick
 *$9689 LD A,$02      ; {Write #N$02 to #R$5BA8.
  $968B LD ($5BA8),A  ; }
  $968E CALL $95A3    ; Call #R$95A3.
@@ -2391,13 +2748,15 @@ c$9681 LD A,($5BA8)  ; #REGa=#R$5BA8.
  $9696 CALL $96D2    ; Call #R$96D2.
  $9699 JP $94C0      ; Jump to #R$94C0.
 
-; Routine at 969C
+; Input: Protek Joystick
 ;
 ; Used by the routine at #R$9470.
+@label=InputTest_ProtekJoystick
 c$969C LD A,($5BA8)  ; #REGa=#R$5BA8.
- $969F CP $03        ; {If this is #N$03 then jump to #R$94C0.
+ $969F CP $03        ; {If this is already #N$03 then jump back to #R$94C0.
  $96A1 JP Z,$94C0    ; }
 ; This entry point is used by the routine at #R$9470.
+@label=Input_ProtekJoystick
 *$96A4 LD A,$03      ; {Write #N$03 to #R$5BA8.
  $96A6 LD ($5BA8),A  ; }
  $96A9 CALL $95A3    ; Call #R$95A3.
@@ -2406,13 +2765,15 @@ c$969C LD A,($5BA8)  ; #REGa=#R$5BA8.
  $96B1 CALL $96D2    ; Call #R$96D2.
  $96B4 JP $94C0      ; Jump to #R$94C0.
 
-; Routine at 96B7
+; Input: Interface 2
 ;
 ; Used by the routine at #R$9470.
+@label=InputTest_Interface2
 c$96B7 LD A,($5BA8)  ; #REGa=#R$5BA8.
- $96BA CP $05        ; {If this is #N$05 then jump to #R$94C0.
+ $96BA CP $05        ; {If this is already #N$05 then jump back to #R$94C0.
  $96BC JP Z,$94C0    ; }
 ; This entry point is used by the routine at #R$9470.
+@label=Input_Interface2
 *$96BF LD A,$05      ; {Write #N$05 to #R$5BA8.
  $96C1 LD ($5BA8),A  ; }
  $96C4 CALL $95A3    ; Call #R$95A3.
@@ -2423,7 +2784,7 @@ c$96B7 LD A,($5BA8)  ; #REGa=#R$5BA8.
 
 ; Routine at 96D2
 ;
-; Used by the routines at #R$9666, #R$9681, #R$969C and #R$96B7.
+; Used by the routines at #R$9673, #R$9681, #R$969C and #R$96B7.
 c$96D2 LD B,A        ;
 *$96D3 LD A,(HL)     ;
  $96D4 OR $80        ;
@@ -2734,9 +3095,10 @@ c$9910 LD A,$11      ; {PAPER #N$00.
  $9921 RST $10       ; }
  $9922 RET           ; Return.
 
-; Routine at 9923
+; Reset Random Number Seed?
 ;
 ; Used by the routine at #R$9470.
+@label=ResetRandomSeed
 c$9923 LD HL,$0000   ; {Writes #N$0000 to #R$5B99.
  $9926 LD ($5B99),HL ; }
  $9929 RET           ; Return.
@@ -3330,7 +3692,7 @@ b$B8B5 DEFB $20,$20,$00,$00,$1F,$FF,$F8,$1F
 
 ; Congratulations Print
 @label=CongratulationsPrint
-c$B8F6 LD HL,$4000   ; { Writes #N$00 to all #N$1800 screen buffer address
+c$B8F6 LD HL,$4000   ; {Writes #N$00 to all #N$1800 screen buffer address
  $B8F9 LD DE,$4001   ; locations (clears the screen).
  $B8FC LD (HL),$00   ;
  $B8FE LD BC,$17FF   ;
@@ -3355,7 +3717,7 @@ c$B8F6 LD HL,$4000   ; { Writes #N$00 to all #N$1800 screen buffer address
  $B923 IN A,($FE)    ; #TABLE(default,centre,centre,centre,centre,centre,centre)
                      ; { =h,r2 Port Number | =h,c5 Bit }
                      ; { =h 0 | =h 1 | =h 2 | =h 3 | =h 4 }
-                     ; { $7F | SPACE | FULL-STOP | M | N | B }
+                     ; { #N$7F | SPACE | FULL-STOP | M | N | B }
                      ; TABLE#}
  $B925 AND $01       ; {Loop back round to #R$B921 until the "SPACE" button is
  $B927 JP NZ,$B921   ; pressed.}
@@ -3499,26 +3861,31 @@ b$B9EA DEFB $00,$1F,$FF,$F8,$1F,$81,$21,$00
 ; Routine at BC48
 ;
 ; Used by the routine at #R$97AC.
-c$BC48 XOR A         ;
- $BC49 LD ($5BA9),A  ;
- $BC4C LD A,$04      ;
- $BC4E LD ($5B90),A  ;
- $BC51 LD HL,$0000   ;
- $BC54 LD ($5B8E),HL ;
- $BC57 LD A,$02      ;
- $BC59 CALL $1601    ;
- $BC5C CALL $CA6F    ;
+c$BC48 XOR A         ; {Write #N$00 to #R$5BA9.
+ $BC49 LD ($5BA9),A  ; }
+ $BC4C LD A,$04      ; {Write #N$04 to #R$5B90.
+ $BC4E LD ($5B90),A  ; }
+ $BC51 LD HL,$0000   ; {Write #N$0000 to #R$5B8E.
+ $BC54 LD ($5B8E),HL ; }
+; Open the upper screen channel.
+ $BC57 LD A,$02      ; #REGa=#N$02.
+ $BC59 CALL $1601    ; #HTML(Call <a
+                     ; href="https://skoolkit.ca/disassemblies/rom/hex/asm/1601.html">CHAN_OPEN</a>.)
+ $BC5C CALL $CA6F    ; Call #R$CA6F.
  $BC5F LD A,($5B9E)  ;
  $BC62 AND A         ;
  $BC63 RET Z         ;
  $BC64 LD A,($5B90)  ;
  $BC67 INC A         ;
  $BC68 LD ($5B90),A  ;
- $BC6B CALL $8B10    ;
- $BC6E CALL $C33E    ;
- $BC71 JP $C3FB      ;
-; This entry point is used by the routine at #R$C3FB.
-*$BC74 XOR A         ;
+ $BC6B CALL $8B10    ; Call #R$8B10.
+ $BC6E CALL $C33E    ; Call #R$C33E.
+ $BC71 JP $C3FB      ; Jump to #R$C3FB.
+
+; Routine at BC74
+;
+; Used by the routine at #R$C3FB.
+c$BC74 XOR A         ;
  $BC75 LD ($5B7F),A  ;
  $BC78 LD HL,$7788   ;
  $BC7B LD ($5B77),HL ;
@@ -3545,6 +3912,7 @@ c$BC48 XOR A         ;
  $BCB4 LD ($5C8D),A  ;
  $BCB7 CALL $C96B    ;
  $BCBA CALL $6978    ;
+; This entry point is used by the routine at #R$BF85.
 *$BCBD CALL $BDA5    ;
  $BCC0 CALL $C1F3    ;
  $BCC3 LD A,($5B76)  ;
@@ -3586,7 +3954,7 @@ c$BC48 XOR A         ;
  $BD18 AND A         ;
  $BD19 CALL Z,$C9D8  ;
  $BD1C JP $BCBD      ;
-; This entry point is used by the routine at #R$CA6F.
+; This entry point is used by the routines at #R$BDE4 and #R$CA6F.
 *$BD1F CALL $BE90    ;
  $BD22 LD A,($5B74)  ;
  $BD25 CP $01        ;
@@ -3609,7 +3977,7 @@ c$BC48 XOR A         ;
  $BD4C INC HL        ;
  $BD4D LD ($5B68),HL ;
  $BD50 RET           ;
-; This entry point is used by the routine at #R$CA6F.
+; This entry point is used by the routines at #R$BDE4 and #R$CA6F.
 *$BD51 CALL $BE4C    ;
  $BD54 LD A,($5B73)  ;
  $BD57 CP $01        ;
@@ -3634,6 +4002,7 @@ c$BC48 XOR A         ;
  $BD83 DEC HL        ;
  $BD84 LD ($5B68),HL ;
  $BD87 RET           ;
+; This entry point is used by the routine at #R$BDE4.
 *$BD88 CALL $BEA9    ;
  $BD8B LD A,($5B75)  ;
  $BD8E CP $01        ;
@@ -3642,11 +4011,12 @@ c$BC48 XOR A         ;
  $BD94 CALL $BE0E    ;
  $BD97 LD ($5B68),HL ;
  $BD9A RET           ;
+; This entry point is used by the routine at #R$BDE4.
 *$BD9B LD HL,($5B68) ;
  $BD9E CALL $BDE4    ;
  $BDA1 LD ($5B68),HL ;
  $BDA4 RET           ;
-; This entry point is used by the routines at #R$C3FB and #R$CA6F.
+; This entry point is used by the routines at #R$BDE4, #R$C3FB and #R$CA6F.
 *$BDA5 LD HL,($5B6B) ;
  $BDA8 PUSH HL       ;
  $BDA9 POP DE        ;
@@ -3656,7 +4026,7 @@ c$BC48 XOR A         ;
  $BDB1 LD A,$10      ;
  $BDB3 CALL $BDB7    ;
  $BDB6 RET           ;
-; This entry point is used by the routines at #R$C33E and #R$C3FB.
+; This entry point is used by the routines at #R$C33E and #R$C98F.
 *$BDB7 LD B,$80      ;
 *$BDB9 PUSH AF       ;
  $BDBA PUSH HL       ;
@@ -3685,8 +4055,12 @@ c$BC48 XOR A         ;
  $BDDD CALL $BDE4    ;
  $BDE0 INC DE        ;
  $BDE1 JP $BDB9      ;
-; This entry point is used by the routines at #R$C33E, #R$C3FB and #R$CA6F.
-*$BDE4 PUSH DE       ;
+
+; Routine at BDE4
+;
+; Used by the routines at #R$BC74, #R$BF85, #R$C2E7, #R$C33E, #R$C3FB, #R$C98F
+; and #R$CA6F.
+c$BDE4 PUSH DE       ;
  $BDE5 PUSH AF       ;
  $BDE6 CALL $BDEC    ;
  $BDE9 POP AF        ;
@@ -3712,7 +4086,8 @@ c$BC48 XOR A         ;
  $BE09 LD DE,$0020   ;
  $BE0C ADD HL,DE     ;
  $BE0D RET           ;
-; This entry point is used by the routines at #R$C3FB and #R$CA6F.
+; This entry point is used by the routines at #R$BC74, #R$BF85, #R$C3FB,
+; #R$C98F and #R$CA6F.
 *$BE0E PUSH DE       ;
  $BE0F PUSH AF       ;
  $BE10 CALL $BE16    ;
@@ -3737,16 +4112,19 @@ c$BC48 XOR A         ;
  $BE30 AND A         ;
  $BE31 SBC HL,DE     ;
  $BE33 RET           ;
+; This entry point is used by the routine at #R$BC74.
 *$BE34 LD HL,$6DA0   ;
  $BE37 LD ($5B6B),HL ;
  $BE3A LD A,$05      ;
  $BE3C LD ($5B6D),A  ;
  $BE3F RET           ;
+; This entry point is used by the routine at #R$BC74.
 *$BE40 LD HL,$6D60   ;
  $BE43 LD ($5B6B),HL ;
  $BE46 LD A,$01      ;
  $BE48 LD ($5B6D),A  ;
  $BE4B RET           ;
+; This entry point is used by the routine at #R$BC74.
 *$BE4C LD HL,($5B68) ;
  $BE4F XOR A         ;
  $BE50 LD ($5B73),A  ;
@@ -3780,6 +4158,7 @@ c$BC48 XOR A         ;
  $BE8D RET           ;
 *$BE8E DEC HL        ;
  $BE8F RET           ;
+; This entry point is used by the routine at #R$BC74.
 *$BE90 LD HL,($5B68) ;
  $BE93 XOR A         ;
  $BE94 LD ($5B74),A  ;
@@ -3790,9 +4169,11 @@ c$BC48 XOR A         ;
 *$BE9E LD A,(HL)     ;
  $BE9F AND C         ;
  $BEA0 JP NZ,$C153   ;
+; This entry point is used by the routine at #R$BF85.
 *$BEA3 CALL $BDE4    ;
  $BEA6 DJNZ $BE9E    ;
  $BEA8 RET           ;
+; This entry point is used by the routine at #R$BC74.
 *$BEA9 LD HL,($5B68) ;
  $BEAC XOR A         ;
  $BEAD LD ($5B75),A  ;
@@ -3804,12 +4185,14 @@ c$BC48 XOR A         ;
 *$BEBC LD A,(HL)     ;
  $BEBD AND C         ;
  $BEBE JP NZ,$C177   ;
+; This entry point is used by the routine at #R$BF85.
 *$BEC1 RRC C         ;
  $BEC3 CALL C,$BEC9  ;
  $BEC6 DJNZ $BEBC    ;
  $BEC8 RET           ;
 *$BEC9 INC HL        ;
  $BECA RET           ;
+; This entry point is used by the routine at #R$BC74.
 *$BECB LD HL,($5B68) ;
  $BECE LD B,$10      ;
 *$BED0 CALL $BDE4    ;
@@ -3845,7 +4228,7 @@ c$BC48 XOR A         ;
  $BF0D JP NZ,$BF0C   ;
  $BF10 DJNZ $BEFC    ;
  $BF12 JP $BECB      ;
-; This entry point is used by the routine at #R$CA6F.
+; This entry point is used by the routines at #R$BC74 and #R$CA6F.
 *$BF15 XOR A         ;
  $BF16 LD ($5B7B),A  ;
  $BF19 LD A,($5B6D)  ;
@@ -3890,6 +4273,7 @@ c$BC48 XOR A         ;
  $BF6D RET Z         ;
  $BF6E DJNZ $BF4B    ;
  $BF70 RET           ;
+; This entry point is used by the routine at #R$BC74.
 *$BF71 CALL $BE4C    ;
  $BF74 LD A,($5B90)  ;
  $BF77 AND A         ;
@@ -3900,8 +4284,11 @@ c$BC48 XOR A         ;
  $BF80 RET Z         ;
  $BF81 CALL $BEA9    ;
  $BF84 RET           ;
-; This entry point is used by the routine at #R$CA6F.
-*$BF85 LD HL,$5800   ;
+
+; Routine at BF85
+;
+; Used by the routine at #R$CA6F.
+c$BF85 LD HL,$5800   ;
  $BF88 LD DE,$5801   ;
  $BF8B LD BC,$0300   ;
  $BF8E LD A,$05      ;
@@ -3923,7 +4310,7 @@ c$BC48 XOR A         ;
  $BFA9 ADD HL,DE     ;
  $BFAA POP BC        ;
  $BFAB DJNZ $BF98    ;
- $BFAD RET           ;
+ $BFAD RET           ; Return.
 ; This entry point is used by the routine at #R$CA6F.
 *$BFAE LD HL,$4020   ;
  $BFB1 LD B,$98      ;
@@ -4063,7 +4450,7 @@ c$BC48 XOR A         ;
  $C0A7 HALT          ;
  $C0A8 POP BC        ;
  $C0A9 RET           ;
-; This entry point is used by the routines at #R$C3FB and #R$CA6F.
+; This entry point is used by the routines at #R$BC74, #R$C3FB and #R$CA6F.
 *$C0AA LD A,$02      ;
  $C0AC CALL $1601    ;
  $C0AF LD A,$16      ;
@@ -4166,7 +4553,7 @@ c$BC48 XOR A         ;
  $C143 POP BC        ;
  $C144 POP DE        ;
  $C145 RET           ;
-; This entry point is used by the routines at #R$C3FB and #R$CA6F.
+; This entry point is used by the routines at #R$BDE4, #R$C3FB and #R$CA6F.
 *$C146 LD A,H        ;
  $C147 AND $18       ;
  $C149 SRA A         ;
@@ -4175,6 +4562,7 @@ c$BC48 XOR A         ;
  $C14F ADD A,$58     ;
  $C151 LD H,A        ;
  $C152 RET           ;
+; This entry point is used by the routine at #R$BDE4.
 *$C153 PUSH HL       ;
  $C154 LD A,$01      ;
  $C156 LD ($5B74),A  ;
@@ -4192,6 +4580,7 @@ c$BC48 XOR A         ;
  $C170 LD ($5B74),A  ;
  $C173 CALL $C289    ;
  $C176 RET           ;
+; This entry point is used by the routine at #R$BDE4.
 *$C177 PUSH HL       ;
  $C178 LD A,$01      ;
  $C17A LD ($5B75),A  ;
@@ -4271,6 +4660,7 @@ c$BC48 XOR A         ;
  $C1EF LD A,$00      ;
  $C1F1 RST $10       ;
  $C1F2 RET           ;
+; This entry point is used by the routine at #R$BC74.
 *$C1F3 LD HL,($5B68) ;
  $C1F6 XOR A         ;
  $C1F7 LD ($5B76),A  ;
@@ -4281,6 +4671,7 @@ c$BC48 XOR A         ;
  $C201 LD A,$01      ;
  $C203 LD ($5B76),A  ;
  $C206 RET           ;
+; This entry point is used by the routine at #R$BC74.
 *$C207 LD HL,$5B0E   ;
  $C20A LD DE,$5B0F   ;
  $C20D LD (HL),$00   ;
@@ -4335,7 +4726,7 @@ c$BC48 XOR A         ;
 *$C283 LD A,$98      ;
  $C285 LD ($5B71),A  ;
  $C288 RET           ;
-; This entry point is used by the routine at #R$C3FB.
+; This entry point is used by the routines at #R$BDE4 and #R$C98F.
 *$C289 CALL $67E8    ;
  $C28C LD A,$01      ;
  $C28E LD ($5B7B),A  ;
@@ -4388,14 +4779,17 @@ c$BC48 XOR A         ;
 *$C2E1 LD A,$03      ;
  $C2E3 LD ($5B72),A  ;
  $C2E6 RET           ;
-; This entry point is used by the routines at #R$C33E and #R$CA6F.
-*$C2E7 LD B,$08      ;
-*$C2E9 PUSH BC       ;
- $C2EA LD B,$08      ;
- $C2EC LD HL,$489F   ;
-*$C2EF PUSH HL       ;
- $C2F0 PUSH BC       ;
- $C2F1 LD B,$20      ;
+
+; Routine at C2E7
+;
+; Used by the routines at #R$C307, #R$C33E and #R$CA6F.
+c$C2E7 LD B,$08      ; #REGb=#N$08.
+*$C2E9 PUSH BC       ; Stash #REGbc on the stack.
+ $C2EA LD B,$08      ; #REGb=#N$08.
+ $C2EC LD HL,$489F   ; #REGhl=#N$489F.
+*$C2EF PUSH HL       ; {Stash #REGhl and #REGbc on the stack.
+ $C2F0 PUSH BC       ; }
+ $C2F1 LD B,$20      ; #REGb=#N$20.
  $C2F3 AND A         ;
 *$C2F4 PUSH BC       ;
  $C2F5 LD A,(HL)     ;
@@ -4406,31 +4800,39 @@ c$BC48 XOR A         ;
  $C2FA DJNZ $C2F4    ;
  $C2FC POP BC        ;
  $C2FD POP HL        ;
- $C2FE CALL $BDE4    ;
+ $C2FE CALL $BDE4    ; Call #R$BDE4.
  $C301 DJNZ $C2EF    ;
- $C303 POP BC        ;
+ $C303 POP BC        ; Restore #REGbc from the stack.
  $C304 DJNZ $C2E9    ;
- $C306 RET           ;
- $C307 LD D,$0C      ;
- $C309 ADD HL,DE     ;
- $C30A INC DE        ;
- $C30B LD BC,$4857   ;
- $C30E LD C,A        ;
- $C30F LD C,A        ;
- $C310 LD D,B        ;
- $C311 LD D,E        ;
- $C312 LD HL,$023E   ;
- $C315 CALL $1601    ;
- $C318 LD DE,$C307   ;
- $C31B LD BC,$000C   ;
- $C31E CALL $203C    ;
- $C321 LD B,$20      ;
-*$C323 PUSH BC       ;
- $C324 CALL $C2E7    ;
- $C327 POP BC        ;
- $C328 DJNZ $C323    ;
- $C32A RET           ;
-*$C32B LD HL,$0000   ;
+ $C306 RET           ; Return.
+
+; Whoops Copy
+@label=WhoopsCopy
+c$C307 DEFB $16,$0C,$19 ; PRINT AT (#PEEK(#PC + $01), #PEEK(#PC + $02)).
+ $C30A DEFB $13,$01     ; BRIGHT "#MAP(#PEEK(#PC + $01))(?,0:OFF,1:ON)".
+ $C30C DEFM "WHOOPS!"   ; "#STR$C30C,$00,$07".
+; Open the upper screen channel.
+@label=WhoopsPrint
+*$C313 LD A,$02         ; #REGa=#N$02.
+ $C315 CALL $1601       ; #HTML(Call <a
+                        ; href="https://skoolkit.ca/disassemblies/rom/hex/asm/1601.html">CHAN_OPEN</a>.)
+ $C318 LD DE,$C307      ; #REGde=#R$C307 (text).
+ $C31B LD BC,$000C      ; #REGbc=#N$000C (counter).
+ $C31E CALL $203C       ; #HTML(Call <a
+                        ; href="https://skoolkit.ca/disassemblies/rom/hex/asm/1FFC.html#203C">PR_STRING</a>.)
+ $C321 LD B,$20         ; #REGb=#N$20 (scroll counter).
+@label=WhoopsPrint_Loop
+*$C323 PUSH BC          ; Stash #REGbc on the stack.
+ $C324 CALL $C2E7       ; Call #R$C2E7.
+ $C327 POP BC           ; Restore #REGbc from the stack.
+ $C328 DJNZ $C323       ; Decrease the scroll counter by one and loop back to
+                        ; #R$C323 until counter is zero.
+ $C32A RET              ; Return.
+
+; Routine at C32B
+;
+; Used by the routine at #R$BF85.
+c$C32B LD HL,$0000   ;
 *$C32E LD A,(HL)     ;
  $C32F OUT ($FE),A   ;
  $C331 AND $0F       ;
@@ -4444,7 +4846,7 @@ c$BC48 XOR A         ;
 
 ; Routine at C33E
 ;
-; Used by the routines at #R$BC48, #R$C3FB and #R$CA6F.
+; Used by the routines at #R$BC48, #R$BF85, #R$C98F and #R$CA6F.
 c$C33E PUSH HL       ;
  $C33F PUSH DE       ;
  $C340 PUSH BC       ;
@@ -5093,7 +5495,7 @@ c$C3FB LD HL,$412C   ;
  $C861 LD D,H        ;
 *$C862 LD D,$04      ;
  $C864 LD A,(DE)     ;
-; This entry point is used by the routines at #R$BC48 and #R$CA6F.
+; This entry point is used by the routines at #R$BF85, #R$C98F and #R$CA6F.
 *$C865 LD DE,$C848   ;
  $C868 LD BC,$0011   ;
  $C86B CALL $203C    ;
@@ -5127,35 +5529,37 @@ c$C3FB LD HL,$412C   ;
 *$C8A4 LD A,$30      ;
  $C8A6 RST $10       ;
  $C8A7 RET           ;
- $C8A8 LD D,$0C      ;
- $C8AA INC C         ;
- $C8AB INC DE        ;
- $C8AC LD BC,$0112   ;
- $C8AF DJNZ $C8B3    ;
- $C8B1 LD DE,$2006   ;
- $C8B4 LD B,D        ;
- $C8B5 LD C,A        ;
- $C8B6 LD C,(HL)     ;
- $C8B7 LD D,L        ;
- $C8B8 LD D,E        ;
- $C8B9 JR NZ,$C8CD   ;
- $C8BB NOP           ;
- $C8BC DJNZ $C8C5    ;
- $C8BE LD DE,$2100   ;
- $C8C1 NOP           ;
- $C8C2 LD B,B        ;
+
+; Bonus Copy
+@label=BonusCopy
+b$C8A8 DEFB $16,$0C,$0C ; PRINT AT (#PEEK(#PC + $01), #PEEK(#PC + $02)).
+ $C8AB DEFB $13,$01     ; BRIGHT "#MAP(#PEEK(#PC + $01))(?,0:OFF,1:ON)".
+ $C8AD DEFB $12,$01     ; FLASH "#MAP(#PEEK(#PC + $01))(?,0:OFF,1:ON)".
+ $C8AF DEFB $10,$02     ; INK #PEEK(#PC + $01).
+ $C8B1 DEFB $11,$06     ; PAPER #PEEK(#PC + $01).
+ $C8B3 DEFM " BONUS "   ; "#STR$C8B3,$00,$07".
+ $C8BA DEFB $12,$00     ; FLASH "#MAP(#PEEK(#PC + $01))(?,0:OFF,1:ON)".
+ $C8BC DEFB $10,$07     ; INK #PEEK(#PC + $01).
+ $C8BE DEFB $11,$00     ; PAPER #PEEK(#PC + $01).
+
+; Bonus Print
+;
+; Used by the routine at #R$C3FB.
+@label=BonusPrint
+c$C8C0 LD HL,$4000   ;
  $C8C3 LD DE,$4001   ;
  $C8C6 LD BC,$17FF   ;
  $C8C9 LD (HL),$00   ;
  $C8CB LDIR          ;
-*$C8CD LD HL,$5800   ;
+ $C8CD LD HL,$5800   ;
  $C8D0 LD DE,$5801   ;
  $C8D3 LD BC,$02FF   ;
  $C8D6 LD (HL),$07   ;
  $C8D8 LDIR          ;
- $C8DA LD DE,$C8A8   ;
- $C8DD LD BC,$0018   ;
- $C8E0 CALL $203C    ;
+ $C8DA LD DE,$C8A8   ; #REGde=#R$C8A8 (text).
+ $C8DD LD BC,$0018   ; #REGbc=#N$0018 (counter).
+ $C8E0 CALL $203C    ; #HTML(Call <a
+                     ; href="https://skoolkit.ca/disassemblies/rom/hex/asm/1FFC.html#203C">PR_STRING</a>.)
  $C8E3 LD A,$07      ;
  $C8E5 LD ($5C8D),A  ;
  $C8E8 LD B,$1E      ;
@@ -5234,34 +5638,36 @@ c$C3FB LD HL,$412C   ;
  $C967 LD A,$30      ;
  $C969 RST $10       ;
  $C96A RET           ;
-; This entry point is used by the routine at #R$BC48.
-*$C96B PUSH HL       ;
- $C96C PUSH DE       ;
- $C96D PUSH BC       ;
- $C96E LD DE,$C983   ;
- $C971 LD BC,$000C   ;
- $C974 CALL $203C    ;
- $C977 POP BC        ;
- $C978 POP DE        ;
- $C979 POP HL        ;
- $C97A CALL $C98F    ;
- $C97D LD A,$4A      ;
- $C97F LD ($5B95),A  ;
- $C982 RET           ;
- $C983 LD (DE),A     ;
- $C984 NOP           ;
- $C985 LD D,$13      ;
- $C987 LD A,(DE)     ;
+
+; Routine at C96B
+;
+; Used by the routines at #R$BC74 and #R$BF85.
+c$C96B PUSH HL          ; {Stash #REGhl, #REGde and #REGbc on the stack.
+ $C96C PUSH DE          ;
+ $C96D PUSH BC          ; }
+ $C96E LD DE,$C983      ; #REGde=#R$C983 (text).
+ $C971 LD BC,$000C      ; #REGbc=#N$000C (counter).
+ $C974 CALL $203C       ; #HTML(Call <a
+                        ; href="https://skoolkit.ca/disassemblies/rom/hex/asm/1FFC.html#203C">PR_STRING</a>.)
+ $C977 POP BC           ; {Restore #REGbc, #REGde and #REGhl from the stack.
+ $C978 POP DE           ;
+ $C979 POP HL           ; }
+ $C97A CALL $C98F       ; Call #R$C98F.
+ $C97D LD A,$4A         ; {Write #N$4A to #N$5B95.
+ $C97F LD ($5B95),A     ; }
+ $C982 RET              ; Return.
+ $C983 DEFB $12,$00     ; FLASH "#MAP(#PEEK(#PC + $01))(?,0:OFF,1:ON)".
+ $C985 DEFB $16,$13,$1A ; PRINT AT (#PEEK(#PC + $01), #PEEK(#PC + $02)).
 ; This entry point is used by the routine at #R$CA6F.
-*$C988 DJNZ $C98F    ;
- $C98A LD B,D        ;
- $C98B LD C,A        ;
- $C98C LD C,(HL)     ;
- $C98D LD D,L        ;
- $C98E LD D,E        ;
-; This entry point is used by the routine at #R$CA6F.
-*$C98F LD HL,$565A   ;
+*$C988 DEFB $10,$05     ; INK #PEEK(#PC + $01).
+ $C98A DEFM "BONUS"     ; "#STR$C98A,$00,$05".
+
+; Routine at C98F
+;
+; Used by the routines at #R$C96B and #R$CA6F.
+c$C98F LD HL,$565A   ;
  $C992 LD B,$48      ;
+; This entry point is used by the routine at #R$C3FB.
 *$C994 PUSH BC       ;
  $C995 PUSH HL       ;
  $C996 LD (HL),$AA   ;
@@ -5281,7 +5687,7 @@ c$C3FB LD HL,$412C   ;
  $C9AE LD A,$13      ;
  $C9B0 LD ($5B94),A  ;
  $C9B3 RET           ;
-; This entry point is used by the routine at #R$BC48.
+; This entry point is used by the routines at #R$BC74 and #R$BDE4.
 *$C9B4 LD A,$13      ;
  $C9B6 LD ($5B94),A  ;
 ; This entry point is used by the routine at #R$CA6F.
@@ -5301,10 +5707,10 @@ c$C3FB LD HL,$412C   ;
  $C9D3 DEC A         ;
  $C9D4 LD ($5B95),A  ;
  $C9D7 RET           ;
-; This entry point is used by the routine at #R$BC48.
+; This entry point is used by the routine at #R$BC74.
 *$C9D8 CALL $67E8    ;
  $C9DB JP $C289      ;
-; This entry point is used by the routines at #R$BC48 and #R$CA6F.
+; This entry point is used by the routines at #R$BF85 and #R$CA6F.
 *$C9DE LD HL,($5B92) ;
  $C9E1 CALL $BDE4    ;
 ; This entry point is used by the routine at #R$CA6F.
@@ -5337,7 +5743,7 @@ c$C3FB LD HL,$412C   ;
  $CA1B LD L,A        ;
  $CA1C CALL $03B5    ;
  $CA1F RET           ;
-; This entry point is used by the routines at #R$BC48 and #R$CA6F.
+; This entry point is used by the routines at #R$BC74, #R$C3FB and #R$CA6F.
 *$CA20 CALL $67E8    ;
  $CA23 CALL $C33E    ;
  $CA26 RET           ;
@@ -5605,7 +6011,7 @@ c$CA6F LD HL,$412C   ;
  $CC3D LD D,$0F      ;
  $CC3F LD C,$92      ;
  $CC41 SUB E         ;
-; This entry point is used by the routine at #R$BC48.
+; This entry point is used by the routine at #R$BF85.
 *$CC42 CALL $67E8    ;
  $CC45 CALL $C9DE    ;
  $CC48 CALL $CD3E    ;
@@ -5758,7 +6164,7 @@ c$CA6F LD HL,$412C   ;
  $CD8B CP $06        ;
 *$CD8D CALL Z,$C2E1  ;
  $CD90 RET           ;
-; This entry point is used by the routines at #R$BC48 and #R$C3FB.
+; This entry point is used by the routines at #R$BF85 and #R$C3FB.
 *$CD91 LD HL,$593A   ;
  $CD94 LD B,$0A      ;
 *$CD96 PUSH BC       ;
@@ -5834,7 +6240,7 @@ c$CA6F LD HL,$412C   ;
  $CE10 POP BC        ;
  $CE11 DJNZ $CDF0    ;
  $CE13 RET           ;
-; This entry point is used by the routine at #R$BC48.
+; This entry point is used by the routine at #R$BF85.
 *$CE14 PUSH AF       ;
  $CE15 PUSH DE       ;
  $CE16 PUSH HL       ;
@@ -6009,7 +6415,7 @@ c$CA6F LD HL,$412C   ;
  $CF7F AND $01       ;
  $CF81 CALL Z,$C5D9  ;
  $CF84 JP $C469      ;
-; This entry point is used by the routine at #R$BC48.
+; This entry point is used by the routine at #R$BC74.
 *$CF87 CP $02        ;
  $CF89 JP NZ,$CFA4   ;
  $CF8C IN A,($1F)    ;
@@ -6062,7 +6468,7 @@ c$CA6F LD HL,$412C   ;
  $CFFA AND $10       ;
  $CFFC CALL Z,$BD51  ;
  $CFFF JP $BCFB      ;
-; This entry point is used by the routines at #R$BC48 and #R$C3FB.
+; This entry point is used by the routines at #R$BC74 and #R$C3FB.
 *$D002 LD A,$01      ;
  $D004 LD ($5BA9),A  ;
  $D007 CALL $67E8    ;
