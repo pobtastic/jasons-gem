@@ -1,3 +1,4 @@
+; Copyright Mastertronic Ltd 1985, 2026 ArcadeGeek LTD.
 > $4000 @org=$4000
 > $4000 @start=$9470
 b $4000 Loading screen
@@ -89,11 +90,11 @@ N $8B64 Handles printing the "#STR$8B69,$00,$1A" text.
 @ $8B64 label=Stage1Copy
   $8B64,$03 PRINT AT (#PEEK(#PC + $01), #PEEK(#PC + $02)).
   $8B67,$02 INK #PEEK(#PC + $01).
-T $8B69,$1A "#FONT:(THE CARGO BEARS A MESSAGE,)$FBF4,attr=$05(stage1copy1)".
+T $8B69,$1A "#FONT$FBF4,attr=$05,chars=0(THE CARGO BEARS A MESSAGE,)(stage1copy1)".
 N $8B83 Handles printing the "#STR$8B88,$00,$1D" text.
   $8B83,$03 PRINT AT (#PEEK(#PC + $01), #PEEK(#PC + $02)).
   $8B86,$02 INK #PEEK(#PC + $01).
-T $8B88,$1D "#FONT:(A TALE OF LONG LOST TREASURE,)$FBF4,attr=$06(stage1copy2)".
+T $8B88,$1D "#FONT$FBF4,attr=$06,chars=0(A TALE OF LONG LOST TREASURE,)(stage1copy2)".
 N $8BA5 Handles printing the "#STR$8BAA,$00,$1C" text.
   $8BA5,$03 PRINT AT (#PEEK(#PC + $01), #PEEK(#PC + $02)).
   $8BA8,$02 INK #PEEK(#PC + $01).
@@ -179,20 +180,20 @@ N $8CE7 Handles printing the "#STR$8CEE,$00,$1D" text.
 B $8CE7,$02 PAPER #PEEK(#PC + $01).
 B $8CE9,$03 PRINT AT (#PEEK(#PC + $01), #PEEK(#PC + $02)).
 B $8CEC,$02 INK #PEEK(#PC + $01).
-T $8CEE,$1D "#FONT:(THE EPITAPH INSCRIBED ON POOR)$FBF4,attr=$06(gameover-1)".
+T $8CEE,$1D "#FONT$FBF4,attr=$06,chars=0(THE EPITAPH INSCRIBED ON POOR)(gameover-1)".
 N $8D0B Handles printing the "#STR$8D0E,$00,$0D" text.
 B $8D0B,$03 PRINT AT (#PEEK(#PC + $01), #PEEK(#PC + $02)).
-T $8D0E,$0D "#FONT:(JASON'S TOMB,)$FBF4,attr=$06(gameover-2)".
+T $8D0E,$0D "#FONT$FBF4,attr=$06,chars=0(JASON'S TOMB,)(gameover-2)".
 N $8D1B Handles printing the "#STR$8D1D,$00,$1E" text.
 B $8D1B,$02 INK #PEEK(#PC + $01).
-T $8D1D,$1E "#FONT:(DOES NOT SPEAK OF HIS EVENTFUL)$FBF4,attr=$05(gameover-3)".
+T $8D1D,$1E "#FONT$FBF4,attr=$05,chars=0(DOES NOT SPEAK OF HIS EVENTFUL)(gameover-3)".
 N $8D3B Handles printing the "#STR$8D3E,$00,$06" text.
 B $8D3B,$03 PRINT AT (#PEEK(#PC + $01), #PEEK(#PC + $02)).
-T $8D3E,$06 "#FONT:( LIFE,)$FBF4,attr=$05(gameover-4)".
+T $8D3E,$06 "#FONT$FBF4,attr=$05,chars=0( LIFE,)(gameover-4)".
 N $8D44 Handles printing the "#STR$8D49,$00,$1B" text.
 B $8D44,$03 PRINT AT (#PEEK(#PC + $01), #PEEK(#PC + $02)).
 B $8D47,$02 INK #PEEK(#PC + $01).
-T $8D49,$1B "#FONT:(BUT OF HIS CARELESS DOOM...)$FBF4,attr=$06(gameover-5)".
+T $8D49,$1B "#FONT$FBF4,attr=$06,chars=0(BUT OF HIS CARELESS DOOM...)(gameover-5)".
 N $8D64 Handles printing the "#STR$8D69,$00,$1F" text.
 B $8D64,$03 PRINT AT (#PEEK(#PC + $01), #PEEK(#PC + $02)).
 B $8D67,$02 INK #PEEK(#PC + $01).
@@ -291,9 +292,9 @@ N $8F47 Open the upper screen channel.
 B $8F71,$02 PAPER #PEEK(#PC + $01).
 B $8F73,$03 PRINT AT (#PEEK(#PC + $01), #PEEK(#PC + $02)).
 B $8F76,$02 INK #PEEK(#PC + $01).
-T $8F78 "#FONT:(THE MISSION HAS NOW BEEN )$FBF4,attr=$05(congratscopy-1)".
+T $8F78 "#FONT$FBF4,attr=$05,chars=0(THE MISSION HAS NOW BEEN )(congratscopy-1)".
 B $8F91,$03 PRINT AT (#PEEK(#PC + $01), #PEEK(#PC + $02)).
-T $8F94 "#FONT:(ACCOMPLISHED,)$FBF4,attr=$05(congratscopy-2)".
+T $8F94 "#FONT$FBF4,attr=$05,chars=0(ACCOMPLISHED,)(congratscopy-2)".
 B $8FA1,$03 PRINT AT (#PEEK(#PC + $01), #PEEK(#PC + $02)).
 B $8FA4,$02 INK #PEEK(#PC + $01).
 T $8FA6

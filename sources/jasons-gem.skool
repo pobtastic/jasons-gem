@@ -1874,14 +1874,14 @@ c$8B10 LD A,$02      ; #REGa=#N$02.
 b$8B64 DEFB $16,$08,$00                     ; PRINT AT (#PEEK(#PC + $01),
                                             ; #PEEK(#PC + $02)).
  $8B67 DEFB $10,$05                         ; INK #PEEK(#PC + $01).
- $8B69 DEFM "THE CARGO BEARS A MESSAGE,"    ; "#FONT:(THE CARGO BEARS A
-                                            ; MESSAGE,)$FBF4,attr=$05(stage1copy1)".
+ $8B69 DEFM "THE CARGO BEARS A MESSAGE,"    ; "#FONT$FBF4,attr=$05,chars=0(THE
+                                            ; CARGO BEARS A MESSAGE,)(stage1copy1)".
 ; Handles printing the "#STR$8B88,$00,$1D" text.
  $8B83 DEFB $16,$0A,$01                     ; PRINT AT (#PEEK(#PC + $01),
                                             ; #PEEK(#PC + $02)).
  $8B86 DEFB $10,$06                         ; INK #PEEK(#PC + $01).
- $8B88 DEFM "A TALE OF LONG LOST TREASURE," ; "#FONT:(A TALE OF LONG LOST
-                                            ; TREASURE,)$FBF4,attr=$06(stage1copy2)".
+ $8B88 DEFM "A TALE OF LONG LOST TREASURE," ; "#FONT$FBF4,attr=$06,chars=0(A
+                                            ; TALE OF LONG LOST TREASURE,)(stage1copy2)".
 ; Handles printing the "#STR$8BAA,$00,$1C" text.
  $8BA5 DEFB $16,$0C,$00                     ; PRINT AT (#PEEK(#PC + $01),
                                             ; #PEEK(#PC + $02)).
@@ -2016,29 +2016,29 @@ c$8CA0 LD HL,$4000                            ;
  $8CE9 DEFB $16,$00,$00                       ; PRINT AT (#PEEK(#PC + $01),
                                               ; #PEEK(#PC + $02)).
  $8CEC DEFB $10,$06                           ; INK #PEEK(#PC + $01).
- $8CEE DEFM "THE EPITAPH INSCRIBED ON POOR"   ; "#FONT:(THE EPITAPH INSCRIBED
-                                              ; ON
-                                              ; POOR)$FBF4,attr=$06(gameover-1)".
+ $8CEE DEFM "THE EPITAPH INSCRIBED ON POOR"   ; "#FONT$FBF4,attr=$06,chars=0(THE
+                                              ; EPITAPH
+                                              ; INSCRIBED ON POOR)(gameover-1)".
 ; Handles printing the "#STR$8D0E,$00,$0D" text.
  $8D0B DEFB $16,$01,$13                       ; PRINT AT (#PEEK(#PC + $01),
                                               ; #PEEK(#PC + $02)).
- $8D0E DEFM "JASON'S TOMB,"                   ; "#FONT:(JASON'S
-                                              ; TOMB,)$FBF4,attr=$06(gameover-2)".
+ $8D0E DEFM "JASON'S TOMB,"                   ; "#FONT$FBF4,attr=$06,chars=0(JASON'S
+                                              ; TOMB,)(gameover-2)".
 ; Handles printing the "#STR$8D1D,$00,$1E" text.
  $8D1B DEFB $10,$05                           ; INK #PEEK(#PC + $01).
- $8D1D DEFM "DOES NOT SPEAK OF HIS EVENTFUL"  ; "#FONT:(DOES NOT SPEAK OF HIS
-                                              ; EVENTFUL)$FBF4,attr=$05(gameover-3)".
+ $8D1D DEFM "DOES NOT SPEAK OF HIS EVENTFUL"  ; "#FONT$FBF4,attr=$05,chars=0(DOES
+                                              ; NOT SPEAK OF HIS EVENTFUL)(gameover-3)".
 ; Handles printing the "#STR$8D3E,$00,$06" text.
  $8D3B DEFB $16,$03,$1A                       ; PRINT AT (#PEEK(#PC + $01),
                                               ; #PEEK(#PC + $02)).
- $8D3E DEFM " LIFE,"                          ; "#FONT:(
-                                              ; LIFE,)$FBF4,attr=$05(gameover-4)".
+ $8D3E DEFM " LIFE,"                          ; "#FONT$FBF4,attr=$05,chars=0(
+                                              ; LIFE,)(gameover-4)".
 ; Handles printing the "#STR$8D49,$00,$1B" text.
  $8D44 DEFB $16,$04,$01                       ; PRINT AT (#PEEK(#PC + $01),
                                               ; #PEEK(#PC + $02)).
  $8D47 DEFB $10,$06                           ; INK #PEEK(#PC + $01).
- $8D49 DEFM "BUT OF HIS CARELESS DOOM..."     ; "#FONT:(BUT OF HIS CARELESS
-                                              ; DOOM...)$FBF4,attr=$06(gameover-5)".
+ $8D49 DEFM "BUT OF HIS CARELESS DOOM..."     ; "#FONT$FBF4,attr=$06,chars=0(BUT
+                                              ; OF HIS CARELESS DOOM...)(gameover-5)".
 ; Handles printing the "#STR$8D69,$00,$1F" text.
  $8D64 DEFB $16,$07,$00                       ; PRINT AT (#PEEK(#PC + $01),
                                               ; #PEEK(#PC + $02)).
@@ -2191,11 +2191,11 @@ c$8F2A LD HL,$4000                           ;
  $8F73 DEFB $16,$06,$00                      ; PRINT AT (#PEEK(#PC + $01),
                                              ; #PEEK(#PC + $02)).
  $8F76 DEFB $10,$05                          ; INK #PEEK(#PC + $01).
- $8F78 DEFM "THE MISSION HAS NOW BEEN "      ; "#FONT:(THE MISSION HAS NOW BEEN
-                                             ; )$FBF4,attr=$05(congratscopy-1)".
+ $8F78 DEFM "THE MISSION HAS NOW BEEN "      ; "#FONT$FBF4,attr=$05,chars=0(THE
+                                             ; MISSION HAS NOW BEEN )(congratscopy-1)".
  $8F91 DEFB $16,$07,$13                      ; PRINT AT (#PEEK(#PC + $01),
                                              ; #PEEK(#PC + $02)).
- $8F94 DEFM "ACCOMPLISHED,"                  ; "#FONT:(ACCOMPLISHED,)$FBF4,attr=$05(congratscopy-2)".
+ $8F94 DEFM "ACCOMPLISHED,"                  ; "#FONT$FBF4,attr=$05,chars=0(ACCOMPLISHED,)(congratscopy-2)".
  $8FA1 DEFB $16,$09,$00                      ; PRINT AT (#PEEK(#PC + $01),
                                              ; #PEEK(#PC + $02)).
  $8FA4 DEFB $10,$06                          ; INK #PEEK(#PC + $01).

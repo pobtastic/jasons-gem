@@ -1,3 +1,5 @@
+; Copyright 2026 Paul Maddern (paul@arcadegeek.co.uk)
+
 ;
 ; SkoolKit ref file for Jason's Gem
 ;
@@ -13,7 +15,7 @@ GameDir=jasons-gem
 [Game]
 Game=Jason's Gem
 Logo=#SCR2,$00,$00,$20,$04,$4000,$5800(/images/logo)
-Copyright=&copy; Mastertronic Ltd 1985 &copy; 2023 ArcadeGeek LTD.
+Copyright=&copy; 1985 Mastertronic Ltd<br />&copy; 2026 ArcadeGeek LTD.
 Repository=https://github.com/pobtastic/jasons-gem/
 LinkInternalOperands=1
 AddressAnchor={address#IF({base}==16)(:04x)}
